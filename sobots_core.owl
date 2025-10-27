@@ -180,7 +180,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#InteractionTimeFrame</IRI>
-        <Literal>The time frame a single or multiple interactions impact. Example: During my stay at the hospital over the recent two weeks, a service robot brought me my food twice each day.</Literal>
+        <Literal>The time frame a single or multiple interactions can occur in. Example: During my stay at the hospital over the recent two weeks, a service robot brought me my food twice each day.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
