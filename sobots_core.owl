@@ -14,6 +14,189 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>https://raw.githubusercontent.com/Neroware/Sobots/refs/heads/master/OCRA/ocra.owl</Import>
     <Import>https://raw.githubusercontent.com/pstlab/SOHO/refs/heads/main/core/soho_core_v1.1.owl</Import>
+    <Declaration>
+        <Class IRI="#AdaptivityLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CognitiveVariability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EmotionalVariability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HumanLikeness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InteractionDuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InteractionTimeFrame"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InteractionsPerDay"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MotivationalVariability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NaturalRobot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialRobot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialRobotAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialTimeInterval"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocioCulturalVariability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialVariability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporalVariability"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AdaptivityLevel"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CognitiveVariability"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EmotionalVariability"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HumanLikeness"/>
+        <Class IRI="#SocialRobotAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InteractionDuration"/>
+        <Class IRI="#SocialTimeInterval"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InteractionDuration"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isRegionFor"/>
+            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialAgent"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InteractionTimeFrame"/>
+        <Class IRI="#SocialTimeInterval"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InteractionsPerDay"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#FrequencyRegion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InteractionsPerDay"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isRegionFor"/>
+            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObject"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MotivationalVariability"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NaturalRobot"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialRobot"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AutonomousRobot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialRobot"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialRobot"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasCapability"/>
+            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialRobot"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasEmbodiment"/>
+            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotInterface"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialRobot"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasQuality"/>
+            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotAutonomy"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialRobotAttribute"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialRobotAttribute"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isRegionFor"/>
+            <Class IRI="#SocialRobot"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialTimeInterval"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#TimeInterval"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialTimeInterval"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isRegionFor"/>
+            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObject"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocioCulturalVariability"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpatialVariability"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporalVariability"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InteractionDuration</IRI>
+        <Literal>Represents the duration of any interaction as a fixed time interval. Example: The interaction between me and the robot took exactly 5 minutes, until we reached our collaborative goal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InteractionTimeFrame</IRI>
+        <Literal>The time frame a single or multiple interactions impact. Example: During my stay at the hospital over the recent two weeks, a service robot brought me my food twice each day.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InteractionsPerDay</IRI>
+        <Literal>The amount of ocurred social interactions per day</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NaturalRobot</IRI>
+        <Literal>&quot;A robot is a reprogrammable, multifunctional manipulator designed to move material, parts, tools or specialized devices through variable programmed motions for the performance of a variety of tasks&quot; -Robotic Industries Association</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NaturalRobot</IRI>
+        <Literal>Natural robot</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
