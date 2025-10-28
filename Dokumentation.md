@@ -54,4 +54,18 @@ Während Regionen nur als dimensionale Wertemengen bzw. zur Kodierung einer Qual
 
 -> Definition: HumanProperty und SocialRobotProperty als Äquivalenzklassen mit trivialen Regeln
 
-- Erscheinungsform: Die Erscheinungsform ist eine klare Qualität eines Agenten. Basierend auf den Angaben der Taxonomie habe ich entsprechend Regionen für die 'Menschenähnlichkeit' und die 'Tierähnlichkeit' definiert. Beide Vektorräume starten dabei vom Ursprung 'PurelyTechnical'.
+- Erscheinungsform: Die Erscheinungsform ist eine klare Qualität eines Agenten. Basierend auf den Angaben der Taxonomie habe ich entsprechend Regionen für die 'Menschenähnlichkeit' und die 'Tierähnlichkeit' definiert. Beide Vektorräume starten dabei vom Ursprung 'PurelyTechnical'. Eine entsprechende Qualität "AgentAppearance" wurde eingefügt.
+- Robotertyp: Wurde als Unterklasse von RobotProperty eingefügt und nicht verändert im Vergleich zur Taxonomie
+- Mobilität: Die Mobilität ist eine AgentCapability, die einzelnen Kategorien der Taxonomie deuten aber wieder auf Wertemengen hin. So ist 'FullyStationary' z.B. ganz klar ein Maximum des dimensionale Raums. Entsprechend wurde die Region MobilityLevel {Stationary, Restricted, Mobile} eingeführt (welche vermutlich nicht perfekt ist, aber so schon passen müsste...)
+- Art der Interaktion: Verstehe ich als Kategorie nicht... TODO Rücksprache!
+
+## Schritt 5: Intelligenz als Capability eines Roboters
+Geht man davon aus, dass Adaptability (mit den Kategorien als Subklassen) und Autonomy (beschrieben durch die Region des Autonomiegrads) ebenfalls Capabilities eines Roboters, so ist die Modellierung hier als Subklasse von soho:AgentCapability angebracht.
+
+## Schritt 6: Kommunikation als verbleibendes Konzept
+
+Hier legt die Taxonomie großen Wert auf die verschiedenen Modi, über die kommuniziert werden kann. Ich sehe Kommunikationsfähigkeit als eine Capability eines Agenten und habe entsprechend die Kategorien modelliert.
+
+Was ist gerne noch irgendwie bewerkstelligen würde, ist eine Verbindung zur Funktion 'Communication' zu schaffen. Intuitiv sollte dies zu schaffen sein über den Fakt, dass eine Function (bzw. ein Skill) eine konkrete Implementierung einer Capability ist...
+
+Auch fehlt noch eine Region zur Skalierung der Kommunikationsfähigkeit von z.B. "unkommunikativ" zu "sehr kommunikativ"... Eventuell gibt es hierzu schon psychologische Arbeiten...

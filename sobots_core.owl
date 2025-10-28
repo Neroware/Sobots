@@ -27,7 +27,13 @@
         <Class IRI="#AgeRegion"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AgentAdaptability"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#AgentAppearance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgentAutonomy"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Android"/>
@@ -45,13 +51,34 @@
         <Class IRI="#Art"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#BodySpeechCapability"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Children"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChronemicHintCapability"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Close"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#CognitiveAdaptability"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#CognitiveTaskContext"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CommunicationCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CommunicationProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CommunicativeEmissionCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CommunicativePerceptionCapability"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ContextOfUsage"/>
@@ -60,10 +87,22 @@
         <Class IRI="#ContinousTimeWindow"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#CrawlingCapability"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Days"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#DigitalCommunicationCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DrivingCapability"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Education"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EmotionalAdaptability"/>
     </Declaration>
     <Declaration>
         <Class IRI="#EmotionalTaskContext"/>
@@ -76,6 +115,30 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Experts"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExtraverbalCommunicationCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExtraverbalEmissionCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExtraverbalPerceptionCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FacialExpressionCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FlyingCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GazeContactCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GestureExpressionCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HapticCueCapability"/>
     </Declaration>
     <Declaration>
         <Class IRI="#HighAdaptivity"/>
@@ -97,6 +160,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Humanoid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IndustrialRobot"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Industry"/>
@@ -132,16 +198,31 @@
         <Class IRI="#Laymen"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#LiteracyCapability"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#LongDuration"/>
     </Declaration>
     <Declaration>
         <Class IRI="#LowAdaptivity"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#MedicalRobot"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#MediumTimeWindow"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Minutes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mobile"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobilityCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobilityLevel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ModerateAdaptivity"/>
@@ -153,10 +234,25 @@
         <Class IRI="#Months"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#MotivationalAdaptability"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#NaturalRobot"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#NonverbalCommunicationCapability"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#OccasionalInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OralSoundCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OralSpeechCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParaverbalCommunicationCapability"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Passing"/>
@@ -174,7 +270,19 @@
         <Class IRI="#PrivateService"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#PrivateServiceRobot"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ProfessionalService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProfessionalServiceRobot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProsodyCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProxemicHintCapability"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ProxemicZone"/>
@@ -186,6 +294,9 @@
         <Class IRI="#PublicService"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#PublicServiceRobot"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#PurelyTechnical"/>
     </Declaration>
     <Declaration>
@@ -195,7 +306,13 @@
         <Class IRI="#RegularInteraction"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Restricted"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#RobotProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RobotType"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Science"/>
@@ -210,13 +327,22 @@
         <Class IRI="#Service"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ServiceRobot"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ShortDuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SignSpeechCapability"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SingleInteraction"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SmallTimeWindow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmellBasedCommunicationCapability"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SocialDistance"/>
@@ -240,13 +366,28 @@
         <Class IRI="#SocialTimeInterval"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SocioCulturalAdaptability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stationary"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SwimmingCapability"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#TargetGroup"/>
     </Declaration>
     <Declaration>
         <Class IRI="#TaskContext"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#TechnicalAuditiveNotificationCapability"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#TechnicalSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TechnicalVisualNotificationCapability"/>
     </Declaration>
     <Declaration>
         <Class IRI="#TimeDuration"/>
@@ -261,6 +402,12 @@
         <Class IRI="#TransportTaskContext"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#VerbalCommunicationCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WalkingCapability"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Weeks"/>
     </Declaration>
     <Declaration>
@@ -272,6 +419,20 @@
     <Declaration>
         <Class IRI="#Zoomorph"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#CommunicationCapability"/>
+        <ObjectUnionOf>
+            <Class IRI="#CommunicativeEmissionCapability"/>
+            <Class IRI="#CommunicativePerceptionCapability"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ExtraverbalCommunicationCapability"/>
+        <ObjectUnionOf>
+            <Class IRI="#ExtraverbalEmissionCapability"/>
+            <Class IRI="#ExtraverbalPerceptionCapability"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#HumanProperty"/>
         <ObjectSomeValuesFrom>
@@ -318,8 +479,16 @@
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#QuantitativeAmount"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#AgentAdaptability"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#AgentAppearance"/>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentEmbodimentProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgentAutonomy"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Android"/>
@@ -346,16 +515,51 @@
         <Class IRI="#ApplicationArea"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#BodySpeechCapability"/>
+        <Class IRI="#NonverbalCommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Children"/>
         <Class IRI="#AgeGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChronemicHintCapability"/>
+        <Class IRI="#ExtraverbalCommunicationCapability"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Close"/>
         <Class IRI="#PhysicalCloseness"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#CognitiveAdaptability"/>
+        <Class IRI="#AgentAdaptability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#CognitiveTaskContext"/>
         <Class IRI="#TaskContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CommunicationCapability"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CommunicationProperty"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CommunicationProperty"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
+            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Communication"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CommunicativeEmissionCapability"/>
+        <Class IRI="#CommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CommunicativePerceptionCapability"/>
+        <Class IRI="#CommunicationCapability"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ContextOfUsage"/>
@@ -373,12 +577,28 @@
         <Class IRI="#LargeTimeWindow"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#CrawlingCapability"/>
+        <Class IRI="#MobilityCapability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Days"/>
         <Class IRI="#SmallTimeWindow"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#DigitalCommunicationCapability"/>
+        <Class IRI="#NonverbalCommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DrivingCapability"/>
+        <Class IRI="#MobilityCapability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Education"/>
         <Class IRI="#ApplicationArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EmotionalAdaptability"/>
+        <Class IRI="#AgentAdaptability"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EmotionalTaskContext"/>
@@ -395,6 +615,38 @@
     <SubClassOf>
         <Class IRI="#Experts"/>
         <Class IRI="#ExpertiseGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExtraverbalCommunicationCapability"/>
+        <Class IRI="#CommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExtraverbalEmissionCapability"/>
+        <Class IRI="#CommunicativeEmissionCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExtraverbalPerceptionCapability"/>
+        <Class IRI="#CommunicativePerceptionCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FacialExpressionCapability"/>
+        <Class IRI="#NonverbalCommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FlyingCapability"/>
+        <Class IRI="#MobilityCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GazeContactCapability"/>
+        <Class IRI="#NonverbalCommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GestureExpressionCapability"/>
+        <Class IRI="#NonverbalCommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HapticCueCapability"/>
+        <Class IRI="#ExtraverbalCommunicationCapability"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HighAdaptivity"/>
@@ -427,6 +679,10 @@
     <SubClassOf>
         <Class IRI="#Humanoid"/>
         <Class IRI="#HumanLikeness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IndustrialRobot"/>
+        <Class IRI="#RobotType"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Industry"/>
@@ -489,6 +745,10 @@
         <Class IRI="#ExpertiseGroup"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#LiteracyCapability"/>
+        <Class IRI="#VerbalCommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#LongDuration"/>
         <Class IRI="#TimeDuration"/>
     </SubClassOf>
@@ -497,12 +757,28 @@
         <Class IRI="#AdaptivityLevel"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#MedicalRobot"/>
+        <Class IRI="#RobotType"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#MediumTimeWindow"/>
         <Class IRI="#TimeFrame"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Minutes"/>
         <Class IRI="#SmallTimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mobile"/>
+        <Class IRI="#MobilityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobilityCapability"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobilityLevel"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ModerateAdaptivity"/>
@@ -517,12 +793,32 @@
         <Class IRI="#MediumTimeWindow"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#MotivationalAdaptability"/>
+        <Class IRI="#AgentAdaptability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#NaturalRobot"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAgent"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#NonverbalCommunicationCapability"/>
+        <Class IRI="#CommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#OccasionalInteraction"/>
         <Class IRI="#InteractionAmount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OralSoundCapability"/>
+        <Class IRI="#ParaverbalCommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OralSpeechCapability"/>
+        <Class IRI="#VerbalCommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParaverbalCommunicationCapability"/>
+        <Class IRI="#CommunicationCapability"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Passing"/>
@@ -545,8 +841,24 @@
         <Class IRI="#Service"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#PrivateServiceRobot"/>
+        <Class IRI="#ServiceRobot"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ProfessionalService"/>
         <Class IRI="#Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProfessionalServiceRobot"/>
+        <Class IRI="#ServiceRobot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProsodyCapability"/>
+        <Class IRI="#ParaverbalCommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProxemicHintCapability"/>
+        <Class IRI="#ExtraverbalCommunicationCapability"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProxemicZone"/>
@@ -559,6 +871,10 @@
     <SubClassOf>
         <Class IRI="#PublicService"/>
         <Class IRI="#Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PublicServiceRobot"/>
+        <Class IRI="#ServiceRobot"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PurelyTechnical"/>
@@ -577,8 +893,16 @@
         <Class IRI="#InteractionAmount"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Restricted"/>
+        <Class IRI="#MobilityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#RobotProperty"/>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RobotType"/>
+        <Class IRI="#RobotProperty"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Science"/>
@@ -597,8 +921,16 @@
         <Class IRI="#ApplicationArea"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ServiceRobot"/>
+        <Class IRI="#RobotType"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ShortDuration"/>
         <Class IRI="#TimeDuration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SignSpeechCapability"/>
+        <Class IRI="#VerbalCommunicationCapability"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SingleInteraction"/>
@@ -607,6 +939,10 @@
     <SubClassOf>
         <Class IRI="#SmallTimeWindow"/>
         <Class IRI="#TimeFrame"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmellBasedCommunicationCapability"/>
+        <Class IRI="#ExtraverbalCommunicationCapability"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialDistance"/>
@@ -677,6 +1013,18 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#TimeInterval"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#SocioCulturalAdaptability"/>
+        <Class IRI="#AgentAdaptability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stationary"/>
+        <Class IRI="#MobilityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SwimmingCapability"/>
+        <Class IRI="#MobilityCapability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#TargetGroup"/>
         <Class IRI="#ContextOfUsage"/>
     </SubClassOf>
@@ -685,8 +1033,16 @@
         <Class IRI="#ContextOfUsage"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#TechnicalAuditiveNotificationCapability"/>
+        <Class IRI="#ExtraverbalEmissionCapability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#TechnicalSystem"/>
         <Class IRI="#InteractionPartner"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TechnicalVisualNotificationCapability"/>
+        <Class IRI="#ExtraverbalEmissionCapability"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TimeDuration"/>
@@ -703,6 +1059,14 @@
     <SubClassOf>
         <Class IRI="#TransportTaskContext"/>
         <Class IRI="#TaskContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VerbalCommunicationCapability"/>
+        <Class IRI="#CommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WalkingCapability"/>
+        <Class IRI="#MobilityCapability"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Weeks"/>
