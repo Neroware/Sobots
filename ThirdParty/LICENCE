@@ -12,3 +12,18 @@ https://doi.org/10.1016/j.compind.2022.103627.
 Abstract: Industrial collaborative robots will be used in unstructured scenarios and a large variety of tasks in the near future. These robots shall collaborate with humans, who will add uncertainty and safety constraints to the execution of industrial robotic tasks. Hence, trustworthy collaborative robots must be able to reason about their collaboration’s requirements (e.g., safety), as well as the adaptation of their plans due to unexpected situations. A common approach to reasoning is to represent the knowledge of interest using logic-based formalisms, such as ontologies. However, there is not an established ontology defining notions such as collaboration or adaptation yet. In this article, we propose an Ontology for Collaborative Robotics and Adaptation (OCRA), which is built around two main notions: collaboration, and plan adaptation. OCRA ensures a reliable human-robot collaboration, since robots can formalize, and reason about their plan adaptations and collaborations in unstructured collaborative robotic scenarios. Furthermore, our ontology enhances the reusability of the domain’s terminology, allowing robots to represent their knowledge about different collaborative and adaptive situations. We validate our formal model, first, by demonstrating that a robot may answer a set of competency questions using OCRA. Second, by studying the formalization’s performance in limit cases that include instances with incongruent and incomplete axioms. For both validations, the example use case consists in a human and a robot collaborating on the filling of a tray.
 Keywords: Ontology; Ontological analysis; Industrial collaborative robots; Human-robot collaboration; Adaptation; Reliability
 Website: https://www.iri.upc.edu/groups/perception/OCRA/
+
+
+# An Ontology for Human-Robot Collaboration
+
+Alessandro Umbrico, Andrea Orlandini, Amedeo Cesta,
+An Ontology for Human-Robot Collaboration,
+Procedia CIRP,
+Volume 93,
+2020,
+Pages 1097-1102,
+ISSN 2212-8271,
+https://doi.org/10.1016/j.procir.2020.04.045.
+(https://www.sciencedirect.com/science/article/pii/S2212827120306107)
+Abstract: The diffusion of Human-Robot Collaborative cells is prevented by some barriers. Classical control approaches seem not yet fully suitable for facing variability conveyed by the presence of human operators beside robots. Heterogeneous knowledge representation capabilities and abstract reasoning are crucial to enhance flexibility of control solutions. This work presents SOHO (Sharework Ontology for Human Robot Collaboration), a novel ontology specifically designed for Human-Robot Collaboration. The paper describes the pursued context-based approach, the novelty of the designed ontology with respect to the state of the art and shows its validity in a realistic Human-Robot Collaboration scenario.
+Keywords: Human-Robot Collaboration; Artificial Intelligence; Formal Ontology
