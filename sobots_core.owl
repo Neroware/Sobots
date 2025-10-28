@@ -18,19 +18,64 @@
         <Class IRI="#AdaptivityLevel"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AgeGroup"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#AgeInYears"/>
     </Declaration>
     <Declaration>
         <Class IRI="#AgeRegion"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AgentAppearance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Android"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AnimalLikeness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AnimalPartner"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ApplicationArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Art"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Children"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Close"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CognitiveTaskContext"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContextOfUsage"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ContinousTimeWindow"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Days"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Education"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EmotionalTaskContext"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Entertainment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExpertiseGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Experts"/>
     </Declaration>
     <Declaration>
         <Class IRI="#HighAdaptivity"/>
@@ -42,13 +87,31 @@
         <Class IRI="#HumanLikeness"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#HumanPartner"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HumanProperty"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#HumanToRobotRatio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Humanoid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Industry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InformationExchangeTaskContext"/>
     </Declaration>
     <Declaration>
         <Class IRI="#InteractionAmount"/>
     </Declaration>
     <Declaration>
         <Class IRI="#InteractionDuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InteractionPartner"/>
     </Declaration>
     <Declaration>
         <Class IRI="#InteractionTimeFrame"/>
@@ -64,6 +127,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#LargeTimeWindow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Laymen"/>
     </Declaration>
     <Declaration>
         <Class IRI="#LongDuration"/>
@@ -102,10 +168,25 @@
         <Class IRI="#PhysicalCloseness"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#PhysicalTaskContext"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PrivateService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProfessionalService"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ProxemicZone"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PublicProxemicZone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PublicService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PurelyTechnical"/>
     </Declaration>
     <Declaration>
         <Class IRI="#RatioRegion"/>
@@ -114,7 +195,19 @@
         <Class IRI="#RegularInteraction"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#RobotProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Science"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Seconds"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Seniors"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Service"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ShortDuration"/>
@@ -138,7 +231,22 @@
         <Class IRI="#SocialRobotAttribute"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SocialRobotProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialTaskContext"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SocialTimeInterval"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TargetGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskContext"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TechnicalSystem"/>
     </Declaration>
     <Declaration>
         <Class IRI="#TimeDuration"/>
@@ -150,14 +258,56 @@
         <Class IRI="#Touching"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#TransportTaskContext"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Weeks"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Workers"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Years"/>
     </Declaration>
+    <Declaration>
+        <Class IRI="#Zoomorph"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#HumanProperty"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
+            <ObjectUnionOf>
+                <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Human"/>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#NaturalPerson"/>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RobotProperty"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
+            <ObjectUnionOf>
+                <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AutonomousRobot"/>
+                <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Cobot"/>
+                <Class IRI="#NaturalRobot"/>
+                <Class IRI="#SocialRobot"/>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SocialRobotProperty"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
+            <Class IRI="#SocialRobot"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#AdaptivityLevel"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgeGroup"/>
+        <Class IRI="#TargetGroup"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AgeInYears"/>
@@ -168,8 +318,55 @@
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#QuantitativeAmount"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#AgentAppearance"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentEmbodimentProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Android"/>
+        <Class IRI="#HumanLikeness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLikeness"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalLikeness"/>
+        <Class IRI="#SocialRobotAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimalPartner"/>
+        <Class IRI="#InteractionPartner"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ApplicationArea"/>
+        <Class IRI="#ContextOfUsage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Art"/>
+        <Class IRI="#ApplicationArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Children"/>
+        <Class IRI="#AgeGroup"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Close"/>
         <Class IRI="#PhysicalCloseness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CognitiveTaskContext"/>
+        <Class IRI="#TaskContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContextOfUsage"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContextOfUsage"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
+            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AutonomousRobot"/>
+        </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ContinousTimeWindow"/>
@@ -178,6 +375,26 @@
     <SubClassOf>
         <Class IRI="#Days"/>
         <Class IRI="#SmallTimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Education"/>
+        <Class IRI="#ApplicationArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EmotionalTaskContext"/>
+        <Class IRI="#TaskContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Entertainment"/>
+        <Class IRI="#ApplicationArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExpertiseGroup"/>
+        <Class IRI="#TargetGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Experts"/>
+        <Class IRI="#ExpertiseGroup"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HighAdaptivity"/>
@@ -189,11 +406,35 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HumanLikeness"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HumanLikeness"/>
         <Class IRI="#SocialRobotAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HumanPartner"/>
+        <Class IRI="#InteractionPartner"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HumanProperty"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentProperty"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HumanToRobotRatio"/>
         <Class IRI="#RatioRegion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Humanoid"/>
+        <Class IRI="#HumanLikeness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Industry"/>
+        <Class IRI="#ApplicationArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformationExchangeTaskContext"/>
+        <Class IRI="#TaskContext"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InteractionAmount"/>
@@ -210,6 +451,10 @@
     <SubClassOf>
         <Class IRI="#InteractionDuration"/>
         <Class IRI="#TimeDuration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InteractionPartner"/>
+        <Class IRI="#ContextOfUsage"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InteractionTimeFrame"/>
@@ -238,6 +483,10 @@
     <SubClassOf>
         <Class IRI="#LargeTimeWindow"/>
         <Class IRI="#TimeFrame"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Laymen"/>
+        <Class IRI="#ExpertiseGroup"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#LongDuration"/>
@@ -288,12 +537,36 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAttribute"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#PhysicalTaskContext"/>
+        <Class IRI="#TaskContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivateService"/>
+        <Class IRI="#Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProfessionalService"/>
+        <Class IRI="#Service"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ProxemicZone"/>
         <Class IRI="#SocialDistance"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PublicProxemicZone"/>
         <Class IRI="#ProxemicZone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PublicService"/>
+        <Class IRI="#Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PurelyTechnical"/>
+        <Class IRI="#AnimalLikeness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PurelyTechnical"/>
+        <Class IRI="#HumanLikeness"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#RatioRegion"/>
@@ -304,8 +577,24 @@
         <Class IRI="#InteractionAmount"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#RobotProperty"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Science"/>
+        <Class IRI="#ApplicationArea"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Seconds"/>
         <Class IRI="#SmallTimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Seniors"/>
+        <Class IRI="#AgeGroup"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Service"/>
+        <Class IRI="#ApplicationArea"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ShortDuration"/>
@@ -372,12 +661,32 @@
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#SocialRobotProperty"/>
+        <Class IRI="#RobotProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialTaskContext"/>
+        <Class IRI="#TaskContext"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SocialTimeInterval"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialTimeInterval"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#TimeInterval"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TargetGroup"/>
+        <Class IRI="#ContextOfUsage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskContext"/>
+        <Class IRI="#ContextOfUsage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TechnicalSystem"/>
+        <Class IRI="#InteractionPartner"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TimeDuration"/>
@@ -392,12 +701,24 @@
         <Class IRI="#PhysicalCloseness"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#TransportTaskContext"/>
+        <Class IRI="#TaskContext"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Weeks"/>
         <Class IRI="#MediumTimeWindow"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Workers"/>
+        <Class IRI="#TargetGroup"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Years"/>
         <Class IRI="#LargeTimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zoomorph"/>
+        <Class IRI="#AnimalLikeness"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -438,6 +759,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#PhysicalCloseness</IRI>
         <Literal>The physical closeness of a physical object towards another from passing to intracorporeal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RatioRegion</IRI>
+        <Literal>Any ratio as a dimensional space. A ratio could be &quot;2 : 3&quot;, &quot;1 : 1&quot;, &quot;16 : 9&quot; or &quot;4 : 6&quot;. The first and last example are the same value in the dimensional space.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
