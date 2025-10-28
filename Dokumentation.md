@@ -11,9 +11,9 @@ In diesem Schritt gehe ich durch und identifiziere die dimensionale Räume, welc
 ### Nutzungskontext
 Beobachtung: Das Exlusivitätskriterium liefert guten Aufschluss, ob die Kategorie eine Region ist. Leider wurden auch hier Fehler gemacht: Der Anwendungsbereich z.B. muss nicht exklusiv sein und ist eindeutig keine Region...
 
-- Alter der Benutzerzielgruppe
-- Erfahrungsgrad der Benutzerzielgruppe
-- Physische Nähe
+- Alter der Benutzerzielgruppe (Hinzugefügt durch AgeRegion und AgeInYears)
+- Erfahrungsgrad der Benutzerzielgruppe (exisitiert bereits in SOHO als ExpertiseLevelScale)
+- Physische Nähe (realisiert durch PhysicalCloseness)
 - Mensch-zu-Roboter-Verhältnis
 
 ### Interaktionszeit
@@ -30,5 +30,7 @@ Hier sind alle drei Kategorien auch eine Region, Zeiträume sind klassischerweis
 => Keine Regionen!
 
 ### Intelligenz
-- Autonomie: Klare Region durch Vektorraum der Autonomiegrade
-- Adaptivität schwer, sollte auch eine Region sein, aber die Kategorien ergeben keinen Sinn für mich als dimensionaler Raum, stattdessen sind wohl die Kategorien hier eigene Regionen...
+- Autonomie: Klare Region durch Vektorraum der Autonomiegrade (exisitiert bereits in SOHO)
+- Adaptivität schwer, sollte auch eine Region sein, aber die Kategorien ergeben keinen Sinn für mich als dimensionaler Raum, stattdessen wirken sie eher wie Qualitäten, also ein Roboter hat die Qualität emotionaler Adaptivität...
+
+

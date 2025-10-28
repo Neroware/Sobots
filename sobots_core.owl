@@ -12,19 +12,40 @@
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl</Import>
     <Import>http://pst.istc.cnr.it/ontologies/2019/01/soho/1.0.0</Import>
+    <Import>http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl</Import>
     <Declaration>
         <Class IRI="#AdaptivityLevel"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#CognitiveVariability"/>
+        <Class IRI="#AgeInYears"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#EmotionalVariability"/>
+        <Class IRI="#AgeRegion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Close"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContinousTimeWindow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Days"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighAdaptivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hours"/>
     </Declaration>
     <Declaration>
         <Class IRI="#HumanLikeness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HumanToRobotRatio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InteractionAmount"/>
     </Declaration>
     <Declaration>
         <Class IRI="#InteractionDuration"/>
@@ -36,10 +57,79 @@
         <Class IRI="#InteractionsPerDay"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#MotivationalVariability"/>
+        <Class IRI="#IntimateProxemicZone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Intracorporeal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LargeTimeWindow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LongDuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowAdaptivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediumTimeWindow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Minutes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ModerateAdaptivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ModerateDuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Months"/>
     </Declaration>
     <Declaration>
         <Class IRI="#NaturalRobot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OccasionalInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Passing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonalProxemicZone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalCloseness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProxemicZone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PublicProxemicZone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RatioRegion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RegularInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Seconds"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShortDuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SingleInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmallTimeWindow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialDistance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialProxemicZone"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SocialRobot"/>
@@ -51,44 +141,83 @@
         <Class IRI="#SocialTimeInterval"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SocioCulturalVariability"/>
+        <Class IRI="#TimeDuration"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SpatialVariability"/>
+        <Class IRI="#TimeFrame"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TemporalVariability"/>
+        <Class IRI="#Touching"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Weeks"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Years"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#AdaptivityLevel"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#CognitiveVariability"/>
+        <Class IRI="#AgeInYears"/>
+        <Class IRI="#AgeRegion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgeRegion"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#QuantitativeAmount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Close"/>
+        <Class IRI="#PhysicalCloseness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContinousTimeWindow"/>
+        <Class IRI="#LargeTimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Days"/>
+        <Class IRI="#SmallTimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighAdaptivity"/>
         <Class IRI="#AdaptivityLevel"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#EmotionalVariability"/>
-        <Class IRI="#AdaptivityLevel"/>
+        <Class IRI="#Hours"/>
+        <Class IRI="#SmallTimeWindow"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HumanLikeness"/>
         <Class IRI="#SocialRobotAttribute"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#HumanToRobotRatio"/>
+        <Class IRI="#RatioRegion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InteractionAmount"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#QuantitativeAmount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InteractionAmount"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#InteractionDuration"/>
         <Class IRI="#SocialTimeInterval"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InteractionDuration"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isRegionFor"/>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialAgent"/>
-        </ObjectSomeValuesFrom>
+        <Class IRI="#TimeDuration"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InteractionTimeFrame"/>
         <Class IRI="#SocialTimeInterval"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InteractionTimeFrame"/>
+        <Class IRI="#TimeFrame"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InteractionsPerDay"/>
@@ -96,18 +225,111 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InteractionsPerDay"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isRegionFor"/>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObject"/>
-        </ObjectAllValuesFrom>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MotivationalVariability"/>
+        <Class IRI="#IntimateProxemicZone"/>
+        <Class IRI="#ProxemicZone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Intracorporeal"/>
+        <Class IRI="#PhysicalCloseness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LargeTimeWindow"/>
+        <Class IRI="#TimeFrame"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LongDuration"/>
+        <Class IRI="#TimeDuration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LowAdaptivity"/>
         <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediumTimeWindow"/>
+        <Class IRI="#TimeFrame"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Minutes"/>
+        <Class IRI="#SmallTimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ModerateAdaptivity"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ModerateDuration"/>
+        <Class IRI="#TimeDuration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Months"/>
+        <Class IRI="#MediumTimeWindow"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#NaturalRobot"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OccasionalInteraction"/>
+        <Class IRI="#InteractionAmount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Passing"/>
+        <Class IRI="#PhysicalCloseness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonalProxemicZone"/>
+        <Class IRI="#ProxemicZone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalCloseness"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProxemicZone"/>
+        <Class IRI="#SocialDistance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PublicProxemicZone"/>
+        <Class IRI="#ProxemicZone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RatioRegion"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#QuantitativeAmount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RegularInteraction"/>
+        <Class IRI="#InteractionAmount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Seconds"/>
+        <Class IRI="#SmallTimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShortDuration"/>
+        <Class IRI="#TimeDuration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SingleInteraction"/>
+        <Class IRI="#InteractionAmount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmallTimeWindow"/>
+        <Class IRI="#TimeFrame"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialDistance"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialDistance"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialProxemicZone"/>
+        <Class IRI="#ProxemicZone"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialRobot"/>
@@ -151,26 +373,31 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialTimeInterval"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#TimeInterval"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialTimeInterval"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isRegionFor"/>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObject"/>
-        </ObjectAllValuesFrom>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#TimeInterval"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SocioCulturalVariability"/>
-        <Class IRI="#AdaptivityLevel"/>
+        <Class IRI="#TimeDuration"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#TimeInterval"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SpatialVariability"/>
-        <Class IRI="#AdaptivityLevel"/>
+        <Class IRI="#TimeFrame"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#TimeInterval"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#TemporalVariability"/>
-        <Class IRI="#AdaptivityLevel"/>
+        <Class IRI="#Touching"/>
+        <Class IRI="#PhysicalCloseness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Weeks"/>
+        <Class IRI="#MediumTimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Years"/>
+        <Class IRI="#LargeTimeWindow"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -189,6 +416,16 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LargeTimeWindow</IRI>
+        <Literal>An interaction time frame between years and open ended.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MediumTimeWindow</IRI>
+        <Literal>An interaction time frame between weeks and months.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#NaturalRobot</IRI>
         <Literal>&quot;A robot is a reprogrammable, multifunctional manipulator designed to move material, parts, tools or specialized devices through variable programmed motions for the performance of a variety of tasks&quot; -Robotic Industries Association</Literal>
     </AnnotationAssertion>
@@ -196,6 +433,26 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#NaturalRobot</IRI>
         <Literal>Natural robot</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhysicalCloseness</IRI>
+        <Literal>The physical closeness of a physical object towards another from passing to intracorporeal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SmallTimeWindow</IRI>
+        <Literal>An interaction time frame between seconds and days.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TimeDuration</IRI>
+        <Literal>Represents the duration of any event as a fixed time interval. Example: It took me 8 years to graduate from grammar school.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TimeFrame</IRI>
+        <Literal>A time frame one or multiple events can occur in. Example: During the recent three years this person visited me twice.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
