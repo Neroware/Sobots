@@ -51,6 +51,9 @@
         <Class IRI="#Art"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AuditiveHint"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Children"/>
     </Declaration>
     <Declaration>
@@ -207,6 +210,9 @@
         <Class IRI="#NonverbalCommunicationCapability"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Notify"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#OccasionalInteraction"/>
     </Declaration>
     <Declaration>
@@ -255,6 +261,60 @@
         <Class IRI="#RatioRegion"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ReceiveBodySpeech"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveChronemicCue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveDigitalCue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveExtraverbal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveFacialExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveGazeContact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveGesture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveHapticCue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveNonverbal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveOralSound"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveOralSpeech"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveParaverbal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveProsodicCue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveProxemicCue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveSignSpeech"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveSmellCue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveVerbal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReceiveWrittenSpeech"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#RegularInteraction"/>
     </Declaration>
     <Declaration>
@@ -271,6 +331,60 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Seconds"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendBodySpeech"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendChronemicCue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendDigitalCue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendExtraverbal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendFacialExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendGazeContact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendGesture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendHapticCue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendNonverbal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendOralSound"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendOralSpeech"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendParaverbal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendProsodicCue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendProxemicCue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendSignSpeech"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendSmellCue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendVerbal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendWrittenSpeech"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Seniors"/>
@@ -294,6 +408,9 @@
         <Class IRI="#SocialDistance"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SocialMethod"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SocialProxemicZone"/>
     </Declaration>
     <Declaration>
@@ -304,6 +421,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#SocialRobotProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialTask"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SocialTaskContext"/>
@@ -343,6 +463,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#VerbalCommunicationCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisualHint"/>
     </Declaration>
     <Declaration>
         <Class IRI="#WalkingCapability"/>
@@ -388,6 +511,26 @@
             <Class IRI="#SocialRobot"/>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#ComplexTask"/>
+        <Class IRI="#SocialTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
+        <Class IRI="#SocialTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#HumanFunction"/>
+        <Class IRI="#SocialTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotFunction"/>
+        <Class IRI="#SocialTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SimpleTask"/>
+        <Class IRI="#SocialTask"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#AdaptivityLevel"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
@@ -439,6 +582,10 @@
     <SubClassOf>
         <Class IRI="#Art"/>
         <Class IRI="#ApplicationArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AuditiveHint"/>
+        <Class IRI="#Notify"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Children"/>
@@ -683,6 +830,10 @@
         <Class IRI="#CommunicationCapability"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Notify"/>
+        <Class IRI="#SendExtraverbal"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#OccasionalInteraction"/>
         <Class IRI="#InteractionAmount"/>
     </SubClassOf>
@@ -751,6 +902,78 @@
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#QuantitativeAmount"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ReceiveBodySpeech"/>
+        <Class IRI="#ReceiveNonverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveChronemicCue"/>
+        <Class IRI="#ReceiveExtraverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveDigitalCue"/>
+        <Class IRI="#ReceiveNonverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveExtraverbal"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Receive"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveFacialExpression"/>
+        <Class IRI="#ReceiveBodySpeech"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveGazeContact"/>
+        <Class IRI="#ReceiveBodySpeech"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveGesture"/>
+        <Class IRI="#ReceiveBodySpeech"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveHapticCue"/>
+        <Class IRI="#ReceiveExtraverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveNonverbal"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Receive"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveOralSound"/>
+        <Class IRI="#ReceiveParaverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveOralSpeech"/>
+        <Class IRI="#ReceiveVerbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveParaverbal"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Receive"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveProsodicCue"/>
+        <Class IRI="#ReceiveParaverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveProxemicCue"/>
+        <Class IRI="#ReceiveExtraverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveSignSpeech"/>
+        <Class IRI="#ReceiveVerbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveSmellCue"/>
+        <Class IRI="#ReceiveExtraverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveVerbal"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Receive"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReceiveWrittenSpeech"/>
+        <Class IRI="#ReceiveVerbal"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#RegularInteraction"/>
         <Class IRI="#InteractionAmount"/>
     </SubClassOf>
@@ -773,6 +996,78 @@
     <SubClassOf>
         <Class IRI="#Seconds"/>
         <Class IRI="#SmallTimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendBodySpeech"/>
+        <Class IRI="#SendNonverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendChronemicCue"/>
+        <Class IRI="#SendExtraverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendDigitalCue"/>
+        <Class IRI="#SendNonverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendExtraverbal"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Send"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendFacialExpression"/>
+        <Class IRI="#SendBodySpeech"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendGazeContact"/>
+        <Class IRI="#SendBodySpeech"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendGesture"/>
+        <Class IRI="#SendBodySpeech"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendHapticCue"/>
+        <Class IRI="#SendExtraverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendNonverbal"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Send"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendOralSound"/>
+        <Class IRI="#SendParaverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendOralSpeech"/>
+        <Class IRI="#SendVerbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendParaverbal"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Send"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendProsodicCue"/>
+        <Class IRI="#SendParaverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendProxemicCue"/>
+        <Class IRI="#SendExtraverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendSignSpeech"/>
+        <Class IRI="#SendVerbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendSmellCue"/>
+        <Class IRI="#SendExtraverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendVerbal"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Send"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendWrittenSpeech"/>
+        <Class IRI="#SendVerbal"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Seniors"/>
@@ -805,6 +1100,10 @@
     <SubClassOf>
         <Class IRI="#SocialDistance"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialMethod"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Method"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialProxemicZone"/>
@@ -853,6 +1152,10 @@
     <SubClassOf>
         <Class IRI="#SocialRobotProperty"/>
         <Class IRI="#RobotProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialTask"/>
+        <Class IRI="#SocialMethod"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialTaskContext"/>
@@ -909,6 +1212,10 @@
     <SubClassOf>
         <Class IRI="#VerbalCommunicationCapability"/>
         <Class IRI="#CommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisualHint"/>
+        <Class IRI="#Notify"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#WalkingCapability"/>
