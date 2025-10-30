@@ -72,9 +72,6 @@
         <Class IRI="#CommunicationProperty"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ContextOfUsage"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#ContinousTimeWindow"/>
     </Declaration>
     <Declaration>
@@ -405,6 +402,9 @@
         <Class IRI="#SmallTimeWindow"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SocialContext"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SocialDistance"/>
     </Declaration>
     <Declaration>
@@ -418,6 +418,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#SocialRobotAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialRobotContext"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SocialRobotProperty"/>
@@ -505,6 +508,13 @@
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#SocialRobotContext"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+            <Class IRI="#SocialRobot"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#SocialRobotProperty"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
@@ -577,7 +587,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ApplicationArea"/>
-        <Class IRI="#ContextOfUsage"/>
+        <Class IRI="#SocialContext"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Art"/>
@@ -617,17 +627,6 @@
             <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
             <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Communication"/>
         </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ContextOfUsage"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ContextOfUsage"/>
-        <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
-            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AutonomousRobot"/>
-        </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ContinousTimeWindow"/>
@@ -739,7 +738,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InteractionPartner"/>
-        <Class IRI="#ContextOfUsage"/>
+        <Class IRI="#SocialContext"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InteractionTimeFrame"/>
@@ -1094,6 +1093,10 @@
         <Class IRI="#TimeFrame"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#SocialContext"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SocialDistance"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAttribute"/>
     </SubClassOf>
@@ -1150,6 +1153,10 @@
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#SocialRobotContext"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SocialRobotProperty"/>
         <Class IRI="#RobotProperty"/>
     </SubClassOf>
@@ -1183,11 +1190,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TargetGroup"/>
-        <Class IRI="#ContextOfUsage"/>
+        <Class IRI="#SocialContext"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TaskContext"/>
-        <Class IRI="#ContextOfUsage"/>
+        <Class IRI="#SocialContext"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TechnicalSystem"/>
