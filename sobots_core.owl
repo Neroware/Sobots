@@ -36,6 +36,9 @@
         <Class IRI="#AgentAutonomy"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AgentSkill"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Android"/>
     </Declaration>
     <Declaration>
@@ -402,6 +405,9 @@
         <Class IRI="#SmallTimeWindow"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SocialCapability"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SocialContext"/>
     </Declaration>
     <Declaration>
@@ -424,6 +430,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#SocialRobotProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialSkill"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SocialTask"/>
@@ -568,6 +577,17 @@
     <SubClassOf>
         <Class IRI="#AgentAutonomy"/>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgentSkill"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgentSkill"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasTask"/>
+            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Android"/>
@@ -1093,6 +1113,10 @@
         <Class IRI="#TimeFrame"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#SocialCapability"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SocialContext"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
     </SubClassOf>
@@ -1159,6 +1183,14 @@
     <SubClassOf>
         <Class IRI="#SocialRobotProperty"/>
         <Class IRI="#RobotProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialSkill"/>
+        <Class IRI="#AgentSkill"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialSkill"/>
+        <Class IRI="#SocialCapability"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialTask"/>
