@@ -494,6 +494,18 @@
     <Declaration>
         <Class IRI="#Zoomorph"/>
     </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrecedingEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProceedingSituation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPrecedingEventOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isProceedingSituationOf"/>
+    </Declaration>
     <EquivalentClasses>
         <Class IRI="#HumanProperty"/>
         <ObjectSomeValuesFrom>
@@ -1276,6 +1288,62 @@
         <Class IRI="#Zoomorph"/>
         <Class IRI="#AnimalLikeness"/>
     </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPrecedingEvent"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasProceedingSituation"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPrecedingEventOf"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isProceedingSituationOf"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPrecedingEvent"/>
+        <ObjectProperty IRI="#isPrecedingEventOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasProceedingSituation"/>
+        <ObjectProperty IRI="#isProceedingSituationOf"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPrecedingEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProceedingSituation"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPrecedingEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isProceedingSituationOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPrecedingEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProceedingSituation"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPrecedingEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isProceedingSituationOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#InteractionDuration</IRI>
