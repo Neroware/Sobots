@@ -504,10 +504,22 @@
         <ObjectProperty IRI="#hasEnablingEvent"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasPostconditioningEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPostconditioningSituation"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasPrecedingEvent"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPrecedingSituation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPreconditioningEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPreconditioningSituation"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasProceedingEvent"/>
@@ -522,16 +534,40 @@
         <ObjectProperty IRI="#isEnablingEventOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isPostconditionedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPostconditioningEventOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPostconditioningSituationOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isPrecedingEventOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isPrecedingSituationOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isPreconditionedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPreconditioningEventOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPreconditioningSituationOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isProceedingEventOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isProceedingSituationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#postconditions"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#preconditions"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#HumanProperty"/>
@@ -1582,12 +1618,28 @@
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPostconditioningEvent"/>
+        <ObjectProperty IRI="#hasEnabledEvent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPostconditioningSituation"/>
+        <ObjectProperty IRI="#isEnablingEventOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasPrecedingEvent"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasPrecedingSituation"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPreconditioningEvent"/>
+        <ObjectProperty IRI="#hasEnablingEvent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPreconditioningSituation"/>
+        <ObjectProperty IRI="#isEnabledEventOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasProceedingEvent"/>
@@ -1606,6 +1658,18 @@
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPostconditionedBy"/>
+        <ObjectProperty IRI="#hasEnabledEvent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPostconditioningEventOf"/>
+        <ObjectProperty IRI="#isEnabledEventOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPostconditioningSituationOf"/>
+        <ObjectProperty IRI="#hasEnablingEvent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isPrecedingEventOf"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
     </SubObjectPropertyOf>
@@ -1614,12 +1678,32 @@
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPreconditionedBy"/>
+        <ObjectProperty IRI="#hasEnablingEvent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPreconditioningEventOf"/>
+        <ObjectProperty IRI="#isEnablingEventOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPreconditioningSituationOf"/>
+        <ObjectProperty IRI="#hasEnabledEvent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProceedingEventOf"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProceedingSituationOf"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#postconditions"/>
+        <ObjectProperty IRI="#isEnabledEventOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#preconditions"/>
+        <ObjectProperty IRI="#isEnablingEventOf"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasEnabledEvent"/>
@@ -1630,6 +1714,14 @@
         <ObjectProperty IRI="#isEnablingEventOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPostconditioningEvent"/>
+        <ObjectProperty IRI="#isPostconditioningEventOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPostconditioningSituation"/>
+        <ObjectProperty IRI="#isPostconditioningSituationOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasPrecedingEvent"/>
         <ObjectProperty IRI="#isPrecedingEventOf"/>
     </InverseObjectProperties>
@@ -1638,12 +1730,28 @@
         <ObjectProperty IRI="#isPrecedingSituationOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPreconditioningEvent"/>
+        <ObjectProperty IRI="#isPreconditioningEventOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPreconditioningSituation"/>
+        <ObjectProperty IRI="#isPreconditioningSituationOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasProceedingEvent"/>
         <ObjectProperty IRI="#isProceedingEventOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasProceedingSituation"/>
         <ObjectProperty IRI="#isProceedingSituationOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isPostconditionedBy"/>
+        <ObjectProperty IRI="#postconditions"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isPreconditionedBy"/>
+        <ObjectProperty IRI="#preconditions"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEnabledEvent"/>
@@ -1654,11 +1762,27 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPostconditioningEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPostconditioningSituation"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPrecedingEvent"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPrecedingSituation"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPreconditioningEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPreconditioningSituation"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1678,11 +1802,35 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPostconditionedBy"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPostconditioningEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPostconditioningSituationOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPrecedingEventOf"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPrecedingSituationOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPreconditionedBy"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPreconditioningEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPreconditioningSituationOf"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1693,6 +1841,14 @@
         <ObjectProperty IRI="#isProceedingSituationOf"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#postconditions"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#preconditions"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasEnabledEvent"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
@@ -1702,11 +1858,27 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPostconditioningEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPostconditioningSituation"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPrecedingEvent"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPrecedingSituation"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPreconditioningEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPreconditioningSituation"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -1726,6 +1898,18 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPostconditionedBy"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPostconditioningEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPostconditioningSituationOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isPrecedingEventOf"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
     </ObjectPropertyRange>
@@ -1734,11 +1918,31 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPreconditionedBy"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPreconditioningEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPreconditioningSituationOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isProceedingEventOf"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProceedingSituationOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#postconditions"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#preconditions"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyRange>
     <AnnotationAssertion>
