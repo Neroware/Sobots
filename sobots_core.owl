@@ -84,6 +84,9 @@
         <Class IRI="#Days"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Disposition"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#DrivingCapability"/>
     </Declaration>
     <Declaration>
@@ -244,6 +247,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#ProfessionalServiceRobot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Property"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ProxemicZone"/>
@@ -516,6 +522,9 @@
         <ObjectProperty IRI="#hasPreconditioningSituation"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasTrigger"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isEnabledEventOf"/>
     </Declaration>
     <Declaration>
@@ -540,11 +549,34 @@
         <ObjectProperty IRI="#isPreconditioningSituationOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isRealizationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTriggerOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#postconditions"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#preconditions"/>
     </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#realizedIn"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Quality"/>
+        <Class IRI="#Property"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Disposition"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Property"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#realizedIn"/>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#HumanProperty"/>
         <ObjectSomeValuesFrom>
@@ -832,6 +864,24 @@
     <SubClassOf>
         <Class IRI="#Days"/>
         <Class IRI="#SmallTimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Disposition"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Disposition"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTrigger"/>
+            <Class IRI="http://purl.oclc.org/NET/ssnx/ssn#Process"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Disposition"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#realizedIn"/>
+            <Class IRI="http://purl.oclc.org/NET/ssnx/ssn#Process"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DrivingCapability"/>
@@ -1200,6 +1250,10 @@
     <SubClassOf>
         <Class IRI="#ProfessionalServiceRobot"/>
         <Class IRI="#ServiceRobot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Property"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProxemicZone"/>
@@ -1610,6 +1664,10 @@
         <ObjectProperty IRI="#isEnabledEventOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <ObjectProperty IRI="#hasEnablingEvent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isEnabledEventOf"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
     </SubObjectPropertyOf>
@@ -1642,6 +1700,10 @@
         <ObjectProperty IRI="#hasEnabledEvent"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isTriggerOf"/>
+        <ObjectProperty IRI="#isEnablingEventOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#postconditions"/>
         <ObjectProperty IRI="#isEnabledEventOf"/>
     </SubObjectPropertyOf>
@@ -1674,6 +1736,10 @@
         <ObjectProperty IRI="#isPreconditioningSituationOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <ObjectProperty IRI="#isTriggerOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#isPostconditionedBy"/>
         <ObjectProperty IRI="#postconditions"/>
     </InverseObjectProperties>
@@ -1681,6 +1747,10 @@
         <ObjectProperty IRI="#isPreconditionedBy"/>
         <ObjectProperty IRI="#preconditions"/>
     </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isRealizationOf"/>
+        <ObjectProperty IRI="#realizedIn"/>
+    </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEnabledEvent"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
@@ -1738,12 +1808,20 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRealizationOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#postconditions"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#preconditions"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#realizedIn"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasEnabledEvent"/>
@@ -1802,12 +1880,20 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isRealizationOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#postconditions"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#preconditions"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#realizedIn"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </ObjectPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
