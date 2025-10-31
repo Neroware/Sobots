@@ -231,6 +231,9 @@
         <Class IRI="#PhysicalTaskContext"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#PlanAdaptation"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#PrivateService"/>
     </Declaration>
     <Declaration>
@@ -494,6 +497,42 @@
     <Declaration>
         <Class IRI="#Zoomorph"/>
     </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEnabledEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEnablingEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrecedingEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrecedingSituation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProceedingEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProceedingSituation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isEnabledEventOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isEnablingEventOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPrecedingEventOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPrecedingSituationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isProceedingEventOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isProceedingSituationOf"/>
+    </Declaration>
     <EquivalentClasses>
         <Class IRI="#HumanProperty"/>
         <ObjectSomeValuesFrom>
@@ -503,6 +542,128 @@
                 <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#NaturalPerson"/>
             </ObjectUnionOf>
         </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PlanAdaptation"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
+                        <ObjectIntersectionOf>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+                            <ObjectAllValuesFrom>
+                                <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasGoal"/>
+                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                            </ObjectAllValuesFrom>
+                            <ObjectAllValuesFrom>
+                                <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasPlan"/>
+                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                            </ObjectAllValuesFrom>
+                        </ObjectIntersectionOf>
+                    </ObjectSomeValuesFrom>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#isEnabledEventOf"/>
+                        <ObjectIntersectionOf>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                            <ObjectAllValuesFrom>
+                                <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
+                                <ObjectIntersectionOf>
+                                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                    <ObjectSomeValuesFrom>
+                                        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
+                                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                                    </ObjectSomeValuesFrom>
+                                    <ObjectAllValuesFrom>
+                                        <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isWorsePlanThan"/>
+                                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                    </ObjectAllValuesFrom>
+                                </ObjectIntersectionOf>
+                            </ObjectAllValuesFrom>
+                        </ObjectIntersectionOf>
+                    </ObjectSomeValuesFrom>
+                    <ObjectAllValuesFrom>
+                        <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
+                        <ObjectIntersectionOf>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                            <ObjectSomeValuesFrom>
+                                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
+                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                            </ObjectSomeValuesFrom>
+                            <ObjectAllValuesFrom>
+                                <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isBetterPlanThan"/>
+                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                            </ObjectAllValuesFrom>
+                        </ObjectIntersectionOf>
+                    </ObjectAllValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
+                        <ObjectIntersectionOf>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+                            <ObjectAllValuesFrom>
+                                <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasGoal"/>
+                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                            </ObjectAllValuesFrom>
+                            <ObjectAllValuesFrom>
+                                <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasPlan"/>
+                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                            </ObjectAllValuesFrom>
+                        </ObjectIntersectionOf>
+                    </ObjectSomeValuesFrom>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#isEnablingEventOf"/>
+                        <ObjectIntersectionOf>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                            <ObjectAllValuesFrom>
+                                <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
+                                <ObjectIntersectionOf>
+                                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                    <ObjectSomeValuesFrom>
+                                        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
+                                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                                    </ObjectSomeValuesFrom>
+                                    <ObjectAllValuesFrom>
+                                        <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isBetterPlanThan"/>
+                                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                    </ObjectAllValuesFrom>
+                                </ObjectIntersectionOf>
+                            </ObjectAllValuesFrom>
+                        </ObjectIntersectionOf>
+                    </ObjectSomeValuesFrom>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#isPrecedingEventOf"/>
+                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+                    </ObjectSomeValuesFrom>
+                    <ObjectAllValuesFrom>
+                        <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
+                        <ObjectIntersectionOf>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                            <ObjectSomeValuesFrom>
+                                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
+                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                            </ObjectSomeValuesFrom>
+                            <ObjectAllValuesFrom>
+                                <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isWorsePlanThan"/>
+                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                            </ObjectAllValuesFrom>
+                        </ObjectIntersectionOf>
+                    </ObjectAllValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#RobotProperty"/>
@@ -875,6 +1036,142 @@
     <SubClassOf>
         <Class IRI="#PhysicalTaskContext"/>
         <Class IRI="#TaskContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlanAdaptation"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlanAdaptation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+            <ObjectIntersectionOf>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
+                    <ObjectIntersectionOf>
+                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+                        <ObjectAllValuesFrom>
+                            <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasGoal"/>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                        </ObjectAllValuesFrom>
+                        <ObjectAllValuesFrom>
+                            <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasPlan"/>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                        </ObjectAllValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isEnabledEventOf"/>
+                    <ObjectIntersectionOf>
+                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                        <ObjectAllValuesFrom>
+                            <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
+                            <ObjectIntersectionOf>
+                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                <ObjectSomeValuesFrom>
+                                    <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
+                                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                                </ObjectSomeValuesFrom>
+                                <ObjectAllValuesFrom>
+                                    <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isWorsePlanThan"/>
+                                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                </ObjectAllValuesFrom>
+                            </ObjectIntersectionOf>
+                        </ObjectAllValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
+                    <ObjectIntersectionOf>
+                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                        </ObjectSomeValuesFrom>
+                        <ObjectAllValuesFrom>
+                            <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isBetterPlanThan"/>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                        </ObjectAllValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlanAdaptation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+            <ObjectIntersectionOf>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
+                    <ObjectIntersectionOf>
+                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+                        <ObjectAllValuesFrom>
+                            <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasGoal"/>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                        </ObjectAllValuesFrom>
+                        <ObjectAllValuesFrom>
+                            <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasPlan"/>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                        </ObjectAllValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isEnablingEventOf"/>
+                    <ObjectIntersectionOf>
+                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                        <ObjectAllValuesFrom>
+                            <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
+                            <ObjectIntersectionOf>
+                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                <ObjectSomeValuesFrom>
+                                    <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
+                                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                                </ObjectSomeValuesFrom>
+                                <ObjectAllValuesFrom>
+                                    <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isBetterPlanThan"/>
+                                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                </ObjectAllValuesFrom>
+                            </ObjectIntersectionOf>
+                        </ObjectAllValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#isPrecedingEventOf"/>
+                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+                </ObjectSomeValuesFrom>
+                <ObjectAllValuesFrom>
+                    <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
+                    <ObjectIntersectionOf>
+                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                        </ObjectSomeValuesFrom>
+                        <ObjectAllValuesFrom>
+                            <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isWorsePlanThan"/>
+                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                        </ObjectAllValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectAllValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlanAdaptation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
+            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlanAdaptation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PrivateService"/>
@@ -1276,6 +1573,174 @@
         <Class IRI="#Zoomorph"/>
         <Class IRI="#AnimalLikeness"/>
     </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEnabledEvent"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEnablingEvent"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPrecedingEvent"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPrecedingSituation"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasProceedingEvent"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasProceedingSituation"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isEnabledEventOf"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isEnablingEventOf"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPrecedingEventOf"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPrecedingSituationOf"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isProceedingEventOf"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isProceedingSituationOf"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasEnabledEvent"/>
+        <ObjectProperty IRI="#isEnabledEventOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasEnablingEvent"/>
+        <ObjectProperty IRI="#isEnablingEventOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPrecedingEvent"/>
+        <ObjectProperty IRI="#isPrecedingEventOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPrecedingSituation"/>
+        <ObjectProperty IRI="#isPrecedingSituationOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasProceedingEvent"/>
+        <ObjectProperty IRI="#isProceedingEventOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasProceedingSituation"/>
+        <ObjectProperty IRI="#isProceedingSituationOf"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEnabledEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEnablingEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPrecedingEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPrecedingSituation"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProceedingEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProceedingSituation"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isEnabledEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isEnablingEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPrecedingEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPrecedingSituationOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isProceedingEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isProceedingSituationOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEnabledEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEnablingEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPrecedingEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPrecedingSituation"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProceedingEvent"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProceedingSituation"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isEnabledEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isEnablingEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPrecedingEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPrecedingSituationOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isProceedingEventOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isProceedingSituationOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#InteractionDuration</IRI>
@@ -1335,6 +1800,126 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#TimeFrame</IRI>
         <Literal>A time frame one or multiple events can occur in. Example: During the recent three years this person visited me twice.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasEnabledEvent</IRI>
+        <Literal>An event having another enabled event as postcondition in a causal chain. E.g. the birth of a massive star enables the event of a supernova.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasEnabledEvent</IRI>
+        <Literal>has enabled event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasEnablingEvent</IRI>
+        <Literal>An event having another enabling event as precondition in a causal chain. E.g. the birth of a massive star enables the event of a supernova.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasEnablingEvent</IRI>
+        <Literal>has enabling event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPrecedingEvent</IRI>
+        <Literal>A situation, which has a preceding event as precondition. E.g.: The situation of earth circling around the sun has the preceding birth event of the sun as a precondition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPrecedingEvent</IRI>
+        <Literal>has preceding event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPrecedingSituation</IRI>
+        <Literal>An event that has a preceding situation as precondition. E.g. the birth event of the first terrestrial life has the preceding situation of earth circling around the sun as precondition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPrecedingSituation</IRI>
+        <Literal>has preceding situation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasProceedingEvent</IRI>
+        <Literal>A situation that has a proceeding event as postcondition. E.g.: The situation of the universe with earth circling around the sun has the birth event of the first terrestrial life as postcondition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasProceedingEvent</IRI>
+        <Literal>has proceeding event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasProceedingSituation</IRI>
+        <Literal>An event, which has a proceeding situation as postcondition. E.g. the birth of the sun is an event, which has the postconditioned situation of planets circling around the sun.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasProceedingSituation</IRI>
+        <Literal>has proceeding Situation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isEnabledEventOf</IRI>
+        <Literal>An event as postcondition in a causal chain enabled by another event. E.g. the birth of a massive star enables the event of a supernova.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isEnabledEventOf</IRI>
+        <Literal>is enabled event of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isEnablingEventOf</IRI>
+        <Literal>An event as precondition in a causal chain enabling another event. E.g. the birth of a massive star enables the event of a supernova.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isEnablingEventOf</IRI>
+        <Literal>is enabling event of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPrecedingEventOf</IRI>
+        <Literal>An event, which is a preceding precondition of a situation. E.g.: The birth of the sun is a preceding event of the situation of earth circling around it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPrecedingEventOf</IRI>
+        <Literal>is preceding event of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPrecedingSituationOf</IRI>
+        <Literal>A situation, which is a preceding precondition of an event. E.g. the earth circling around the sun is a precondition for the birth event of the first terrestrial life.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPrecedingSituationOf</IRI>
+        <Literal>is preceding situation of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isProceedingEventOf</IRI>
+        <Literal>An event as a proceeding postcondition of a situation. E.g.: The proceeding birth event of the first terrestrial life is a postcondition of the situation of earth circling around the sun.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isProceedingEventOf</IRI>
+        <Literal>is proceeding event of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isProceedingSituationOf</IRI>
+        <Literal>A situation as a proceeding postcondition of an event. E.g.: The proceeding situation of earth circling around the sun is a postcondition of the birth event of the sun.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isProceedingSituationOf</IRI>
+        <Literal>is proceeding situation of</Literal>
     </AnnotationAssertion>
 </Ontology>
 
