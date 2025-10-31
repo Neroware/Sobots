@@ -1583,19 +1583,19 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasPrecedingEvent"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasPrecedingSituation"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasProceedingEvent"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasProceedingSituation"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isEnabledEventOf"/>
@@ -1607,19 +1607,19 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isPrecedingEventOf"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isPrecedingSituationOf"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProceedingEventOf"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isProceedingSituationOf"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
+        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasEnabledEvent"/>
@@ -1647,11 +1647,11 @@
     </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEnabledEvent"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEnablingEvent"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPrecedingEvent"/>
@@ -1719,11 +1719,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isEnabledEventOf"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isEnablingEventOf"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPrecedingEventOf"/>
@@ -1804,7 +1804,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasEnabledEvent</IRI>
-        <Literal>An event having another enabled event as postcondition in a causal chain. E.g. the birth of a massive star enables the event of a supernova.</Literal>
+        <Literal>An entity or event having another enabled event as postcondition in a causal chain. E.g. the birth of a massive star enables the event of a supernova.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1814,7 +1814,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasEnablingEvent</IRI>
-        <Literal>An event having another enabling event as precondition in a causal chain. E.g. the birth of a massive star enables the event of a supernova.</Literal>
+        <Literal>An event or entity having another enabling event as precondition in a causal chain. E.g. the birth of a massive star enables the event of a supernova.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1864,7 +1864,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isEnabledEventOf</IRI>
-        <Literal>An event as postcondition in a causal chain enabled by another event. E.g. the birth of a massive star enables the event of a supernova.</Literal>
+        <Literal>An event as postcondition in a causal chain enabled by another entity or event. E.g. the birth of a massive star enables the event of a supernova.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1874,7 +1874,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isEnablingEventOf</IRI>
-        <Literal>An event as precondition in a causal chain enabling another event. E.g. the birth of a massive star enables the event of a supernova.</Literal>
+        <Literal>An event as precondition in a causal chain enabling another entity or event. E.g. the birth of a massive star enables the event of a supernova.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
