@@ -622,10 +622,14 @@
         <Class IRI="#Disposition"/>
         <ObjectIntersectionOf>
             <Class IRI="#Property"/>
-            <ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasTrigger"/>
+                <Class IRI="#Trigger"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
                 <ObjectProperty IRI="#realizedIn"/>
                 <Class IRI="#Realization"/>
-            </ObjectSomeValuesFrom>
+            </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
