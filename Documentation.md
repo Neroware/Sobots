@@ -64,7 +64,7 @@ Additionally, the disjoint classes of SendCommunicationCapability and ReceiveCom
 
 ### Dispositions
 
-Following the paper of Toyoshima et al., the class "Disposition" was defined accordingly with classes TR_min, R_max, TRIGGER and REALIZATION
-
+- Following the paper of Toyoshima et al., the class "Disposition" was defined accordingly with classes TR_min, R_max, TRIGGER and REALIZATION
+- Furthermore, Belief, Desire, Intention and DecisionProcess are defined following the stated work.
 
 
