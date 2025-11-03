@@ -270,6 +270,9 @@
         <Class IRI="#ReceiveChronemicCue"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ReceiveCommunicationCapabilitiy"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ReceiveDigitalCue"/>
     </Declaration>
     <Declaration>
@@ -340,6 +343,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#SendChronemicCue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SendCommunicationCapability"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SendDigitalCue"/>
@@ -866,6 +872,13 @@
         <Class IRI="#CommunicationCapability"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ExtraverbalCommunicationCapability"/>
+        <ObjectUnionOf>
+            <Class IRI="#ReceiveCommunicationCapabilitiy"/>
+            <Class IRI="#SendCommunicationCapability"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#FlyingCapability"/>
         <Class IRI="#MobilityCapability"/>
     </SubClassOf>
@@ -1022,6 +1035,13 @@
         <Class IRI="#CommunicationCapability"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#NonverbalCommunicationCapability"/>
+        <ObjectUnionOf>
+            <Class IRI="#ReceiveCommunicationCapabilitiy"/>
+            <Class IRI="#SendCommunicationCapability"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Notify"/>
         <Class IRI="#SendExtraverbal"/>
     </SubClassOf>
@@ -1032,6 +1052,13 @@
     <SubClassOf>
         <Class IRI="#ParaverbalCommunicationCapability"/>
         <Class IRI="#CommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParaverbalCommunicationCapability"/>
+        <ObjectUnionOf>
+            <Class IRI="#ReceiveCommunicationCapabilitiy"/>
+            <Class IRI="#SendCommunicationCapability"/>
+        </ObjectUnionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Passing"/>
@@ -1238,6 +1265,10 @@
         <Class IRI="#ReceiveExtraverbal"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ReceiveCommunicationCapabilitiy"/>
+        <Class IRI="#CommunicationCapability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ReceiveDigitalCue"/>
         <Class IRI="#ReceiveNonverbal"/>
     </SubClassOf>
@@ -1332,6 +1363,10 @@
     <SubClassOf>
         <Class IRI="#SendChronemicCue"/>
         <Class IRI="#SendExtraverbal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SendCommunicationCapability"/>
+        <Class IRI="#CommunicationCapability"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SendDigitalCue"/>
@@ -1562,6 +1597,13 @@
         <Class IRI="#CommunicationCapability"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#VerbalCommunicationCapability"/>
+        <ObjectUnionOf>
+            <Class IRI="#ReceiveCommunicationCapabilitiy"/>
+            <Class IRI="#SendCommunicationCapability"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#VisualHint"/>
         <Class IRI="#Notify"/>
     </SubClassOf>
@@ -1585,6 +1627,10 @@
         <Class IRI="#Zoomorph"/>
         <Class IRI="#AnimalLikeness"/>
     </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#ReceiveCommunicationCapabilitiy"/>
+        <Class IRI="#SendCommunicationCapability"/>
+    </DisjointClasses>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasEnabledEvent"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
