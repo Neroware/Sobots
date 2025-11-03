@@ -57,6 +57,9 @@
         <Class IRI="#AuditiveHint"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#BDIEntity"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Belief"/>
     </Declaration>
     <Declaration>
@@ -87,10 +90,16 @@
         <Class IRI="#Days"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Desire"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Disposition"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#DispositionalBelieve"/>
+        <Class IRI="#DispositionalBelief"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DispositionalDesire"/>
     </Declaration>
     <Declaration>
         <Class IRI="#DrivingCapability"/>
@@ -229,6 +238,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#OccasionalInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OccurentDesire"/>
     </Declaration>
     <Declaration>
         <Class IRI="#OccurrentBelief"/>
@@ -906,8 +918,12 @@
         <Class IRI="#Notify"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#BDIEntity"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Belief"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Object"/>
+        <Class IRI="#BDIEntity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Children"/>
@@ -953,18 +969,37 @@
         <Class IRI="#SmallTimeWindow"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Desire"/>
+        <Class IRI="#BDIEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Disposition"/>
+        <Class IRI="#BDIEntity"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Disposition"/>
         <Class IRI="#Property"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#DispositionalBelieve"/>
+        <Class IRI="#DispositionalBelief"/>
         <Class IRI="#Belief"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#DispositionalBelieve"/>
+        <Class IRI="#DispositionalBelief"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#realizedIn"/>
             <Class IRI="#OccurrentBelief"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DispositionalDesire"/>
+        <Class IRI="#Desire"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DispositionalDesire"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#realizedIn"/>
+            <Class IRI="#OccurentDesire"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1186,6 +1221,18 @@
         <Class IRI="#InteractionAmount"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#OccurentDesire"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#CognitiveProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OccurentDesire"/>
+        <Class IRI="#Desire"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OccurrentBelief"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#CognitiveProcess"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#OccurrentBelief"/>
         <Class IRI="#Belief"/>
     </SubClassOf>
@@ -1402,7 +1449,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Realization"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+        <Class IRI="#BDIEntity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ReceiveBodySpeech"/>
@@ -1745,6 +1792,10 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Trigger"/>
+        <Class IRI="#BDIEntity"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#VerbalCapability"/>
         <Class IRI="#CommunicationCapability"/>
     </SubClassOf>
@@ -2055,6 +2106,16 @@
         <ObjectProperty IRI="#realizedIn"/>
         <Class IRI="#Realization"/>
     </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BDIEntity</IRI>
+        <Literal>An entity that is described in and as part of the Belief-Desire-Intention model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BDIEntity</IRI>
+        <Literal>Belief-Desire-Intention Model Entity</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#InteractionDuration</IRI>
