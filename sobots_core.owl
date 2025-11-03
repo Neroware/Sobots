@@ -58,6 +58,9 @@
         <Class IRI="#AuditiveHint"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#BDIEntity"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Children"/>
     </Declaration>
     <Declaration>
@@ -523,6 +526,9 @@
         <ObjectProperty IRI="#hasPreconditioningSituation"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasTrigger"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isEnabledEventOf"/>
     </Declaration>
     <Declaration>
@@ -547,13 +553,19 @@
         <ObjectProperty IRI="#isPreconditioningSituationOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isRealizationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTriggerOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#postconditions"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#preconditions"/>
     </Declaration>
     <Declaration>
-        <Datatype abbreviatedIRI="xsd:date"/>
+        <ObjectProperty IRI="#realizedIn"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#HumanProperty"/>
@@ -799,6 +811,10 @@
     <SubClassOf>
         <Class IRI="#AuditiveHint"/>
         <Class IRI="#Notify"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BDIEntity"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Children"/>
@@ -1660,6 +1676,10 @@
         <ObjectProperty IRI="#isEnabledEventOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <ObjectProperty IRI="#hasEnablingEvent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isEnabledEventOf"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
     </SubObjectPropertyOf>
@@ -1692,6 +1712,10 @@
         <ObjectProperty IRI="#hasEnabledEvent"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isTriggerOf"/>
+        <ObjectProperty IRI="#isEnablingEventOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#postconditions"/>
         <ObjectProperty IRI="#isEnabledEventOf"/>
     </SubObjectPropertyOf>
@@ -1731,6 +1755,10 @@
         <ObjectProperty IRI="#isPreconditionedBy"/>
         <ObjectProperty IRI="#preconditions"/>
     </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isRealizationOf"/>
+        <ObjectProperty IRI="#realizedIn"/>
+    </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEnabledEvent"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
@@ -1859,6 +1887,16 @@
         <ObjectProperty IRI="#preconditions"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BDIEntity</IRI>
+        <Literal>An entity that is described in and as part of the Belief-Desire-Intention model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BDIEntity</IRI>
+        <Literal>Belief-Desire-Intention Model Entity</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#InteractionDuration</IRI>
