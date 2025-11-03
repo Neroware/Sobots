@@ -177,10 +177,16 @@
         <Class IRI="#LowAdaptivity"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#MaximumRealization"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#MedicalRobot"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MediumTimeWindow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MinimalTrigger"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Minutes"/>
@@ -268,6 +274,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#RatioRegion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Realization"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ReceiveBodySpeech"/>
@@ -483,6 +492,9 @@
         <Class IRI="#TransportTaskContext"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Trigger"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#VerbalCommunicationCapability"/>
     </Declaration>
     <Declaration>
@@ -573,7 +585,7 @@
             <Class IRI="#Property"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#realizedIn"/>
-                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+                <Class IRI="#Realization"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -586,6 +598,30 @@
                 <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#NaturalPerson"/>
             </ObjectUnionOf>
         </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MaximumRealization"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Realization"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isPartOf"/>
+                    <Class IRI="#Realization"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MinimalTrigger"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Trigger"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+                    <Class IRI="#Trigger"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#PlanAdaptation"/>
@@ -710,6 +746,22 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#Realization"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="http://purl.oclc.org/NET/ssnx/ssn#Process"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isPartOf"/>
+                    <Class IRI="#MaximumRealization"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRealizationOf"/>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#RobotProperty"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
@@ -734,6 +786,22 @@
             <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
             <Class IRI="#SocialRobot"/>
         </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Trigger"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="http://purl.oclc.org/NET/ssnx/ssn#Process"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+                    <Class IRI="#MinimalTrigger"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isTriggerOf"/>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#ComplexTask"/>
@@ -868,20 +936,6 @@
     <SubClassOf>
         <Class IRI="#Disposition"/>
         <Class IRI="#Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Disposition"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasTrigger"/>
-            <Class IRI="http://purl.oclc.org/NET/ssnx/ssn#Process"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Disposition"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#realizedIn"/>
-            <Class IRI="http://purl.oclc.org/NET/ssnx/ssn#Process"/>
-        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DrivingCapability"/>
@@ -1024,12 +1078,20 @@
         <Class IRI="#AdaptivityLevel"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#MaximumRealization"/>
+        <Class IRI="#Realization"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#MedicalRobot"/>
         <Class IRI="#RobotType"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MediumTimeWindow"/>
         <Class IRI="#TimeFrame"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MinimalTrigger"/>
+        <Class IRI="#Trigger"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Minutes"/>
@@ -1282,6 +1344,10 @@
     <SubClassOf>
         <Class IRI="#RatioRegion"/>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#QuantitativeAmount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Realization"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ReceiveBodySpeech"/>
@@ -1612,6 +1678,10 @@
         <Class IRI="#TaskContext"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Trigger"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#VerbalCommunicationCapability"/>
         <Class IRI="#CommunicationCapability"/>
     </SubClassOf>
@@ -1776,6 +1846,10 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isEnabledEventOf"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyDomain>
@@ -1809,7 +1883,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isRealizationOf"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+        <Class IRI="#Realization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isTriggerOf"/>
+        <Class IRI="#Trigger"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#postconditions"/>
@@ -1848,6 +1926,10 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <Class IRI="#Trigger"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isEnabledEventOf"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </ObjectPropertyRange>
@@ -1884,6 +1966,10 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isTriggerOf"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#postconditions"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyRange>
@@ -1893,7 +1979,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#realizedIn"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+        <Class IRI="#Realization"/>
     </ObjectPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
