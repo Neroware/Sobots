@@ -1137,6 +1137,13 @@
     <SubClassOf>
         <Class IRI="#Intention"/>
         <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasTrigger"/>
+            <Class IRI="#OccurrentBelief"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Intention"/>
+        <ObjectAllValuesFrom>
             <ObjectProperty IRI="#realizedIn"/>
             <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Action"/>
         </ObjectAllValuesFrom>
