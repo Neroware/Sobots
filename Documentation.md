@@ -60,5 +60,11 @@ The taxonomy became very specific on the communication part. Most prominently, i
 
 Additionally, the disjoint classes of SendCommunicationCapability and ReceiveCommunicationCapability were introduced.
 
+## 4. Belief-Desire-Intention Model
+
+### Dispositions
+
+Following the paper of Toyoshima et al., the class "Disposition" was defined accordingly with classes TR_min, R_max, TRIGGER and REALIZATION
+
 
 
