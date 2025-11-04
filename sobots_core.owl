@@ -632,7 +632,10 @@
             <Class IRI="#Disposition"/>
             <ObjectAllValuesFrom>
                 <ObjectProperty IRI="#realizedIn"/>
-                <Class IRI="#OccurentBelief"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                    <Class IRI="#OccurentBelief"/>
+                </ObjectIntersectionOf>
             </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -642,7 +645,10 @@
             <Class IRI="#Disposition"/>
             <ObjectAllValuesFrom>
                 <ObjectProperty IRI="#realizedIn"/>
-                <Class IRI="#OccurentDesire"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                    <Class IRI="#OccurentDesire"/>
+                </ObjectIntersectionOf>
             </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
