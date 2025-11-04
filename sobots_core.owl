@@ -1748,6 +1748,10 @@
         <ObjectProperty IRI="#isPreconditioningSituationOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <ObjectProperty IRI="#isTriggerOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#isPostconditionedBy"/>
         <ObjectProperty IRI="#postconditions"/>
     </InverseObjectProperties>
