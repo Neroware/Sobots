@@ -552,6 +552,9 @@
     <Declaration>
         <ObjectProperty IRI="#preconditions"/>
     </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
     <EquivalentClasses>
         <Class IRI="#HumanProperty"/>
         <ObjectSomeValuesFrom>

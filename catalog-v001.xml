@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <uri id="User Entered Import Resolution" name="http://pst.istc.cnr.it/ontologies/2019/01/soho/1.0.0" uri="ThirdParty/SOHO/soho_core_v1.1.owl"/>
+    <uri id="User Entered Import Resolution" name="http://pst.istc.cnr.it/ontologies/2019/01/soho/1.0.0" uri="ThirdParty/OWL/soho_core_v1.1.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1762352717384" name="http://pst.istc.cnr.it/ontologies/2019/01/soho" uri="ThirdParty/SOHO/soho_core_v1.1.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1762352717384" name="http://purl.oclc.org/NET/ssnx/ssn" uri="ThirdParty/SSN/ssn.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1762352717384" name="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl" uri="ThirdParty/OCRA/ocra.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1762352717384" name="http://www.loa-cnr.it/ontologies/DUL.owl" uri="ThirdParty/DUL/DUL.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1762352717384" name="https://www.forsocialrobots.de/ontologies/sobots.owl" uri="sobots_core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1762354503228" name="http://pst.istc.cnr.it/ontologies/2019/01/soho" uri="ThirdParty/OWL/soho_core_v1.1.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1762354503228" name="http://purl.oclc.org/NET/ssnx/ssn" uri="ThirdParty/OWL/ssn.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1762354503228" name="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl" uri="ThirdParty/OWL/ocra.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1762354503228" name="http://www.loa-cnr.it/ontologies/DUL.owl" uri="ThirdParty/OWL/DUL.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1762354503228" name="https://www.forsocialrobots.de/ontologies/sobots.owl" uri="sobots_core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1762354503228" name="shadowed:http://pst.istc.cnr.it/ontologies/2019/01/soho" uri="ThirdParty/RDF/soho_core_v1.1.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1762354503228" name="shadowed:http://purl.oclc.org/NET/ssnx/ssn" uri="ThirdParty/RDF/ssn.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1762354503228" name="shadowed:http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl" uri="ThirdParty/RDF/ocra.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1762354503228" name="shadowed:http://www.loa-cnr.it/ontologies/DUL.owl" uri="ThirdParty/RDF/DUL.rdf"/>
     </group>
 </catalog>
