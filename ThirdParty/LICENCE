@@ -1,3 +1,22 @@
+# DUL - DOLCE+DnS Ultralite
+
+Aldo Gangemi,
+DOLCE+DnS Ultralite,
+Abstract: DOLCE+DnS Ultralite ontology. It is a simplification of some parts of the DOLCE Lite-Plus library (cf. http://www.loa-cnr.it/ontologies/DLP397.owl). Main aspects in which DOLCE+DnS Ultralite departs from DOLCE Lite-Plus are the following: - The names of classes and relations have been made more intuitive - The DnS-related part is closer to the newer 'constructive DnS' ontology (http://www.loa-cnr.it/ontologies/cDnS.owl). - Temporal and spatial relations are simplified - Axiomatization makes use of simpler constructs than DOLCE Lite-Plus - The architecture of the ontology is pattern-based, which means that DOLCE+DnS Ultralite is also available in modules, called 'content ontology design patterns', which can be applied independently in the design of domain ontologies (cf. http://www.ontologydesignpatterns.org). If many modules are needes in a same ontology project, is anyway useful to use this integrated version. The final result is a lightweight, easy-to-apply foundational ontology for modeling either physical or social contexts. Several extensions of DOLCE+DnS Ultralite are being designed; see for example the extensions for information objects: http://www.loa-cnr.it/ontologies/IOLite.owl, for systems: http://www.loa-cnr.it/ontologies/SystemsLite.owl, for plans: http://www.loa-cnr.it/ontologies/PlansLite.owl, for the legal domain: http://www.loa-cnr.it/ontologies/CLO/CoreLegal.owl, for the lexical and semiotic domains: http://www.loa-cnr.it/codeps/owl/LMM_L2.owl; etc.
+Website: https://www.loa.istc.cnr.it/ontologies/DUL.owl
+
+
+# SSN - The Semantic Sensor Network Ontology
+
+Kerry Taylor, Armin Haller, Maxime Lefrancois, Simon JD Cox, Krzysztof Janowicz, Raul Garcia-Castro, Danh Le Phuoc, Joshua Lieberman, Rob Atkinson, Claus Stadler,
+The Semantic Sensor Network Ontology,
+JT@ ISWC,
+2019,
+Abstract: The Semantic Sensor Network Ontology, popularly known as SSN, was developed by an Incubator Group of the World Wide Web Consortium (W3C) over 2009 to 2011. Subsequently, the W3C and the Open Geospatial Consortium (OGC) joined forces to update the SSN as informed by experience, to harmonize it with OGC’s O&M, and to publish a new version to be endorsed as both a W3C Recommendation and an OGC standard in late 2017. The major contribution of the new SSN is a modular structure designed to be more convenient for ontology engineers and data custodians. It also slightly extends the coverage of the previous SSN with new terms for sampling and actuation. SSN retains the ability to comprehensively represent: sensors in terms of what they can sense, and what and how they do sense; observations in terms of what they measure and what values they find; systems (or networks) of sensors in terms of sensor components and how they are deployed; and real-world objects (called features of interest, OGC-style) in terms of their physical properties, what can sense them, and what observations of them have been made. A few little-used SSN terms have been deprecated, and several others have been renamed. For a comprehensive description of new SSN the reader is referred to the specification [10]. A full description of the scope, design rationale and additions, with examples of its application are presented in [11].
+Keywords: sensor; ontology; OGC standard; W3C recommendation
+Website: https://www.w3.org/TR/vocab-ssn/
+
+
 # OCRA - An Ontology for Collaborative Robotics and Adaptation
 
 Alberto Olivares-Alarcos, Sergi Foix, Stefano Borgo,  Guillem Alenyà,,
@@ -27,3 +46,4 @@ https://doi.org/10.1016/j.procir.2020.04.045.
 (https://www.sciencedirect.com/science/article/pii/S2212827120306107)
 Abstract: The diffusion of Human-Robot Collaborative cells is prevented by some barriers. Classical control approaches seem not yet fully suitable for facing variability conveyed by the presence of human operators beside robots. Heterogeneous knowledge representation capabilities and abstract reasoning are crucial to enhance flexibility of control solutions. This work presents SOHO (Sharework Ontology for Human Robot Collaboration), a novel ontology specifically designed for Human-Robot Collaboration. The paper describes the pursued context-based approach, the novelty of the designed ontology with respect to the state of the art and shows its validity in a realistic Human-Robot Collaboration scenario.
 Keywords: Human-Robot Collaboration; Artificial Intelligence; Formal Ontology
+Website: https://github.com/pstlab/SOHO
