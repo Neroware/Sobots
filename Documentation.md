@@ -6,6 +6,8 @@ Chosen Methodology: Top-Down-Modelling using the SOHO, OCRA and DUL ontologies.
 - Definition of "SocialRobot" as AutonomousAgent
 - Definition of "NaturalRobot" as PhysicalAgent
 - "SocialSkill" as subclass of "SocialCapability", which is a subclass of soho:AgentCapability. Each SocialSkill has only Functions as tasks
+- "SocialMethod" and "SocialTask" as a subclass of Method with ProductionTask subclasses as subclasses of SocialTask
+- "SocialAction" with "RobotAction", "JointAction" and "HumanAction" as subclasses
 
 ## 1. Introducing taxonomy: Regions
 Based on an already established taxonomy on social robotics, the first major step in creating Sobots was the introduction of the taxonomic structures into the given parent domain of SOHO and OCRA, domain ontologies for human-robot collaboration. DUL differentiates in SocialObjects and Region, with the latter being some dimensional space serving as value ranges, e.g. for parameters.

@@ -415,6 +415,9 @@
         <Class IRI="#SmallTimeWindow"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SocialAction"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SocialCapability"/>
     </Declaration>
     <Declaration>
@@ -722,8 +725,20 @@
         <Class IRI="#SocialTask"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#HumanAction"/>
+        <Class IRI="#SocialAction"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#HumanFunction"/>
         <Class IRI="#SocialTask"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#JointAction"/>
+        <Class IRI="#SocialAction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotAction"/>
+        <Class IRI="#SocialAction"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotFunction"/>
@@ -1459,6 +1474,10 @@
     <SubClassOf>
         <Class IRI="#SmallTimeWindow"/>
         <Class IRI="#TimeFrame"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialAction"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialCapability"/>

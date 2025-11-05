@@ -250,10 +250,34 @@
     
 
 
+    <!-- http://pst.istc.cnr.it/ontologies/2019/01/soho#HumanAction -->
+
+    <rdf:Description rdf:about="http://pst.istc.cnr.it/ontologies/2019/01/soho#HumanAction">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialAction"/>
+    </rdf:Description>
+    
+
+
     <!-- http://pst.istc.cnr.it/ontologies/2019/01/soho#HumanFunction -->
 
     <rdf:Description rdf:about="http://pst.istc.cnr.it/ontologies/2019/01/soho#HumanFunction">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialTask"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://pst.istc.cnr.it/ontologies/2019/01/soho#JointAction -->
+
+    <rdf:Description rdf:about="http://pst.istc.cnr.it/ontologies/2019/01/soho#JointAction">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialAction"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotAction -->
+
+    <rdf:Description rdf:about="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotAction">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialAction"/>
     </rdf:Description>
     
 
@@ -1747,6 +1771,14 @@
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SmallTimeWindow">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#TimeFrame"/>
         <rdfs:comment>An interaction time frame between seconds and days.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SocialAction -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialAction">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
     </owl:Class>
     
 
