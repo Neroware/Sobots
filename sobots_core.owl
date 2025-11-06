@@ -58,6 +58,12 @@
         <Class IRI="#AuditiveHint"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#BDIEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Belief"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Children"/>
     </Declaration>
     <Declaration>
@@ -83,6 +89,21 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Days"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DecisionProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Desire"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Disposition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DispositionalBelief"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DispositionalDesire"/>
     </Declaration>
     <Declaration>
         <Class IRI="#DrivingCapability"/>
@@ -140,6 +161,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#InformationExchangeTaskContext"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Intention"/>
     </Declaration>
     <Declaration>
         <Class IRI="#InteractionAmount"/>
@@ -217,6 +241,12 @@
         <Class IRI="#OccasionalInteraction"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#OccurentBelief"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OccurentDesire"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ParaverbalCapability"/>
     </Declaration>
     <Declaration>
@@ -263,6 +293,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#RatioRegion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Realization"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ReceiveBodySpeech"/>
@@ -487,6 +520,9 @@
         <Class IRI="#TransportTaskContext"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Trigger"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#VerbalCapability"/>
     </Declaration>
     <Declaration>
@@ -526,6 +562,9 @@
         <ObjectProperty IRI="#hasPreconditioningSituation"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasTrigger"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isEnabledEventOf"/>
     </Declaration>
     <Declaration>
@@ -550,14 +589,72 @@
         <ObjectProperty IRI="#isPreconditioningSituationOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isRealizationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSpecifiedOutputOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTriggerOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#postconditions"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#preconditions"/>
     </Declaration>
     <Declaration>
-        <Datatype abbreviatedIRI="xsd:date"/>
+        <ObjectProperty IRI="#realizedIn"/>
     </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#specifiedOutputOf"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Disposition"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTrigger"/>
+            <ObjectIntersectionOf>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                <Class IRI="#Trigger"/>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Disposition"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#realizedIn"/>
+            <ObjectIntersectionOf>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                <Class IRI="#Realization"/>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DispositionalBelief"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Disposition"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#realizedIn"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                    <Class IRI="#OccurentBelief"/>
+                </ObjectIntersectionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DispositionalDesire"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Disposition"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#realizedIn"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                    <Class IRI="#OccurentDesire"/>
+                </ObjectIntersectionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#HumanProperty"/>
         <ObjectSomeValuesFrom>
@@ -691,6 +788,13 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#Realization"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isRealizationOf"/>
+            <Class IRI="#Disposition"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#RobotProperty"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
@@ -714,6 +818,13 @@
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
             <Class IRI="#SocialRobot"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Trigger"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isTriggerOf"/>
+            <Class IRI="#Disposition"/>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <SubClassOf>
@@ -816,6 +927,14 @@
         <Class IRI="#Notify"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#BDIEntity"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Belief"/>
+        <Class IRI="#BDIEntity"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Children"/>
         <Class IRI="#AgeGroup"/>
     </SubClassOf>
@@ -857,6 +976,48 @@
     <SubClassOf>
         <Class IRI="#Days"/>
         <Class IRI="#SmallTimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DecisionProcess"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#CognitiveProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DecisionProcess"/>
+        <Class IRI="#BDIEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DecisionProcess"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+            <Class IRI="#OccurentBelief"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DecisionProcess"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+            <Class IRI="#OccurentDesire"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Desire"/>
+        <Class IRI="#BDIEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Disposition"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Disposition"/>
+        <Class IRI="#BDIEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DispositionalBelief"/>
+        <Class IRI="#Belief"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DispositionalDesire"/>
+        <Class IRI="#Desire"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DrivingCapability"/>
@@ -944,6 +1105,35 @@
     <SubClassOf>
         <Class IRI="#InformationExchangeTaskContext"/>
         <Class IRI="#TaskContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Intention"/>
+        <Class IRI="#BDIEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Intention"/>
+        <Class IRI="#Disposition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Intention"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#specifiedOutputOf"/>
+            <Class IRI="#DecisionProcess"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Intention"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasTrigger"/>
+            <Class IRI="#OccurentBelief"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Intention"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#realizedIn"/>
+            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InteractionAmount"/>
@@ -1067,6 +1257,22 @@
     <SubClassOf>
         <Class IRI="#OccasionalInteraction"/>
         <Class IRI="#InteractionAmount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OccurentBelief"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#CognitiveProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OccurentBelief"/>
+        <Class IRI="#Belief"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OccurentDesire"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#CognitiveProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OccurentDesire"/>
+        <Class IRI="#Desire"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ParaverbalCapability"/>
@@ -1274,6 +1480,10 @@
     <SubClassOf>
         <Class IRI="#RatioRegion"/>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#QuantitativeAmount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Realization"/>
+        <Class IRI="#BDIEntity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ReceiveBodySpeech"/>
@@ -1616,6 +1826,10 @@
         <Class IRI="#TaskContext"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Trigger"/>
+        <Class IRI="#BDIEntity"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#VerbalCapability"/>
         <Class IRI="#CommunicationCapability"/>
     </SubClassOf>
@@ -1679,6 +1893,10 @@
         <ObjectProperty IRI="#isEnabledEventOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <ObjectProperty IRI="#hasEnablingEvent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isEnabledEventOf"/>
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
     </SubObjectPropertyOf>
@@ -1711,6 +1929,10 @@
         <ObjectProperty IRI="#hasEnabledEvent"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isTriggerOf"/>
+        <ObjectProperty IRI="#isEnablingEventOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#postconditions"/>
         <ObjectProperty IRI="#isEnabledEventOf"/>
     </SubObjectPropertyOf>
@@ -1743,6 +1965,10 @@
         <ObjectProperty IRI="#isPreconditioningSituationOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <ObjectProperty IRI="#isTriggerOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#isPostconditionedBy"/>
         <ObjectProperty IRI="#postconditions"/>
     </InverseObjectProperties>
@@ -1750,6 +1976,14 @@
         <ObjectProperty IRI="#isPreconditionedBy"/>
         <ObjectProperty IRI="#preconditions"/>
     </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isRealizationOf"/>
+        <ObjectProperty IRI="#realizedIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isSpecifiedOutputOf"/>
+        <ObjectProperty IRI="#specifiedOutputOf"/>
+    </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEnabledEvent"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
@@ -1773,6 +2007,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPreconditioningSituation"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <Class IRI="#Disposition"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isEnabledEventOf"/>
@@ -1807,12 +2045,24 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRealizationOf"/>
+        <Class IRI="#Realization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isTriggerOf"/>
+        <Class IRI="#Trigger"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#postconditions"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#preconditions"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#realizedIn"/>
+        <Class IRI="#Disposition"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasEnabledEvent"/>
@@ -1837,6 +2087,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPreconditioningSituation"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <Class IRI="#Trigger"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isEnabledEventOf"/>
@@ -1871,6 +2125,14 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isRealizationOf"/>
+        <Class IRI="#Disposition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isTriggerOf"/>
+        <Class IRI="#Disposition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#postconditions"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyRange>
@@ -1878,6 +2140,20 @@
         <ObjectProperty IRI="#preconditions"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#realizedIn"/>
+        <Class IRI="#Realization"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BDIEntity</IRI>
+        <Literal>An entity that is described in and as part of the Belief-Desire-Intention model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BDIEntity</IRI>
+        <Literal>Belief-Desire-Intention Model Entity</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#InteractionDuration</IRI>

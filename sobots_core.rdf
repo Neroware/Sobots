@@ -22,23 +22,6 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#date -->
-
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -113,6 +96,17 @@
         <owl:inverseOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#isPreconditioningSituationOf"/>
         <rdfs:domain rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
         <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#hasTrigger -->
+
+    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#hasTrigger">
+        <rdfs:subPropertyOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#hasEnablingEvent"/>
+        <owl:inverseOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#isTriggerOf"/>
+        <rdfs:domain rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
+        <rdfs:range rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Trigger"/>
     </owl:ObjectProperty>
     
 
@@ -203,6 +197,34 @@
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#isRealizationOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#isRealizationOf">
+        <owl:inverseOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#realizedIn"/>
+        <rdfs:domain rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Realization"/>
+        <rdfs:range rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#isSpecifiedOutputOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#isSpecifiedOutputOf">
+        <owl:inverseOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#specifiedOutputOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#isTriggerOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#isTriggerOf">
+        <rdfs:subPropertyOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#isEnablingEventOf"/>
+        <rdfs:domain rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Trigger"/>
+        <rdfs:range rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#postconditions -->
 
     <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#postconditions">
@@ -220,6 +242,21 @@
         <rdfs:domain rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
         <rdfs:range rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#realizedIn -->
+
+    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#realizedIn">
+        <rdfs:domain rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
+        <rdfs:range rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Realization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#specifiedOutputOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#specifiedOutputOf"/>
     
 
 
@@ -417,6 +454,24 @@
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+        <rdfs:comment>An entity that is described in and as part of the Belief-Desire-Intention model</rdfs:comment>
+        <rdfs:label>Belief-Desire-Intention Model Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Belief -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Belief">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
+    </owl:Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Children -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Children">
@@ -491,6 +546,122 @@
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Days">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SmallTimeWindow"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#DecisionProcess -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#DecisionProcess">
+        <rdfs:subClassOf rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#CognitiveProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+                <owl:someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#OccurentBelief"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+                <owl:someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#OccurentDesire"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Desire -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Desire">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#hasTrigger"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Trigger"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#realizedIn"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Realization"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Quality"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#DispositionalBelief -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#DispositionalBelief">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#realizedIn"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#OccurentBelief"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Belief"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#DispositionalDesire -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#DispositionalDesire">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#realizedIn"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#OccurentDesire"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Desire"/>
     </owl:Class>
     
 
@@ -665,6 +836,33 @@
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#InformationExchangeTaskContext">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#TaskContext"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Intention -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Intention">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#specifiedOutputOf"/>
+                <owl:someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#DecisionProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#hasTrigger"/>
+                <owl:allValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#OccurentBelief"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#realizedIn"/>
+                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -884,6 +1082,24 @@
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#OccasionalInteraction">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#InteractionAmount"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#OccurentBelief -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#OccurentBelief">
+        <rdfs:subClassOf rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#CognitiveProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Belief"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#OccurentDesire -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#OccurentDesire">
+        <rdfs:subClassOf rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#CognitiveProcess"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Desire"/>
     </owl:Class>
     
 
@@ -1354,6 +1570,20 @@
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#RatioRegion">
         <rdfs:subClassOf rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#QuantitativeAmount"/>
         <rdfs:comment>Any ratio as a dimensional space. A ratio could be &quot;2 : 3&quot;, &quot;1 : 1&quot;, &quot;16 : 9&quot; or &quot;4 : 6&quot;. The first and last example are the same value in the dimensional space.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Realization -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Realization">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#isRealizationOf"/>
+                <owl:someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
     </owl:Class>
     
 
@@ -2006,6 +2236,20 @@
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#TransportTaskContext">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#TaskContext"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Trigger -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Trigger">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#isTriggerOf"/>
+                <owl:someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
     </owl:Class>
     
 
