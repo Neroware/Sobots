@@ -311,6 +311,14 @@
     
 
 
+    <!-- http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionPlan -->
+
+    <rdf:Description rdf:about="http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionPlan">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialPlan"/>
+    </rdf:Description>
+    
+
+
     <!-- http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotAction -->
 
     <rdf:Description rdf:about="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotAction">
@@ -2042,6 +2050,32 @@
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialMethod">
         <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Method"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SocialPlan -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialPlan">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#describes"/>
+                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
+                <owl:allValuesFrom rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SocialGoal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+                <owl:allValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialMethod"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 

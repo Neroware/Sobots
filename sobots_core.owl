@@ -463,6 +463,9 @@
         <Class IRI="#SocialMethod"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SocialPlan"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SocialProxemicZone"/>
     </Declaration>
     <Declaration>
@@ -846,6 +849,10 @@
     <SubClassOf>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#JointAction"/>
         <Class IRI="#SocialAction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionPlan"/>
+        <Class IRI="#SocialPlan"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotAction"/>
@@ -1708,6 +1715,31 @@
     <SubClassOf>
         <Class IRI="#SocialMethod"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialPlan"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialPlan"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#describes"/>
+            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialPlan"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
+            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SocialGoal"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialPlan"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+            <Class IRI="#SocialMethod"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialProxemicZone"/>
