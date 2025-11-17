@@ -37,9 +37,6 @@
         <Class IRI="#AgentAutonomy"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#AgentSkill"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Android"/>
     </Declaration>
     <Declaration>
@@ -445,6 +442,12 @@
         <Class IRI="#SingleInteraction"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Skill"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SkillPrimitive"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SmallTimeWindow"/>
     </Declaration>
     <Declaration>
@@ -458,6 +461,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#SocialDistance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialFunction"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SocialMethod"/>
@@ -774,6 +780,16 @@
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#SocialFunction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
+                <Class IRI="#SocialSkill"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#SocialRobotContext"/>
         <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
@@ -857,17 +873,6 @@
     <SubClassOf>
         <Class IRI="#AgentAutonomy"/>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AgentSkill"/>
-        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AgentSkill"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasTask"/>
-            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
-        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Android"/>
@@ -1653,6 +1658,49 @@
         <Class IRI="#InteractionAmount"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Skill"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Description"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Skill"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implementedBy"/>
+            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Method"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Skill"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#describes"/>
+            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Skill"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+            <Class IRI="#SkillPrimitive"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkillPrimitive"/>
+        <Class IRI="#Skill"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkillPrimitive"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implementedBy"/>
+            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkillPrimitive"/>
+        <ObjectExactCardinality cardinality="0">
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+            <Class IRI="#SkillPrimitive"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SmallTimeWindow"/>
         <Class IRI="#TimeFrame"/>
     </SubClassOf>
@@ -1675,6 +1723,10 @@
     <SubClassOf>
         <Class IRI="#SocialDistance"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialFunction"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialMethod"/>
@@ -1759,11 +1811,14 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialSkill"/>
-        <Class IRI="#AgentSkill"/>
+        <Class IRI="#Skill"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialSkill"/>
-        <Class IRI="#SocialCapability"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#describes"/>
+            <Class IRI="#SocialCapability"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialTask"/>
@@ -2065,8 +2120,40 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Skill</IRI>
+        <Literal>A skill describes an agent&apos;s capability and is implemented by a Method.
+E.g.: A robot can have the capability to move objects, described by a skill &quot;Pick-and-Place&quot; and implemented by a Function &quot;PickPlace&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Skill</IRI>
+        <Literal>Skill</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SkillPrimitive</IRI>
+        <Literal>A skill primitive is a skill that is implemented by exactly one Function. A skill can be constituted of multiple primitives.
+E.g.: A robot&apos;s Pick-and-Place skill can be implemented through two Motion primitives and two primitives for Opening and Closing the gripper.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SkillPrimitive</IRI>
+        <Literal>Skill Primitive</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SmallTimeWindow</IRI>
         <Literal>An interaction time frame between seconds and days.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SocialSkill</IRI>
+        <Literal>A social skill describes some form of social capability.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SocialSkill</IRI>
+        <Literal>Social Skill</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
