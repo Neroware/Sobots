@@ -1774,7 +1774,7 @@
     <SubClassOf>
         <Class IRI="#Skill"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
             <Class IRI="#SkillPrimitive"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
@@ -1792,7 +1792,7 @@
     <SubClassOf>
         <Class IRI="#SkillPrimitive"/>
         <ObjectExactCardinality cardinality="0">
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
             <Class IRI="#SkillPrimitive"/>
         </ObjectExactCardinality>
     </SubClassOf>
