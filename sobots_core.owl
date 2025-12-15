@@ -115,6 +115,9 @@
         <Class IRI="#Desire"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#DevicePrimitive"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Disposition"/>
     </Declaration>
     <Declaration>
@@ -473,9 +476,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Skill"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SkillPrimitive"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SmallTimeWindow"/>
@@ -1062,6 +1062,24 @@
     <SubClassOf>
         <Class IRI="#Desire"/>
         <Class IRI="#BDIEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DevicePrimitive"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Description"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DevicePrimitive"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isConstituentOf"/>
+            <Class IRI="#Skill"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DevicePrimitive"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implementedBy"/>
+            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
+        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Disposition"/>
@@ -1773,28 +1791,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Skill"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
-            <Class IRI="#SkillPrimitive"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SkillPrimitive"/>
-        <Class IRI="#Skill"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SkillPrimitive"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implementedBy"/>
-            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SkillPrimitive"/>
-        <ObjectExactCardinality cardinality="0">
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
-            <Class IRI="#SkillPrimitive"/>
-        </ObjectExactCardinality>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+            <Class IRI="#DevicePrimitive"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SmallTimeWindow"/>
@@ -2196,6 +2196,17 @@ E.g.: A robot&apos;s capability to adjust the speaking style depending on the ro
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DevicePrimitive</IRI>
+        <Literal>A device primitive is implemented by exactly one Function. A skill can be constituted of multiple primitives.
+E.g.: A robot&apos;s Pick-and-Place skill can be implemented through two Motion primitives and two primitives for Opening and Closing the gripper.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DevicePrimitive</IRI>
+        <Literal>Device Primitive</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#InteractionDuration</IRI>
         <Literal>Represents the duration of any interaction as a fixed time interval. Example: The interaction between me and the robot took exactly 5 minutes, until we reached our collaborative goal.</Literal>
     </AnnotationAssertion>
@@ -2273,17 +2284,6 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Skill</IRI>
         <Literal>Skill</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#SkillPrimitive</IRI>
-        <Literal>A skill primitive is a skill that is implemented by exactly one Function. A skill can be constituted of multiple primitives.
-E.g.: A robot&apos;s Pick-and-Place skill can be implemented through two Motion primitives and two primitives for Opening and Closing the gripper.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#SkillPrimitive</IRI>
-        <Literal>Skill Primitive</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
