@@ -1070,16 +1070,16 @@
     <SubClassOf>
         <Class IRI="#DevicePrimitive"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isConstituentOf"/>
-            <Class IRI="#Skill"/>
+            <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
+            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DevicePrimitive"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implementedBy"/>
-            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
-        </ObjectExactCardinality>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isConstituentOf"/>
+            <Class IRI="#Skill"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Disposition"/>
@@ -2197,8 +2197,8 @@ E.g.: A robot&apos;s capability to adjust the speaking style depending on the ro
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DevicePrimitive</IRI>
-        <Literal>A device primitive is implemented by exactly one Function. A skill can be constituted of multiple primitives.
-E.g.: A robot&apos;s Pick-and-Place skill can be implemented through two Motion primitives and two primitives for Opening and Closing the gripper.</Literal>
+        <Literal>A device primitive is a low-level, hardware-related action that directly controls a device (robot arm, gripper, sensor) and has no semantic significance at the task level. A skill can be constituted of multiple primitives.
+E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Opening and Closing the gripper as constituents.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
