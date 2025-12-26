@@ -622,7 +622,7 @@
         <ObjectProperty IRI="#realizedIn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#specifiedOutputOf"/>
+        <ObjectProperty IRI="#hasSpecifiedOutput"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#Disposition"/>
@@ -1203,7 +1203,7 @@
     <SubClassOf>
         <Class IRI="#Intention"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#specifiedOutputOf"/>
+            <ObjectProperty IRI="#hasSpecifiedOutput"/>
             <Class IRI="#DecisionProcess"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -2076,7 +2076,7 @@
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isSpecifiedOutputOf"/>
-        <ObjectProperty IRI="#specifiedOutputOf"/>
+        <ObjectProperty IRI="#hasSpecifiedOutput"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#postconditionedBy"/>

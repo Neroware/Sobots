@@ -58,7 +58,7 @@
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#isSpecifiedOutputOf -->
 
     <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#isSpecifiedOutputOf">
-        <owl:inverseOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#specifiedOutputOf"/>
+        <owl:inverseOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput"/>
     </owl:ObjectProperty>
     
 
@@ -164,9 +164,9 @@
     
 
 
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#specifiedOutputOf -->
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput -->
 
-    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#specifiedOutputOf"/>
+    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput"/>
     
 
 
@@ -865,7 +865,7 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#specifiedOutputOf"/>
+                <owl:onProperty rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput"/>
                 <owl:someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#DecisionProcess"/>
             </owl:Restriction>
         </rdfs:subClassOf>
