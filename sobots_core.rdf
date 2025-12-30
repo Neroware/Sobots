@@ -30,6 +30,14 @@
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput -->
+
+    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput">
+        <owl:inverseOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#isSpecifiedOutputOf"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#hasTrigger -->
 
     <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#hasTrigger">
@@ -57,9 +65,7 @@
 
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#isSpecifiedOutputOf -->
 
-    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#isSpecifiedOutputOf">
-        <owl:inverseOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#isSpecifiedOutputOf"/>
     
 
 
@@ -161,12 +167,6 @@
         <rdfs:comment>A relation linking a disposition to its set of realizations that occur after the disposition&apos;s trigger(s) hold true.</rdfs:comment>
         <rdfs:label>realized in</rdfs:label>
     </owl:ObjectProperty>
-    
-
-
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput -->
-
-    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput"/>
     
 
 
@@ -561,7 +561,7 @@ E.g.: A robot&apos;s capability to adjust the speaking style depending on the ro
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#DevicePrimitive -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#DevicePrimitive">
-        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Description"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Skill"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
@@ -2044,7 +2044,7 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
         <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Description"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#implementedBy"/>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
                 <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Method"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2060,8 +2060,8 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
                 <owl:someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#DevicePrimitive"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>A skill describes an agent&apos;s capability and is implemented by a Method.
-E.g.: A robot can have the capability to move objects, described by a skill &quot;Pick-and-Place&quot; and implemented by a Function &quot;PickPlace&quot;.</rdfs:comment>
+        <rdfs:comment>A skill describes an agent&apos;s capability by implementing a Method.
+E.g.: A robot can have the capability to move objects, described by a skill &quot;Pick-and-Place&quot;, which implements the Function &quot;PickPlace&quot;.</rdfs:comment>
         <rdfs:label>Skill</rdfs:label>
     </owl:Class>
     

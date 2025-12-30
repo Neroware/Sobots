@@ -595,6 +595,9 @@
         <Class IRI="#Zoomorph"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasSpecifiedOutput"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasTrigger"/>
     </Declaration>
     <Declaration>
@@ -620,9 +623,6 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#realizedIn"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSpecifiedOutput"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#Disposition"/>
@@ -1065,7 +1065,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DevicePrimitive"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Description"/>
+        <Class IRI="#Skill"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DevicePrimitive"/>
@@ -1778,7 +1778,7 @@
     <SubClassOf>
         <Class IRI="#Skill"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implementedBy"/>
+            <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
             <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Method"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -2067,16 +2067,16 @@
         <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSpecifiedOutput"/>
+        <ObjectProperty IRI="#isSpecifiedOutputOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasTrigger"/>
         <ObjectProperty IRI="#isTriggerOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isRealizationOf"/>
         <ObjectProperty IRI="#realizedIn"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#isSpecifiedOutputOf"/>
-        <ObjectProperty IRI="#hasSpecifiedOutput"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#postconditionedBy"/>
@@ -2277,8 +2277,8 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Skill</IRI>
-        <Literal>A skill describes an agent&apos;s capability and is implemented by a Method.
-E.g.: A robot can have the capability to move objects, described by a skill &quot;Pick-and-Place&quot; and implemented by a Function &quot;PickPlace&quot;.</Literal>
+        <Literal>A skill describes an agent&apos;s capability by implementing a Method.
+E.g.: A robot can have the capability to move objects, described by a skill &quot;Pick-and-Place&quot;, which implements the Function &quot;PickPlace&quot;.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
