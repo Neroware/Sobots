@@ -64,6 +64,9 @@
         <Class IRI="#AuditiveHint"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AutonomyLevel"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#BDIEntity"/>
     </Declaration>
     <Declaration>
@@ -151,10 +154,19 @@
         <Class IRI="#ExtraverbalCapability"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#FixedPatterns"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#FlyingCapability"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#HighAdaptivity"/>
+        <Class IRI="#FullyAdaptive"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FullyStatic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighlyAdaptive"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Hours"/>
@@ -223,9 +235,6 @@
         <Class IRI="#LongDuration"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#LowAdaptivity"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#MedicalRobot"/>
     </Declaration>
     <Declaration>
@@ -242,9 +251,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#MobilityLevel"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ModerateAdaptivity"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ModerateDuration"/>
@@ -295,6 +301,9 @@
         <Class IRI="#PlanAdaptation"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#PredefinedAdaptations"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#PrivateService"/>
     </Declaration>
     <Declaration>
@@ -319,7 +328,7 @@
         <Class IRI="#PublicServiceRobot"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PurelyTechnical"/>
+        <Class IRI="#NoResemblance"/>
     </Declaration>
     <Declaration>
         <Class IRI="#RatioRegion"/>
@@ -547,6 +556,9 @@
         <Class IRI="#Stationary"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SuperficialAdaptations"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SwimmingCapability"/>
     </Declaration>
     <Declaration>
@@ -624,6 +636,10 @@
     <Declaration>
         <ObjectProperty IRI="#realizedIn"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AutonomyLevel"/>
+        <Class IRI="#AutonomyLevel"/>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Disposition"/>
         <ObjectSomeValuesFrom>
@@ -957,6 +973,10 @@
         <Class IRI="#Notify"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#AutonomyLevel"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#BDIEntity"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </SubClassOf>
@@ -1137,11 +1157,23 @@
         </ObjectUnionOf>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#FixedPatterns"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#FlyingCapability"/>
         <Class IRI="#MobilityCapability"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#HighAdaptivity"/>
+        <Class IRI="#FullyAdaptive"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FullyStatic"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighlyAdaptive"/>
         <Class IRI="#AdaptivityLevel"/>
     </SubClassOf>
     <SubClassOf>
@@ -1278,10 +1310,6 @@
         <Class IRI="#TimeDuration"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#LowAdaptivity"/>
-        <Class IRI="#AdaptivityLevel"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#MedicalRobot"/>
         <Class IRI="#RobotType"/>
     </SubClassOf>
@@ -1304,10 +1332,6 @@
     <SubClassOf>
         <Class IRI="#MobilityLevel"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ModerateAdaptivity"/>
-        <Class IRI="#AdaptivityLevel"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ModerateDuration"/>
@@ -1528,6 +1552,10 @@
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#PredefinedAdaptations"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#PrivateService"/>
         <Class IRI="#Service"/>
     </SubClassOf>
@@ -1560,11 +1588,11 @@
         <Class IRI="#ServiceRobot"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#PurelyTechnical"/>
+        <Class IRI="#NoResemblance"/>
         <Class IRI="#AnimalLikeness"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#PurelyTechnical"/>
+        <Class IRI="#NoResemblance"/>
         <Class IRI="#HumanLikeness"/>
     </SubClassOf>
     <SubClassOf>
@@ -1964,6 +1992,10 @@
         <Class IRI="#MobilityLevel"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#SuperficialAdaptations"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SwimmingCapability"/>
         <Class IRI="#MobilityCapability"/>
     </SubClassOf>
@@ -2207,6 +2239,26 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FixedPatterns</IRI>
+        <Literal>Limited adjustments; mostly follows fixed interaction patterns</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FullyAdaptive</IRI>
+        <Literal>Responds to user preferences and situational changes with some flexibility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FullyStatic</IRI>
+        <Literal>Fully static behavior; no adjustment to user or context</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HighlyAdaptive</IRI>
+        <Literal>Continuously adjusts behavior based on user cues, context, and history</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#InteractionDuration</IRI>
         <Literal>Represents the duration of any interaction as a fixed time interval. Example: The interaction between me and the robot took exactly 5 minutes, until we reached our collaborative goal.</Literal>
     </AnnotationAssertion>
@@ -2271,6 +2323,11 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PredefinedAdaptations</IRI>
+        <Literal>Adapts in predefined ways under certain conditions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#RatioRegion</IRI>
         <Literal>Any ratio as a dimensional space. A ratio could be &quot;2 : 3&quot;, &quot;1 : 1&quot;, &quot;16 : 9&quot; or &quot;4 : 6&quot;. The first and last example are the same value in the dimensional space.</Literal>
     </AnnotationAssertion>
@@ -2299,6 +2356,11 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#SocialSkill</IRI>
         <Literal>Social Skill</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SuperficialAdaptations</IRI>
+        <Literal>Rare or superficial adaptation (e.g., simple parameter changes)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>

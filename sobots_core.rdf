@@ -181,6 +181,14 @@
     
 
 
+    <!-- http://pst.istc.cnr.it/ontologies/2019/01/soho#AutonomyLevel -->
+
+    <rdf:Description rdf:about="http://pst.istc.cnr.it/ontologies/2019/01/soho#AutonomyLevel">
+        <owl:equivalentClass rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#AutonomyLevel"/>
+    </rdf:Description>
+    
+
+
     <!-- http://pst.istc.cnr.it/ontologies/2019/01/soho#ComplexTask -->
 
     <rdf:Description rdf:about="http://pst.istc.cnr.it/ontologies/2019/01/soho#ComplexTask">
@@ -378,6 +386,14 @@
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#AuditiveHint">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Notify"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#AutonomyLevel -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#AutonomyLevel">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
     </owl:Class>
     
 
@@ -740,6 +756,15 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#FixedPatterns -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#FixedPatterns">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#AdaptivityLevel"/>
+        <rdfs:comment>Limited adjustments; mostly follows fixed interaction patterns</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#FlyingCapability -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#FlyingCapability">
@@ -748,10 +773,29 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#HighAdaptivity -->
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#FullyAdaptive -->
 
-    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#HighAdaptivity">
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#FullyAdaptive">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#AdaptivityLevel"/>
+        <rdfs:comment>Responds to user preferences and situational changes with some flexibility</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#FullyStatic -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#FullyStatic">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#AdaptivityLevel"/>
+        <rdfs:comment>Fully static behavior; no adjustment to user or context</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#HighlyAdaptive -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#HighlyAdaptive">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#AdaptivityLevel"/>
+        <rdfs:comment>Continuously adjusts behavior based on user cues, context, and history</rdfs:comment>
     </owl:Class>
     
 
@@ -973,14 +1017,6 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#LowAdaptivity -->
-
-    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#LowAdaptivity">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#AdaptivityLevel"/>
-    </owl:Class>
-    
-
-
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#MedicalRobot -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#MedicalRobot">
@@ -1030,14 +1066,6 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ModerateAdaptivity -->
-
-    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ModerateAdaptivity">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#AdaptivityLevel"/>
-    </owl:Class>
-    
-
-
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ModerateDuration -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ModerateDuration">
@@ -1068,6 +1096,15 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
         <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAgent"/>
         <rdfs:comment>&quot;A robot is a reprogrammable, multifunctional manipulator designed to move material, parts, tools or specialized devices through variable programmed motions for the performance of a variety of tasks&quot; -Robotic Industries Association</rdfs:comment>
         <rdfs:label>Natural robot</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#NoResemblance -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#NoResemblance">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#AnimalLikeness"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#HumanLikeness"/>
     </owl:Class>
     
 
@@ -1534,6 +1571,15 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#PredefinedAdaptations -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#PredefinedAdaptations">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#AdaptivityLevel"/>
+        <rdfs:comment>Adapts in predefined ways under certain conditions</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#PrivateService -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#PrivateService">
@@ -1594,15 +1640,6 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#PublicServiceRobot">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ServiceRobot"/>
-    </owl:Class>
-    
-
-
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#PurelyTechnical -->
-
-    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#PurelyTechnical">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#AnimalLikeness"/>
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#HumanLikeness"/>
     </owl:Class>
     
 
@@ -2331,6 +2368,15 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Stationary">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#MobilityLevel"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SuperficialAdaptations -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SuperficialAdaptations">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#AdaptivityLevel"/>
+        <rdfs:comment>Rare or superficial adaptation (e.g., simple parameter changes)</rdfs:comment>
     </owl:Class>
     
 
