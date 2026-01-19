@@ -197,6 +197,14 @@
     
 
 
+    <!-- http://pst.istc.cnr.it/ontologies/2019/01/soho#ExpertiseLevelScale -->
+
+    <rdf:Description rdf:about="http://pst.istc.cnr.it/ontologies/2019/01/soho#ExpertiseLevelScale">
+        <owl:equivalentClass rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ExpertiseLevelScale"/>
+    </rdf:Description>
+    
+
+
     <!-- http://pst.istc.cnr.it/ontologies/2019/01/soho#Function -->
 
     <rdf:Description rdf:about="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function">
@@ -524,7 +532,7 @@ E.g.: A robot&apos;s capability to adjust the speaking style depending on the ro
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ContinousTimeWindow -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ContinousTimeWindow">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#LargeTimeWindow"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#LongTerm"/>
     </owl:Class>
     
 
@@ -540,7 +548,7 @@ E.g.: A robot&apos;s capability to adjust the speaking style depending on the ro
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Days -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Days">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SmallTimeWindow"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ShortTerm"/>
     </owl:Class>
     
 
@@ -732,6 +740,14 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ExpertiseLevelScale -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ExpertiseLevelScale">
+        <rdfs:subClassOf rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#QualitativeAmount"/>
+    </owl:Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Experts -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Experts">
@@ -803,7 +819,7 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Hours -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Hours">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SmallTimeWindow"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ShortTerm"/>
     </owl:Class>
     
 
@@ -862,9 +878,9 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#HumanToRobotRatio -->
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#HumanToSocialRobot -->
 
-    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#HumanToRobotRatio">
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#HumanToSocialRobot">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#RatioRegion"/>
     </owl:Class>
     
@@ -971,6 +987,7 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#InteractionsPerDay">
         <rdfs:subClassOf rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#FrequencyRegion"/>
         <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#RatioRegion"/>
         <rdfs:comment>The amount of ocurred social interactions per day</rdfs:comment>
     </owl:Class>
     
@@ -992,15 +1009,6 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#LargeTimeWindow -->
-
-    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#LargeTimeWindow">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#TimeFrame"/>
-        <rdfs:comment>An interaction time frame between years and open ended.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Laymen -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Laymen">
@@ -1017,6 +1025,15 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#LongTerm -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#LongTerm">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#TimeFrame"/>
+        <rdfs:comment>An interaction time frame between years and open ended.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#MedicalRobot -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#MedicalRobot">
@@ -1025,9 +1042,9 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#MediumTimeWindow -->
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#MediumTerm -->
 
-    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#MediumTimeWindow">
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#MediumTerm">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#TimeFrame"/>
         <rdfs:comment>An interaction time frame between weeks and months.</rdfs:comment>
     </owl:Class>
@@ -1037,7 +1054,7 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Minutes -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Minutes">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SmallTimeWindow"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ShortTerm"/>
     </owl:Class>
     
 
@@ -1077,7 +1094,7 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Months -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Months">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#MediumTimeWindow"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#MediumTerm"/>
     </owl:Class>
     
 
@@ -1878,7 +1895,7 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Seconds -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Seconds">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SmallTimeWindow"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ShortTerm"/>
     </owl:Class>
     
 
@@ -2067,6 +2084,15 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ShortTerm -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ShortTerm">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#TimeFrame"/>
+        <rdfs:comment>An interaction time frame between seconds and days.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SingleInteraction -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SingleInteraction">
@@ -2100,15 +2126,6 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
         <rdfs:comment>A skill describes an agent&apos;s capability by implementing a Method.
 E.g.: A robot can have the capability to move objects, described by a skill &quot;Pick-and-Place&quot;, which implements the Function &quot;PickPlace&quot;.</rdfs:comment>
         <rdfs:label>Skill</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SmallTimeWindow -->
-
-    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SmallTimeWindow">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#TimeFrame"/>
-        <rdfs:comment>An interaction time frame between seconds and days.</rdfs:comment>
     </owl:Class>
     
 
@@ -2496,7 +2513,7 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Weeks -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Weeks">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#MediumTimeWindow"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#MediumTerm"/>
     </owl:Class>
     
 
@@ -2512,7 +2529,7 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Years -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Years">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#LargeTimeWindow"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#LongTerm"/>
     </owl:Class>
     
 
