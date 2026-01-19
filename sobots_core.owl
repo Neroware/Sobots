@@ -148,6 +148,9 @@
         <Class IRI="#ExpertiseGroup"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ExpertiseLevelScale"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Experts"/>
     </Declaration>
     <Declaration>
@@ -187,7 +190,7 @@
         <Class IRI="#HumanProperty"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#HumanToRobotRatio"/>
+        <Class IRI="#HumanToSocialRobot"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Humanoid"/>
@@ -226,7 +229,7 @@
         <Class IRI="#Intracorporeal"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#LargeTimeWindow"/>
+        <Class IRI="#LongTerm"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Laymen"/>
@@ -238,7 +241,7 @@
         <Class IRI="#MedicalRobot"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#MediumTimeWindow"/>
+        <Class IRI="#MediumTerm"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Minutes"/>
@@ -263,6 +266,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#NaturalRobot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NoResemblance"/>
     </Declaration>
     <Declaration>
         <Class IRI="#NonverbalCapability"/>
@@ -326,9 +332,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#PublicServiceRobot"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#NoResemblance"/>
     </Declaration>
     <Declaration>
         <Class IRI="#RatioRegion"/>
@@ -487,7 +490,7 @@
         <Class IRI="#Skill"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SmallTimeWindow"/>
+        <Class IRI="#ShortTerm"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SocialAction"/>
@@ -639,6 +642,10 @@
     <EquivalentClasses>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AutonomyLevel"/>
         <Class IRI="#AutonomyLevel"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#ExpertiseLevelScale"/>
+        <Class IRI="#ExpertiseLevelScale"/>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Disposition"/>
@@ -1047,7 +1054,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ContinousTimeWindow"/>
-        <Class IRI="#LargeTimeWindow"/>
+        <Class IRI="#LongTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CrawlingCapability"/>
@@ -1055,7 +1062,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Days"/>
-        <Class IRI="#SmallTimeWindow"/>
+        <Class IRI="#ShortTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DecisionProcess"/>
@@ -1142,6 +1149,10 @@
         <Class IRI="#TargetGroup"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ExpertiseLevelScale"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#QualitativeAmount"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Experts"/>
         <Class IRI="#ExpertiseGroup"/>
     </SubClassOf>
@@ -1178,7 +1189,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Hours"/>
-        <Class IRI="#SmallTimeWindow"/>
+        <Class IRI="#ShortTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HumanEmotionRecognition"/>
@@ -1205,7 +1216,7 @@
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentProperty"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#HumanToRobotRatio"/>
+        <Class IRI="#HumanToSocialRobot"/>
         <Class IRI="#RatioRegion"/>
     </SubClassOf>
     <SubClassOf>
@@ -1290,6 +1301,10 @@
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#InteractionsPerDay"/>
+        <Class IRI="#RatioRegion"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#IntimateProxemicZone"/>
         <Class IRI="#ProxemicZone"/>
     </SubClassOf>
@@ -1298,7 +1313,7 @@
         <Class IRI="#PhysicalCloseness"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#LargeTimeWindow"/>
+        <Class IRI="#LongTerm"/>
         <Class IRI="#TimeFrame"/>
     </SubClassOf>
     <SubClassOf>
@@ -1314,12 +1329,12 @@
         <Class IRI="#RobotType"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MediumTimeWindow"/>
+        <Class IRI="#MediumTerm"/>
         <Class IRI="#TimeFrame"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Minutes"/>
-        <Class IRI="#SmallTimeWindow"/>
+        <Class IRI="#ShortTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Mobile"/>
@@ -1339,7 +1354,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Months"/>
-        <Class IRI="#MediumTimeWindow"/>
+        <Class IRI="#MediumTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MotivationalAdaptability"/>
@@ -1348,6 +1363,14 @@
     <SubClassOf>
         <Class IRI="#NaturalRobot"/>
         <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NoResemblance"/>
+        <Class IRI="#AnimalLikeness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NoResemblance"/>
+        <Class IRI="#HumanLikeness"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#NonverbalCapability"/>
@@ -1588,14 +1611,6 @@
         <Class IRI="#ServiceRobot"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#NoResemblance"/>
-        <Class IRI="#AnimalLikeness"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#NoResemblance"/>
-        <Class IRI="#HumanLikeness"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#RatioRegion"/>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#QuantitativeAmount"/>
     </SubClassOf>
@@ -1701,7 +1716,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Seconds"/>
-        <Class IRI="#SmallTimeWindow"/>
+        <Class IRI="#ShortTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SendBodySpeech"/>
@@ -1825,7 +1840,7 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SmallTimeWindow"/>
+        <Class IRI="#ShortTerm"/>
         <Class IRI="#TimeFrame"/>
     </SubClassOf>
     <SubClassOf>
@@ -2052,7 +2067,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Weeks"/>
-        <Class IRI="#MediumTimeWindow"/>
+        <Class IRI="#MediumTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Workers"/>
@@ -2060,7 +2075,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Years"/>
-        <Class IRI="#LargeTimeWindow"/>
+        <Class IRI="#LongTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Zoomorph"/>
@@ -2274,12 +2289,12 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#LargeTimeWindow</IRI>
+        <IRI>#LongTerm</IRI>
         <Literal>An interaction time frame between years and open ended.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#MediumTimeWindow</IRI>
+        <IRI>#MediumTerm</IRI>
         <Literal>An interaction time frame between weeks and months.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -2344,7 +2359,7 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#SmallTimeWindow</IRI>
+        <IRI>#ShortTerm</IRI>
         <Literal>An interaction time frame between seconds and days.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
