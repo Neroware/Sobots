@@ -37,6 +37,9 @@
         <Class IRI="#AgentAutonomy"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AgentProactivity"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Android"/>
     </Declaration>
     <Declaration>
@@ -164,6 +167,12 @@
     </Declaration>
     <Declaration>
         <Class IRI="#FullyAdaptive"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FullyProactive"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FullyReactive"/>
     </Declaration>
     <Declaration>
         <Class IRI="#FullyStatic"/>
@@ -314,6 +323,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#PrivateServiceRobot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProactivityLevel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ProfessionalService"/>
@@ -952,6 +964,10 @@
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#AgentProactivity"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Android"/>
         <Class IRI="#HumanLikeness"/>
     </SubClassOf>
@@ -1190,6 +1206,14 @@
     <SubClassOf>
         <Class IRI="#FullyAdaptive"/>
         <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FullyProactive"/>
+        <Class IRI="#ProactivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FullyReactive"/>
+        <Class IRI="#ProactivityLevel"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FullyStatic"/>
@@ -1615,6 +1639,10 @@
     <SubClassOf>
         <Class IRI="#PrivateServiceRobot"/>
         <Class IRI="#ServiceRobot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProactivityLevel"/>
+        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProfessionalService"/>

@@ -360,6 +360,14 @@
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#AgentProactivity -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#AgentProactivity">
+        <rdfs:subClassOf rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+    </owl:Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Android -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Android">
@@ -829,6 +837,22 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#FullyAdaptive">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#AdaptivityLevel"/>
         <rdfs:comment>Responds to user preferences and situational changes with some flexibility</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#FullyProactive -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#FullyProactive">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ProactivityLevel"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#FullyReactive -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#FullyReactive">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ProactivityLevel"/>
     </owl:Class>
     
 
@@ -1664,6 +1688,14 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#PrivateServiceRobot">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ServiceRobot"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ProactivityLevel -->
+
+    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ProactivityLevel">
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
     </owl:Class>
     
 
