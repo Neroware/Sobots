@@ -30,6 +30,16 @@
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#hasSkill -->
+
+    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#hasSkill">
+        <owl:inverseOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#isSkillOf"/>
+        <rdfs:domain rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Skill"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput -->
 
     <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput">
@@ -51,6 +61,25 @@
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#involvesCompetenceIn -->
+
+    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#involvesCompetenceIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+        <owl:inverseOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#isInvolvedCompetenceIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#isInvolvedCompetenceIn -->
+
+    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#isInvolvedCompetenceIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#describes"/>
+        <rdfs:domain rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+        <rdfs:range rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Skill"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#isRealizationOf -->
 
     <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#isRealizationOf">
@@ -60,6 +89,12 @@
         <rdfs:comment>A relation linking a realization to its corresponding disposition.</rdfs:comment>
         <rdfs:label>is realization of</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#isSkillOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#isSkillOf"/>
     
 
 
@@ -925,6 +960,12 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput"/>
                 <owl:someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#DecisionProcess"/>
             </owl:Restriction>
@@ -938,7 +979,15 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#realizedIn"/>
-                <owl:allValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionAction"/>
+                            <rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialAction"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1172,6 +1221,12 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#OccurentDesire">
         <rdfs:subClassOf rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#CognitiveProcess"/>
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Desire"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -2134,6 +2189,12 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialAction">
         <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+                <owl:someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialTask"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
