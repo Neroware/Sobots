@@ -24,6 +24,23 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -453,20 +470,10 @@
     
 
 
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity -->
-
-    <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity">
-        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
-        <rdfs:comment>An entity that is described in and as part of the Belief-Desire-Intention model</rdfs:comment>
-        <rdfs:label>Belief-Desire-Intention Model Entity</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Belief -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Belief">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </owl:Class>
     
 
@@ -604,7 +611,6 @@ E.g.: A robot&apos;s capability to adjust the speaking style depending on the ro
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#DecisionProcess">
         <rdfs:subClassOf rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#CognitiveProcess"/>
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
@@ -630,7 +636,7 @@ E.g.: A robot&apos;s capability to adjust the speaking style depending on the ro
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Desire -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Desire">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </owl:Class>
     
 
@@ -688,7 +694,6 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Quality"/>
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
     </owl:Class>
     
 
@@ -990,7 +995,6 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Intention -->
 
     <owl:Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Intention">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1776,7 +1780,7 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
                 <owl:someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </owl:Class>
     
 
@@ -2576,7 +2580,7 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                 <owl:someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Disposition"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#BDIEntity"/>
+        <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
     </owl:Class>
     
 

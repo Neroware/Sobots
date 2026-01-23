@@ -77,9 +77,6 @@
         <Class IRI="#AutonomyLevel"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#BDIEntity"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Belief"/>
     </Declaration>
     <Declaration>
@@ -1022,12 +1019,8 @@
         <Class abbreviatedIRI="DUL:Amount"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#BDIEntity"/>
-        <Class abbreviatedIRI="DUL:Entity"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Belief"/>
-        <Class IRI="#BDIEntity"/>
+        <Class abbreviatedIRI="DUL:Entity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Children"/>
@@ -1108,10 +1101,6 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DecisionProcess"/>
-        <Class IRI="#BDIEntity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DecisionProcess"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
             <Class IRI="#OccurentBelief"/>
@@ -1133,7 +1122,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Desire"/>
-        <Class IRI="#BDIEntity"/>
+        <Class abbreviatedIRI="DUL:Entity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DevicePrimitive"/>
@@ -1156,10 +1145,6 @@
     <SubClassOf>
         <Class IRI="#Disposition"/>
         <Class abbreviatedIRI="DUL:Quality"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Disposition"/>
-        <Class IRI="#BDIEntity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DispositionalBelief"/>
@@ -1287,10 +1272,6 @@
     <SubClassOf>
         <Class IRI="#InformationExchangeTaskContext"/>
         <Class IRI="#TaskContext"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Intention"/>
-        <Class IRI="#BDIEntity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Intention"/>
@@ -1691,7 +1672,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Realization"/>
-        <Class IRI="#BDIEntity"/>
+        <Class abbreviatedIRI="DUL:Entity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ReceiveBodySpeech"/>
@@ -2126,7 +2107,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Trigger"/>
-        <Class IRI="#BDIEntity"/>
+        <Class abbreviatedIRI="DUL:Entity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#VerbalCapability"/>
@@ -2653,16 +2634,6 @@
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#BDIEntity</IRI>
-        <Literal>An entity that is described in and as part of the Belief-Desire-Intention model</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#BDIEntity</IRI>
-        <Literal>Belief-Desire-Intention Model Entity</Literal>
-    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ComplexSocialCapability</IRI>
