@@ -2230,8 +2230,12 @@
         <Class IRI="#Disposition"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isInvolvedCompetenceIn"/>
+        <ObjectProperty IRI="#involvesCompetenceIn"/>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isInvolvedCompetenceIn"/>
+        <Class IRI="#Skill"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isRealizationOf"/>
@@ -2276,8 +2280,12 @@
         <Class IRI="#Trigger"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isInvolvedCompetenceIn"/>
+        <ObjectProperty IRI="#involvesCompetenceIn"/>
         <Class IRI="#Skill"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isInvolvedCompetenceIn"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isRealizationOf"/>
