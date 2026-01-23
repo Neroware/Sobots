@@ -2360,7 +2360,7 @@
         </Annotation>
         <Annotation>
             <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal>A semantic rule characterizing the relationship between an action and the task it executes, based on the structure of goals and methods within a decision process.</Literal>
+            <Literal>A semantic rule characterizing the relationship between a plan and an action intent</Literal>
         </Annotation>
         <Annotation>
             <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2368,60 +2368,88 @@
         </Annotation>
         <Body>
             <ClassAtom>
-                <Class abbreviatedIRI="DUL:Action"/>
-                <Variable IRI="#a"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#DecisionProcess"/>
-                <Variable IRI="#d"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#OccurentDesire"/>
-                <Variable IRI="#o"/>
-            </ClassAtom>
-            <ClassAtom>
                 <Class abbreviatedIRI="DUL:Goal"/>
-                <Variable IRI="#g"/>
+                <Variable IRI="g"/>
             </ClassAtom>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Method"/>
-                <Variable IRI="#m"/>
+                <Variable IRI="m"/>
             </ClassAtom>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Task"/>
-                <Variable IRI="#t"/>
+                <Variable IRI="t"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:hasConstituent"/>
+                <Variable IRI="g"/>
+                <Variable IRI="m"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:hasConstituent"/>
+                <Variable IRI="m"/>
+                <Variable IRI="t"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#DecisionProcess"/>
+                <Variable IRI="d"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Intention"/>
+                <Variable IRI="i"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasSpecifiedOutput"/>
+                <Variable IRI="i"/>
+                <Variable IRI="d"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#OccurentDesire"/>
+                <Variable IRI="o"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
+                <Variable IRI="d"/>
+                <Variable IRI="o"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
+                <Variable IRI="o"/>
+                <Variable IRI="g"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="DUL:Plan"/>
+                <Variable IRI="p"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
+                <Variable IRI="i"/>
+                <Variable IRI="p"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:hasComponent"/>
+                <Variable IRI="p"/>
+                <Variable IRI="g"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
+                <Variable IRI="p"/>
+                <Variable IRI="m"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="DUL:Action"/>
+                <Variable IRI="a"/>
             </ClassAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#preconditions"/>
-                <Variable IRI="#d"/>
-                <Variable IRI="#a"/>
-            </ObjectPropertyAtom>
-            <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
-                <Variable IRI="#d"/>
-                <Variable IRI="#o"/>
-            </ObjectPropertyAtom>
-            <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI="DUL:hasConstituent"/>
-                <Variable IRI="#g"/>
-                <Variable IRI="#m"/>
-            </ObjectPropertyAtom>
-            <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI="DUL:hasConstituent"/>
-                <Variable IRI="#m"/>
-                <Variable IRI="#t"/>
+                <Variable IRI="d"/>
+                <Variable IRI="a"/>
             </ObjectPropertyAtom>
         </Body>
         <Head>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI="DUL:executesTask"/>
-                <Variable IRI="#a"/>
-                <Variable IRI="#t"/>
-            </ObjectPropertyAtom>
-            <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
-                <Variable IRI="#a"/>
-                <Variable IRI="#t"/>
+                <Variable IRI="a"/>
+                <Variable IRI="t"/>
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
@@ -2452,7 +2480,7 @@
                 <Variable IRI="#a"/>
             </ClassAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty IRI="#isSpecifiedOutputOf"/>
+                <ObjectProperty IRI="#hasSpecifiedOutput"/>
                 <Variable IRI="#i"/>
                 <Variable IRI="#d"/>
             </ObjectPropertyAtom>

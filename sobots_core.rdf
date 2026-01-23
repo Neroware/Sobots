@@ -2667,25 +2667,37 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#c">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#a">
+    <rdf:Description rdf:about="g">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="m">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="d">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="i">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="o">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#i">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#d">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#o">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#g">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#m">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#t">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#i">
+    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#a">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#s0">
@@ -2767,7 +2779,7 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     </rdf:Description>
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment>A semantic rule characterizing the relationship between an action and the task it executes, based on the structure of goals and methods within a decision process.</rdfs:comment>
+        <rdfs:comment>A semantic rule characterizing the relationship between a plan and an action intent</rdfs:comment>
         <rdfs:label>S9</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
@@ -2776,8 +2788,8 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
-                        <swrl:argument1 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#a"/>
+                        <swrl:classPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                        <swrl:argument1 rdf:resource="g"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -2786,8 +2798,8 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#DecisionProcess"/>
-                                <swrl:argument1 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#d"/>
+                                <swrl:classPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Method"/>
+                                <swrl:argument1 rdf:resource="m"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -2796,8 +2808,8 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#OccurentDesire"/>
-                                        <swrl:argument1 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#o"/>
+                                        <swrl:classPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Task"/>
+                                        <swrl:argument1 rdf:resource="t"/>
                                     </rdf:Description>
                                 </rdf:first>
                                 <rdf:rest>
@@ -2805,9 +2817,10 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                         <rdf:first>
                                             <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                <swrl:classPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
-                                                <swrl:argument1 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#g"/>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+                                                <swrl:argument1 rdf:resource="g"/>
+                                                <swrl:argument2 rdf:resource="m"/>
                                             </rdf:Description>
                                         </rdf:first>
                                         <rdf:rest>
@@ -2815,9 +2828,10 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                                 <rdf:first>
                                                     <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                        <swrl:classPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Method"/>
-                                                        <swrl:argument1 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#m"/>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+                                                        <swrl:argument1 rdf:resource="m"/>
+                                                        <swrl:argument2 rdf:resource="t"/>
                                                     </rdf:Description>
                                                 </rdf:first>
                                                 <rdf:rest>
@@ -2826,8 +2840,8 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                                                         <rdf:first>
                                                             <rdf:Description>
                                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                                <swrl:classPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Task"/>
-                                                                <swrl:argument1 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#t"/>
+                                                                <swrl:classPredicate rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#DecisionProcess"/>
+                                                                <swrl:argument1 rdf:resource="d"/>
                                                             </rdf:Description>
                                                         </rdf:first>
                                                         <rdf:rest>
@@ -2835,10 +2849,9 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                                                 <rdf:first>
                                                                     <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                        <swrl:propertyPredicate rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#preconditions"/>
-                                                                        <swrl:argument1 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#d"/>
-                                                                        <swrl:argument2 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#a"/>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                        <swrl:classPredicate rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Intention"/>
+                                                                        <swrl:argument1 rdf:resource="i"/>
                                                                     </rdf:Description>
                                                                 </rdf:first>
                                                                 <rdf:rest>
@@ -2847,9 +2860,9 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                                                                         <rdf:first>
                                                                             <rdf:Description>
                                                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                <swrl:propertyPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
-                                                                                <swrl:argument1 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#d"/>
-                                                                                <swrl:argument2 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#o"/>
+                                                                                <swrl:propertyPredicate rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput"/>
+                                                                                <swrl:argument1 rdf:resource="i"/>
+                                                                                <swrl:argument2 rdf:resource="d"/>
                                                                             </rdf:Description>
                                                                         </rdf:first>
                                                                         <rdf:rest>
@@ -2857,10 +2870,9 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                                                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
                                                                                 <rdf:first>
                                                                                     <rdf:Description>
-                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                        <swrl:propertyPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
-                                                                                        <swrl:argument1 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#g"/>
-                                                                                        <swrl:argument2 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#m"/>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                        <swrl:classPredicate rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#OccurentDesire"/>
+                                                                                        <swrl:argument1 rdf:resource="o"/>
                                                                                     </rdf:Description>
                                                                                 </rdf:first>
                                                                                 <rdf:rest>
@@ -2869,12 +2881,101 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                                                                                         <rdf:first>
                                                                                             <rdf:Description>
                                                                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                                <swrl:propertyPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
-                                                                                                <swrl:argument1 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#m"/>
-                                                                                                <swrl:argument2 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#t"/>
+                                                                                                <swrl:propertyPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+                                                                                                <swrl:argument1 rdf:resource="d"/>
+                                                                                                <swrl:argument2 rdf:resource="o"/>
                                                                                             </rdf:Description>
                                                                                         </rdf:first>
-                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                <rdf:first>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                        <swrl:propertyPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+                                                                                                        <swrl:argument1 rdf:resource="o"/>
+                                                                                                        <swrl:argument2 rdf:resource="g"/>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:first>
+                                                                                                <rdf:rest>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                        <rdf:first>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                                                <swrl:classPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                                                                                                <swrl:argument1 rdf:resource="p"/>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:first>
+                                                                                                        <rdf:rest>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                <rdf:first>
+                                                                                                                    <rdf:Description>
+                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                                        <swrl:propertyPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+                                                                                                                        <swrl:argument1 rdf:resource="i"/>
+                                                                                                                        <swrl:argument2 rdf:resource="p"/>
+                                                                                                                    </rdf:Description>
+                                                                                                                </rdf:first>
+                                                                                                                <rdf:rest>
+                                                                                                                    <rdf:Description>
+                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                        <rdf:first>
+                                                                                                                            <rdf:Description>
+                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                                                <swrl:propertyPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
+                                                                                                                                <swrl:argument1 rdf:resource="p"/>
+                                                                                                                                <swrl:argument2 rdf:resource="g"/>
+                                                                                                                            </rdf:Description>
+                                                                                                                        </rdf:first>
+                                                                                                                        <rdf:rest>
+                                                                                                                            <rdf:Description>
+                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                                <rdf:first>
+                                                                                                                                    <rdf:Description>
+                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                                                        <swrl:propertyPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+                                                                                                                                        <swrl:argument1 rdf:resource="p"/>
+                                                                                                                                        <swrl:argument2 rdf:resource="m"/>
+                                                                                                                                    </rdf:Description>
+                                                                                                                                </rdf:first>
+                                                                                                                                <rdf:rest>
+                                                                                                                                    <rdf:Description>
+                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                                        <rdf:first>
+                                                                                                                                            <rdf:Description>
+                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                                                                                <swrl:classPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
+                                                                                                                                                <swrl:argument1 rdf:resource="a"/>
+                                                                                                                                            </rdf:Description>
+                                                                                                                                        </rdf:first>
+                                                                                                                                        <rdf:rest>
+                                                                                                                                            <rdf:Description>
+                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                                                <rdf:first>
+                                                                                                                                                    <rdf:Description>
+                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                                                                        <swrl:propertyPredicate rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#preconditions"/>
+                                                                                                                                                        <swrl:argument1 rdf:resource="d"/>
+                                                                                                                                                        <swrl:argument2 rdf:resource="a"/>
+                                                                                                                                                    </rdf:Description>
+                                                                                                                                                </rdf:first>
+                                                                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                                                            </rdf:Description>
+                                                                                                                                        </rdf:rest>
+                                                                                                                                    </rdf:Description>
+                                                                                                                                </rdf:rest>
+                                                                                                                            </rdf:Description>
+                                                                                                                        </rdf:rest>
+                                                                                                                    </rdf:Description>
+                                                                                                                </rdf:rest>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:rest>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:rest>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
                                                                                     </rdf:Description>
                                                                                 </rdf:rest>
                                                                             </rdf:Description>
@@ -2901,25 +3002,12 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#executesTask"/>
-                        <swrl:argument1 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#a"/>
-                        <swrl:argument2 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#t"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+                        <swrl:argument1 rdf:resource="a"/>
+                        <swrl:argument2 rdf:resource="t"/>
                     </rdf:Description>
                 </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
-                                <swrl:argument1 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#a"/>
-                                <swrl:argument2 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#t"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
             </rdf:Description>
         </swrl:head>
     </rdf:Description>
@@ -2964,7 +3052,7 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                                         <rdf:first>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#isSpecifiedOutputOf"/>
+                                                <swrl:propertyPredicate rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#hasSpecifiedOutput"/>
                                                 <swrl:argument1 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#i"/>
                                                 <swrl:argument2 rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#d"/>
                                             </rdf:Description>
