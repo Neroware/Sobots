@@ -1115,6 +1115,13 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#DecisionProcess"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#preconditions"/>
+            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Desire"/>
         <Class IRI="#BDIEntity"/>
     </SubClassOf>
@@ -2306,6 +2313,328 @@
         <ObjectProperty IRI="#realizedIn"/>
         <Class IRI="#Realization"/>
     </ObjectPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing the skills involved in implementing a capability</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S8</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
+                <Variable IRI="#f"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Skill"/>
+                <Variable IRI="#s"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
+                <Variable IRI="#s"/>
+                <Variable IRI="#f"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
+                <Variable IRI="#f"/>
+                <Variable IRI="#c"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#involvesCompetenceIn"/>
+                <Variable IRI="#c"/>
+                <Variable IRI="#s"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing the relationship between an action and the task it executes, based on the structure of goals and methods within a decision process.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S9</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#DecisionProcess"/>
+                <Variable IRI="#d"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#OccurentDesire"/>
+                <Variable IRI="#o"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                <Variable IRI="#g"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Method"/>
+                <Variable IRI="#m"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+                <Variable IRI="#t"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#preconditions"/>
+                <Variable IRI="#d"/>
+                <Variable IRI="#a"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+                <Variable IRI="#d"/>
+                <Variable IRI="#o"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+                <Variable IRI="#g"/>
+                <Variable IRI="#m"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+                <Variable IRI="#m"/>
+                <Variable IRI="#t"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#executesTask"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#t"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#t"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing how an intention is realized through an action.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S13</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Intention"/>
+                <Variable IRI="#i"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#DecisionProcess"/>
+                <Variable IRI="#d"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isSpecifiedOutputOf"/>
+                <Variable IRI="#i"/>
+                <Variable IRI="#d"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#preconditions"/>
+                <Variable IRI="#d"/>
+                <Variable IRI="#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#realizedIn"/>
+                <Variable IRI="#i"/>
+                <Variable IRI="#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing function implementations describing capabilities as agent skills</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S7</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Skill"/>
+                <Variable IRI="#s"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
+                <Variable IRI="#s"/>
+                <Variable IRI="#f"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasCapability"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#describes"/>
+                <Variable IRI="#s"/>
+                <Variable IRI="#c"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasSkill"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#s"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing the capability of an agent based on its skills</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S12</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Skill"/>
+                <Variable IRI="#s"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasSkill"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#s"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
+                <Variable IRI="#s"/>
+                <Variable IRI="#f"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
+                <Variable IRI="#f"/>
+                <Variable IRI="#c"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasCapability"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#c"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing Sobots postconditions</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S11</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+                <Variable IRI="#s0"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+                <Variable IRI="#s1"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isPostconditionOf"/>
+                <Variable IRI="#s0"/>
+                <Variable IRI="#s1"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#postconditions"/>
+                <Variable IRI="#s0"/>
+                <Variable IRI="#s1"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing Sobots preconditions</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S10</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+                <Variable IRI="#s0"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+                <Variable IRI="#s1"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isPreconditionOf"/>
+                <Variable IRI="#s0"/>
+                <Variable IRI="#s1"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#preconditions"/>
+                <Variable IRI="#s0"/>
+                <Variable IRI="#s1"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#BDIEntity</IRI>
