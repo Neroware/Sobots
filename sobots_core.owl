@@ -626,6 +626,12 @@
         <Class IRI="#Zoomorph"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasPostconditionEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPreconditionEvent"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasSkill"/>
     </Declaration>
     <Declaration>
@@ -641,6 +647,12 @@
         <ObjectProperty IRI="#isInvolvedCompetenceIn"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isPostconditionEventOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPreconditionEventOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isRealizationOf"/>
     </Declaration>
     <Declaration>
@@ -651,18 +663,6 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isTriggerOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#postconditionedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#postconditions"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#preconditionedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#preconditions"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#realizedIn"/>
@@ -757,7 +757,7 @@
                         </ObjectIntersectionOf>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="#postconditions"/>
+                        <ObjectProperty IRI="#isPostconditionEventOf"/>
                         <ObjectIntersectionOf>
                             <Class abbreviatedIRI="DUL:Event"/>
                             <ObjectAllValuesFrom>
@@ -811,11 +811,11 @@
                         </ObjectIntersectionOf>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="#preconditions"/>
+                        <ObjectProperty IRI="#isPreconditionEventOf"/>
                         <Class abbreviatedIRI="DUL:Situation"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="#preconditions"/>
+                        <ObjectProperty IRI="#isPreconditionEventOf"/>
                         <ObjectIntersectionOf>
                             <Class abbreviatedIRI="DUL:Event"/>
                             <ObjectAllValuesFrom>
@@ -1116,7 +1116,7 @@
     <SubClassOf>
         <Class IRI="#DecisionProcess"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#preconditions"/>
+            <ObjectProperty IRI="#isPreconditionEventOf"/>
             <Class abbreviatedIRI="DUL:Action"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -1515,7 +1515,7 @@
                     </ObjectIntersectionOf>
                 </ObjectSomeValuesFrom>
                 <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#postconditions"/>
+                    <ObjectProperty IRI="#isPostconditionEventOf"/>
                     <ObjectIntersectionOf>
                         <Class abbreviatedIRI="DUL:Event"/>
                         <ObjectAllValuesFrom>
@@ -1572,11 +1572,11 @@
                     </ObjectIntersectionOf>
                 </ObjectSomeValuesFrom>
                 <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#preconditions"/>
+                    <ObjectProperty IRI="#isPreconditionEventOf"/>
                     <Class abbreviatedIRI="DUL:Situation"/>
                 </ObjectSomeValuesFrom>
                 <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#preconditions"/>
+                    <ObjectProperty IRI="#isPreconditionEventOf"/>
                     <ObjectIntersectionOf>
                         <Class abbreviatedIRI="DUL:Event"/>
                         <ObjectAllValuesFrom>
@@ -2153,6 +2153,14 @@
         <Class IRI="#SendCapability"/>
     </DisjointClasses>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPostconditionEvent"/>
+        <ObjectProperty abbreviatedIRI="DUL:directlyPrecedes"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPreconditionEvent"/>
+        <ObjectProperty abbreviatedIRI="DUL:directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasTrigger"/>
         <ObjectProperty abbreviatedIRI="DUL:directlyFollows"/>
     </SubObjectPropertyOf>
@@ -2165,25 +2173,25 @@
         <ObjectProperty abbreviatedIRI="DUL:describes"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPostconditionEventOf"/>
+        <ObjectProperty abbreviatedIRI="DUL:directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPreconditionEventOf"/>
+        <ObjectProperty abbreviatedIRI="DUL:directlyPrecedes"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isTriggerOf"/>
         <ObjectProperty abbreviatedIRI="DUL:directlyPrecedes"/>
     </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#postconditionedBy"/>
-        <ObjectProperty abbreviatedIRI="DUL:directlyPrecedes"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#postconditions"/>
-        <ObjectProperty abbreviatedIRI="DUL:directlyFollows"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#preconditionedBy"/>
-        <ObjectProperty abbreviatedIRI="DUL:directlyFollows"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#preconditions"/>
-        <ObjectProperty abbreviatedIRI="DUL:directlyPrecedes"/>
-    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPostconditionEvent"/>
+        <ObjectProperty IRI="#isPostconditionEventOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPreconditionEvent"/>
+        <ObjectProperty IRI="#isPreconditionEventOf"/>
+    </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasSkill"/>
         <ObjectProperty IRI="#isSkillOf"/>
@@ -2204,14 +2212,20 @@
         <ObjectProperty IRI="#isRealizationOf"/>
         <ObjectProperty IRI="#realizedIn"/>
     </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#postconditionedBy"/>
-        <ObjectProperty IRI="#postconditions"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#preconditionedBy"/>
-        <ObjectProperty IRI="#preconditions"/>
-    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPostconditionEvent"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="DUL:Event"/>
+            <Class abbreviatedIRI="DUL:Situation"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPreconditionEvent"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="DUL:Event"/>
+            <Class abbreviatedIRI="DUL:Situation"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSkill"/>
         <Class abbreviatedIRI="DUL:Agent"/>
@@ -2229,6 +2243,14 @@
         <Class IRI="#Skill"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPostconditionEventOf"/>
+        <Class abbreviatedIRI="DUL:Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPreconditionEventOf"/>
+        <Class abbreviatedIRI="DUL:Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isRealizationOf"/>
         <Class IRI="#Realization"/>
     </ObjectPropertyDomain>
@@ -2237,31 +2259,17 @@
         <Class IRI="#Trigger"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#postconditionedBy"/>
-        <ObjectUnionOf>
-            <Class abbreviatedIRI="DUL:Event"/>
-            <Class abbreviatedIRI="DUL:Situation"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#postconditions"/>
-        <Class abbreviatedIRI="DUL:Event"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#preconditionedBy"/>
-        <ObjectUnionOf>
-            <Class abbreviatedIRI="DUL:Event"/>
-            <Class abbreviatedIRI="DUL:Situation"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#preconditions"/>
-        <Class abbreviatedIRI="DUL:Event"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#realizedIn"/>
         <Class IRI="#Disposition"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPostconditionEvent"/>
+        <Class abbreviatedIRI="DUL:Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPreconditionEvent"/>
+        <Class abbreviatedIRI="DUL:Event"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSkill"/>
         <Class IRI="#Skill"/>
@@ -2279,34 +2287,26 @@
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPostconditionEventOf"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="DUL:Event"/>
+            <Class abbreviatedIRI="DUL:Situation"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPreconditionEventOf"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="DUL:Event"/>
+            <Class abbreviatedIRI="DUL:Situation"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isRealizationOf"/>
         <Class IRI="#Disposition"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isTriggerOf"/>
         <Class IRI="#Disposition"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#postconditionedBy"/>
-        <Class abbreviatedIRI="DUL:Event"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#postconditions"/>
-        <ObjectUnionOf>
-            <Class abbreviatedIRI="DUL:Event"/>
-            <Class abbreviatedIRI="DUL:Situation"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#preconditionedBy"/>
-        <Class abbreviatedIRI="DUL:Event"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#preconditions"/>
-        <ObjectUnionOf>
-            <Class abbreviatedIRI="DUL:Event"/>
-            <Class abbreviatedIRI="DUL:Situation"/>
-        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#realizedIn"/>
@@ -2369,87 +2369,87 @@
         <Body>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Goal"/>
-                <Variable IRI="g"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/g"/>
             </ClassAtom>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Method"/>
-                <Variable IRI="m"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/m"/>
             </ClassAtom>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Task"/>
-                <Variable IRI="t"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/t"/>
             </ClassAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:hasConstituent"/>
-                <Variable IRI="g"/>
-                <Variable IRI="m"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/g"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/m"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:hasConstituent"/>
-                <Variable IRI="m"/>
-                <Variable IRI="t"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/m"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/t"/>
             </ObjectPropertyAtom>
             <ClassAtom>
                 <Class IRI="#DecisionProcess"/>
-                <Variable IRI="d"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/d"/>
             </ClassAtom>
             <ClassAtom>
                 <Class IRI="#Intention"/>
-                <Variable IRI="i"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/i"/>
             </ClassAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#hasSpecifiedOutput"/>
-                <Variable IRI="i"/>
-                <Variable IRI="d"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/i"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/d"/>
             </ObjectPropertyAtom>
             <ClassAtom>
                 <Class IRI="#OccurentDesire"/>
-                <Variable IRI="o"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/o"/>
             </ClassAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
-                <Variable IRI="d"/>
-                <Variable IRI="o"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/d"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/o"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
-                <Variable IRI="o"/>
-                <Variable IRI="g"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/o"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/g"/>
             </ObjectPropertyAtom>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Plan"/>
-                <Variable IRI="p"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/p"/>
             </ClassAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
-                <Variable IRI="i"/>
-                <Variable IRI="p"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/i"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/p"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:hasComponent"/>
-                <Variable IRI="p"/>
-                <Variable IRI="g"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/p"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/g"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
-                <Variable IRI="p"/>
-                <Variable IRI="m"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/p"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/m"/>
             </ObjectPropertyAtom>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Action"/>
-                <Variable IRI="a"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/a"/>
             </ClassAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty IRI="#preconditions"/>
-                <Variable IRI="d"/>
-                <Variable IRI="a"/>
+                <ObjectProperty IRI="#isPreconditionEventOf"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/d"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/a"/>
             </ObjectPropertyAtom>
         </Body>
         <Head>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
-                <Variable IRI="a"/>
-                <Variable IRI="t"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/a"/>
+                <Variable IRI="https://www.forsocialrobots.de/ontologies/t"/>
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
@@ -2485,7 +2485,7 @@
                 <Variable IRI="#d"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty IRI="#preconditions"/>
+                <ObjectProperty IRI="#isPreconditionEventOf"/>
                 <Variable IRI="#d"/>
                 <Variable IRI="#a"/>
             </ObjectPropertyAtom>
@@ -2597,7 +2597,7 @@
         </Annotation>
         <Annotation>
             <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal>A semantic rule characterizing Sobots postconditions</Literal>
+            <Literal>A semantic rule characterizing Sobots isPostconditionEventOf</Literal>
         </Annotation>
         <Annotation>
             <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2605,24 +2605,24 @@
         </Annotation>
         <Body>
             <ClassAtom>
-                <Class abbreviatedIRI="DUL:Situation"/>
-                <Variable IRI="#s0"/>
+                <Class abbreviatedIRI="DUL:Event"/>
+                <Variable IRI="#e"/>
             </ClassAtom>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Situation"/>
-                <Variable IRI="#s1"/>
+                <Variable IRI="#s"/>
             </ClassAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:isPostconditionOf"/>
-                <Variable IRI="#s0"/>
-                <Variable IRI="#s1"/>
+                <Variable IRI="#e"/>
+                <Variable IRI="#s"/>
             </ObjectPropertyAtom>
         </Body>
         <Head>
             <ObjectPropertyAtom>
-                <ObjectProperty IRI="#postconditions"/>
-                <Variable IRI="#s0"/>
-                <Variable IRI="#s1"/>
+                <ObjectProperty IRI="#isPostconditionEventOf"/>
+                <Variable IRI="#e"/>
+                <Variable IRI="#s"/>
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
@@ -2633,7 +2633,7 @@
         </Annotation>
         <Annotation>
             <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal>A semantic rule characterizing Sobots preconditions</Literal>
+            <Literal>A semantic rule characterizing Sobots isPreconditionEventOf</Literal>
         </Annotation>
         <Annotation>
             <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2641,24 +2641,24 @@
         </Annotation>
         <Body>
             <ClassAtom>
-                <Class abbreviatedIRI="DUL:Situation"/>
-                <Variable IRI="#s0"/>
+                <Class abbreviatedIRI="DUL:Event"/>
+                <Variable IRI="#e"/>
             </ClassAtom>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Situation"/>
-                <Variable IRI="#s1"/>
+                <Variable IRI="#s"/>
             </ClassAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:isPreconditionOf"/>
-                <Variable IRI="#s0"/>
-                <Variable IRI="#s1"/>
+                <Variable IRI="#e"/>
+                <Variable IRI="#s"/>
             </ObjectPropertyAtom>
         </Body>
         <Head>
             <ObjectPropertyAtom>
-                <ObjectProperty IRI="#preconditions"/>
-                <Variable IRI="#s0"/>
-                <Variable IRI="#s1"/>
+                <ObjectProperty IRI="#isPreconditionEventOf"/>
+                <Variable IRI="#e"/>
+                <Variable IRI="#s"/>
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
@@ -2832,6 +2832,26 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPostconditionEvent</IRI>
+        <Literal>Indicates that an event or situation occurs as a cause of another event. This relation identifies the event whose execution is the consequence of the current event or situation. For example, heavy rainfall may have flooded fields as its postcondition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPostconditionEvent</IRI>
+        <Literal>postconditioned by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPreconditionEvent</IRI>
+        <Literal>Indicates that an event or situation must follow another event. This relation identifies the prior event required for the current situation to hold or event to occur. For example, boiling water may have the precondition of heating the pot on a stove.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPreconditionEvent</IRI>
+        <Literal>preconditioned by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasTrigger</IRI>
         <Literal>A relation linking a disposition to its set of triggers causing a realization of said disposition.</Literal>
     </AnnotationAssertion>
@@ -2839,6 +2859,26 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#hasTrigger</IRI>
         <Literal>has trigger</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPostconditionEventOf</IRI>
+        <Literal>Relates an event to another event or situation. This linked postcondition describes an event that follows as a consequence of a previous state or event. For example, heavy rainfall may have flooded fields as its postcondition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPostconditionEventOf</IRI>
+        <Literal>isPostconditionEventOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPreconditionEventOf</IRI>
+        <Literal>Relates an event to another event or situation. This linked precondition specifies necessary enabling events that must occur before a situation holds or another event occurs. For example, cooking may have boiling water as a precondition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPreconditionEventOf</IRI>
+        <Literal>isPreconditionEventOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2859,46 +2899,6 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#isTriggerOf</IRI>
         <Literal>is trigger of</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#postconditionedBy</IRI>
-        <Literal>Indicates that an event or situation occurs as a cause of another event. This relation identifies the event whose execution is the consequence of the current event or situation. For example, heavy rainfall may have flooded fields as its postcondition.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#postconditionedBy</IRI>
-        <Literal>postconditioned by</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#postconditions</IRI>
-        <Literal>Relates an event to another event or situation. This linked postcondition describes an event that follows as a consequence of a previous state or event. For example, heavy rainfall may have flooded fields as its postcondition.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#postconditions</IRI>
-        <Literal>postconditions</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#preconditionedBy</IRI>
-        <Literal>Indicates that an event or situation must follow another event. This relation identifies the prior event required for the current situation to hold or event to occur. For example, boiling water may be preconditioned by heating the pot on a stove.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#preconditionedBy</IRI>
-        <Literal>preconditioned by</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#preconditions</IRI>
-        <Literal>Relates an event to another event or situation. This linked precondition specifies necessary enabling events that must occur before a situation holds or another event occurs. For example, cooking may have boiling water as one of its preconditions.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#preconditions</IRI>
-        <Literal>preconditions</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
