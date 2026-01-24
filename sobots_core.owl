@@ -6,6 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://www.forsocialrobots.de/ontologies/sobots.owl">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="ns" IRI="http://creativecommons.org/ns#"/>
     <Prefix name="DUL" IRI="http://www.loa-cnr.it/ontologies/DUL.owl#"/>
@@ -1287,7 +1288,7 @@
     <SubClassOf>
         <Class IRI="#Intention"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasSpecifiedOutput"/>
+            <ObjectProperty IRI="#isSpecifiedOutputOf"/>
             <Class IRI="#DecisionProcess"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -2369,87 +2370,87 @@
         <Body>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Goal"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/g"/>
+                <Variable abbreviatedIRI="owl:g"/>
             </ClassAtom>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Method"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/m"/>
+                <Variable abbreviatedIRI="owl:m"/>
             </ClassAtom>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Task"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/t"/>
+                <Variable abbreviatedIRI="owl:t"/>
             </ClassAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:hasConstituent"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/g"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/m"/>
+                <Variable abbreviatedIRI="owl:g"/>
+                <Variable abbreviatedIRI="owl:m"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:hasConstituent"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/m"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/t"/>
+                <Variable abbreviatedIRI="owl:m"/>
+                <Variable abbreviatedIRI="owl:t"/>
             </ObjectPropertyAtom>
             <ClassAtom>
                 <Class IRI="#DecisionProcess"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/d"/>
+                <Variable abbreviatedIRI="owl:d"/>
             </ClassAtom>
             <ClassAtom>
                 <Class IRI="#Intention"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/i"/>
+                <Variable abbreviatedIRI="owl:i"/>
             </ClassAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty IRI="#hasSpecifiedOutput"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/i"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/d"/>
+                <ObjectProperty IRI="#isSpecifiedOutputOf"/>
+                <Variable abbreviatedIRI="owl:i"/>
+                <Variable abbreviatedIRI="owl:d"/>
             </ObjectPropertyAtom>
             <ClassAtom>
                 <Class IRI="#OccurentDesire"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/o"/>
+                <Variable abbreviatedIRI="owl:o"/>
             </ClassAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/d"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/o"/>
+                <Variable abbreviatedIRI="owl:d"/>
+                <Variable abbreviatedIRI="owl:o"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/o"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/g"/>
+                <Variable abbreviatedIRI="owl:o"/>
+                <Variable abbreviatedIRI="owl:g"/>
             </ObjectPropertyAtom>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Plan"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/p"/>
+                <Variable abbreviatedIRI="owl:p"/>
             </ClassAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/i"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/p"/>
+                <Variable abbreviatedIRI="owl:i"/>
+                <Variable abbreviatedIRI="owl:p"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:hasComponent"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/p"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/g"/>
+                <Variable abbreviatedIRI="owl:p"/>
+                <Variable abbreviatedIRI="owl:g"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/p"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/m"/>
+                <Variable abbreviatedIRI="owl:p"/>
+                <Variable abbreviatedIRI="owl:m"/>
             </ObjectPropertyAtom>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Action"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/a"/>
+                <Variable abbreviatedIRI="owl:a"/>
             </ClassAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#isPreconditionEventOf"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/d"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/a"/>
+                <Variable abbreviatedIRI="owl:d"/>
+                <Variable abbreviatedIRI="owl:a"/>
             </ObjectPropertyAtom>
         </Body>
         <Head>
             <ObjectPropertyAtom>
                 <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/a"/>
-                <Variable IRI="https://www.forsocialrobots.de/ontologies/t"/>
+                <Variable abbreviatedIRI="owl:a"/>
+                <Variable abbreviatedIRI="owl:t"/>
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
