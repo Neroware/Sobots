@@ -2805,7 +2805,7 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Task"/>
+                                        <swrl:classPredicate rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialTask"/>
                                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#t"/>
                                     </rdf:Description>
                                 </rdf:first>

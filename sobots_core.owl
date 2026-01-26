@@ -2377,7 +2377,7 @@
                 <Variable abbreviatedIRI="owl:m"/>
             </ClassAtom>
             <ClassAtom>
-                <Class abbreviatedIRI="DUL:Task"/>
+                <Class IRI="#SocialTask"/>
                 <Variable abbreviatedIRI="owl:t"/>
             </ClassAtom>
             <ObjectPropertyAtom>
