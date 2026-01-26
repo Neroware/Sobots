@@ -1,0 +1,41 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#>.
+@prefix ssn:	<http://purl.oclc.org/NET/ssnx/ssn#>.
+@prefix dul:	<http://www.loa-cnr.it/ontologies/DUL.owl#>.
+@prefix soho:	<http://pst.istc.cnr.it/ontologies/2019/01/soho#>.
+@prefix sobot:  <https://www.forsocialrobots.de/ontologies/sobots.owl#>.
+
+@include <owlmicro>.
+
+[skill-ownership:
+    (?a rdf:type dul:Agent), (?s rdf:type sobot:Skill), (?s, ssn:implements ?f),
+    (?a soho:hasCapability ?c), (?s dul:describes ?c)
+    ->
+    (?a sobot:hasSkill ?s)]
+
+[involved-competence:
+    (?f rdf:type soho:Function), (?s rdf:type sobot:Skill), (?s, ssn:implements ?f),
+    ->
+    (?c sobot:involvesCompetenceIn ?s)]
+
+[capability-ownership:
+    (?a rdf:type dul:Agent), (?s rdf:type sobot:Skill), (?a sobot:hasSkill ?s),
+    (?s ssn:implements ?f), (?f soho:requires ?c)
+    ->
+    (?a soho:hasCapability ?c)]
+
+[realized-intention:
+    (?i rdf:type sobot:Intention), (?d rdf:type sobot:DecisionProcess), (?a rdf:type dul:Action),
+    (?i sobot:isSpecifiedOutputOf ?d), (?d sobot:isPreconditionEventOf ?a)
+    ->
+    (?i sobot:realizedIn ?a)]
+
+[action-intent:
+    (?g rdf:type dul:Goal), (?m rdf:type dul:Method), (?t rdf:type sobot:SocialTask),
+    (?g dul:hasConstituent ?m), (?m dul:hasConstituent ?t), (?d rdf:type sobot:DecisionProcess),
+    (?i rdf:type sobot:Intention), (?i sobot:isSpecifiedOutputOf ?d), (?o rdf:type sobot:OccurentDesire),
+    (?d dul:hasPart ?o), (?o dul:isDescribedBy ?g), (?p rdf:type dul:Plan), (?i dul:isDescribedBy ?p),
+    (?p dul:hasComponent ?g), (?p dul:isDescribedBy ?m), (?a rdf:type dul:Action), 
+    (?d sobot:isPreconditionEventOf ?a)
+    ->
+    (?a dul:isDescribedBy ?t)]
