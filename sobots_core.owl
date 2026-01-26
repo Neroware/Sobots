@@ -2470,32 +2470,32 @@
         <Body>
             <ClassAtom>
                 <Class IRI="#Intention"/>
-                <Variable IRI="#i"/>
+                <Variable abbreviatedIRI="owl:i"/>
             </ClassAtom>
             <ClassAtom>
                 <Class IRI="#DecisionProcess"/>
-                <Variable IRI="#d"/>
+                <Variable abbreviatedIRI="owl:d"/>
             </ClassAtom>
             <ClassAtom>
                 <Class abbreviatedIRI="DUL:Action"/>
-                <Variable IRI="#a"/>
+                <Variable abbreviatedIRI="owl:a"/>
             </ClassAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty IRI="#hasSpecifiedOutput"/>
-                <Variable IRI="#i"/>
-                <Variable IRI="#d"/>
+                <ObjectProperty IRI="#isSpecifiedOutputOf"/>
+                <Variable abbreviatedIRI="owl:i"/>
+                <Variable abbreviatedIRI="owl:d"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#isPreconditionEventOf"/>
-                <Variable IRI="#d"/>
-                <Variable IRI="#a"/>
+                <Variable abbreviatedIRI="owl:d"/>
+                <Variable abbreviatedIRI="owl:a"/>
             </ObjectPropertyAtom>
         </Body>
         <Head>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#realizedIn"/>
-                <Variable IRI="#i"/>
-                <Variable IRI="#a"/>
+                <Variable abbreviatedIRI="owl:i"/>
+                <Variable abbreviatedIRI="owl:a"/>
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
