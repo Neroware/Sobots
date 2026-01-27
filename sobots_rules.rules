@@ -8,13 +8,14 @@
 @include <owlmicro>.
 
 [skill-ownership:
-    (?a rdf:type dul:Agent), (?s rdf:type sobot:Skill), (?s, ssn:implements ?f),
+    (?a rdf:type dul:Agent), (?s rdf:type sobot:Skill), (?s ssn:implements ?f),
     (?a soho:hasCapability ?c), (?s dul:describes ?c)
     ->
     (?a sobot:hasSkill ?s)]
 
 [involved-competence:
-    (?f rdf:type soho:Function), (?s rdf:type sobot:Skill), (?s, ssn:implements ?f),
+    (?f rdf:type soho:Function), (?s rdf:type sobot:Skill), (?s ssn:implements ?f),
+    (?f dul:requires ?c)
     ->
     (?c sobot:involvesCompetenceIn ?s)]
 
@@ -35,7 +36,7 @@
     (?g dul:hasConstituent ?m), (?m dul:hasConstituent ?t), (?d rdf:type sobot:DecisionProcess),
     (?i rdf:type sobot:Intention), (?i sobot:isSpecifiedOutputOf ?d), (?o rdf:type sobot:OccurentDesire),
     (?d dul:hasPart ?o), (?o dul:isDescribedBy ?g), (?p rdf:type dul:Plan), (?i dul:isDescribedBy ?p),
-    (?p dul:hasComponent ?g), (?p dul:isDescribedBy ?m), (?a rdf:type dul:Action), 
+    (?p dul:hasComponent ?g), (?p dul:isDescribedBy ?m), (?a rdf:type dul:Action),
     (?d sobot:isPreconditionEventOf ?a)
     ->
     (?a dul:isDescribedBy ?t)]
