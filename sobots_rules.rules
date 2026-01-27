@@ -15,7 +15,7 @@
 
 [involved-competence:
     (?f rdf:type soho:Function), (?s rdf:type sobot:Skill), (?s ssn:implements ?f),
-    (?f dul:requires ?c)
+    (?f dul:requiresCapability ?c)
     ->
     (?c sobot:involvesCompetenceIn ?s)]
 
