@@ -4,17 +4,17 @@
 
 ![image](sobots.png)
 
-This repository contains an ontological model developed within the BFS research project [FORSocialRobots](https://www.forsocialrobots.de/). It features basic vocabulary for social human-robot interaction based on a taxonomy from prior research combined with concepts for skill-based task processing and belief-desire-intention decision processes.
+This repository contains an ontological model developed within the BFS research project [FORSocialRobots](https://www.forsocialrobots.de/). It features basic vocabulary for social human-robot interaction based on a taxonomy from prior research, combined with concepts for skill-based task processing and belief-desire-intention modelling.
 
 - *Core/*         Contains the core ontology
 - *Rules/*        Contains the rule files applied in Jena Fuseki
 - *Instances/*    Contains instances of the meta-model, currently only an extended version of the [Sharework](https://github.com/pstlab/SOHO) use case *Capital Goods*.
 
-Sobots uses DOLCE+DnS Ultralite, SSN and SOHO as domains for human-robot-interaction and aims to specialize in the sub-domain of social robotics.
+Sobots uses DOLCE+DnS Ultralite, SSN and SOHO as domains for human-robot-interaction and aims to specialize within the sub-domain of social robotics.
 
 ## Application
 
-We implemented a [digital twin prototype]() that leverages a semantic knowledge server based on Sobots combined with an interactive virtualization environment to run interactive processes of human-robot-interaction.
+We implemented a [digital twin prototype](https://github.com/Neroware/FSRDigitalTwin3D/) that leverages a semantic knowledge server based on Sobots combined with an interactive virtualization environment to run interactive processes of human-robot-interaction.
 
 ## Publications
 
