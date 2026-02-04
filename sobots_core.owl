@@ -6,12 +6,20 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://www.forsocialrobots.de/ontologies/sobots.owl">
-    <Prefix name="" IRI="https://www.forsocialrobots.de/ontologies/sobots.owl#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="ns" IRI="http://creativecommons.org/ns#"/>
+    <Prefix name="DUL" IRI="http://www.loa-cnr.it/ontologies/DUL.owl#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="sobot" IRI="https://www.forsocialrobots.de/ontologies/sobots.owl#"/>
+    <Prefix name="swrla" IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
     <Import>http://pst.istc.cnr.it/ontologies/2019/01/soho/1.0.0</Import>
     <Import>http://purl.oclc.org/NET/ssnx/ssn</Import>
     <Import>http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl</Import>
@@ -35,6 +43,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#AgentAutonomy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgentProactivity"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Android"/>
@@ -64,7 +75,7 @@
         <Class IRI="#AuditiveHint"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#BDIEntity"/>
+        <Class IRI="#AutonomyLevel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Belief"/>
@@ -145,16 +156,34 @@
         <Class IRI="#ExpertiseGroup"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ExpertiseLevelScale"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Experts"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ExtraverbalCapability"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#FixedPatterns"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#FlyingCapability"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#HighAdaptivity"/>
+        <Class IRI="#FullyAdaptive"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FullyProactive"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FullyReactive"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FullyStatic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighlyAdaptive"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Hours"/>
@@ -175,7 +204,7 @@
         <Class IRI="#HumanProperty"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#HumanToRobotRatio"/>
+        <Class IRI="#HumanToSocialRobot"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Humanoid"/>
@@ -214,22 +243,19 @@
         <Class IRI="#Intracorporeal"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#LargeTimeWindow"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Laymen"/>
     </Declaration>
     <Declaration>
         <Class IRI="#LongDuration"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#LowAdaptivity"/>
+        <Class IRI="#LongTerm"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MedicalRobot"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#MediumTimeWindow"/>
+        <Class IRI="#MediumTerm"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Minutes"/>
@@ -244,9 +270,6 @@
         <Class IRI="#MobilityLevel"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ModerateAdaptivity"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#ModerateDuration"/>
     </Declaration>
     <Declaration>
@@ -257,6 +280,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#NaturalRobot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NoResemblance"/>
     </Declaration>
     <Declaration>
         <Class IRI="#NonverbalCapability"/>
@@ -295,10 +321,16 @@
         <Class IRI="#PlanAdaptation"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#PredefinedAdaptations"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#PrivateService"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PrivateServiceRobot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProactivityLevel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ProfessionalService"/>
@@ -317,9 +349,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#PublicServiceRobot"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PurelyTechnical"/>
     </Declaration>
     <Declaration>
         <Class IRI="#RatioRegion"/>
@@ -472,13 +501,13 @@
         <Class IRI="#ShortDuration"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ShortTerm"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SingleInteraction"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Skill"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SmallTimeWindow"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SocialAction"/>
@@ -547,6 +576,9 @@
         <Class IRI="#Stationary"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SuperficialAdaptations"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SwimmingCapability"/>
     </Declaration>
     <Declaration>
@@ -595,10 +627,37 @@
         <Class IRI="#Zoomorph"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasPostconditionEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPreconditionEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSkill"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSpecifiedOutput"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasTrigger"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#involvesCompetenceIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isInvolvedCompetenceIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPostconditionEventOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPreconditionEventOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isRealizationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSkillOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isSpecifiedOutputOf"/>
@@ -607,29 +666,25 @@
         <ObjectProperty IRI="#isTriggerOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#postconditionedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#postconditions"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#preconditionedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#preconditions"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#realizedIn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#specifiedOutputOf"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AutonomyLevel"/>
+        <Class IRI="#AutonomyLevel"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#ExpertiseLevelScale"/>
+        <Class IRI="#ExpertiseLevelScale"/>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Disposition"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasTrigger"/>
             <ObjectIntersectionOf>
-                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                <Class abbreviatedIRI="DUL:Process"/>
                 <Class IRI="#Trigger"/>
             </ObjectIntersectionOf>
         </ObjectSomeValuesFrom>
@@ -639,7 +694,7 @@
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#realizedIn"/>
             <ObjectIntersectionOf>
-                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                <Class abbreviatedIRI="DUL:Process"/>
                 <Class IRI="#Realization"/>
             </ObjectIntersectionOf>
         </ObjectSomeValuesFrom>
@@ -651,7 +706,7 @@
             <ObjectAllValuesFrom>
                 <ObjectProperty IRI="#realizedIn"/>
                 <ObjectIntersectionOf>
-                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                    <Class abbreviatedIRI="DUL:Process"/>
                     <Class IRI="#OccurentBelief"/>
                 </ObjectIntersectionOf>
             </ObjectAllValuesFrom>
@@ -664,7 +719,7 @@
             <ObjectAllValuesFrom>
                 <ObjectProperty IRI="#realizedIn"/>
                 <ObjectIntersectionOf>
-                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+                    <Class abbreviatedIRI="DUL:Process"/>
                     <Class IRI="#OccurentDesire"/>
                 </ObjectIntersectionOf>
             </ObjectAllValuesFrom>
@@ -673,50 +728,50 @@
     <EquivalentClasses>
         <Class IRI="#HumanProperty"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
+            <ObjectProperty abbreviatedIRI="DUL:isQualityOf"/>
             <ObjectUnionOf>
                 <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Human"/>
-                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#NaturalPerson"/>
+                <Class abbreviatedIRI="DUL:NaturalPerson"/>
             </ObjectUnionOf>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#PlanAdaptation"/>
         <ObjectIntersectionOf>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+            <Class abbreviatedIRI="DUL:Event"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+                <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
                 <ObjectIntersectionOf>
-                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                    <Class abbreviatedIRI="DUL:Event"/>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
+                        <ObjectProperty abbreviatedIRI="DUL:hasParticipant"/>
                         <ObjectIntersectionOf>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+                            <Class abbreviatedIRI="DUL:Agent"/>
                             <ObjectAllValuesFrom>
                                 <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasGoal"/>
-                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                                <Class abbreviatedIRI="DUL:Goal"/>
                             </ObjectAllValuesFrom>
                             <ObjectAllValuesFrom>
                                 <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasPlan"/>
-                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                <Class abbreviatedIRI="DUL:Plan"/>
                             </ObjectAllValuesFrom>
                         </ObjectIntersectionOf>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="#postconditions"/>
+                        <ObjectProperty IRI="#isPostconditionEventOf"/>
                         <ObjectIntersectionOf>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                            <Class abbreviatedIRI="DUL:Event"/>
                             <ObjectAllValuesFrom>
                                 <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
                                 <ObjectIntersectionOf>
-                                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                    <Class abbreviatedIRI="DUL:Plan"/>
                                     <ObjectSomeValuesFrom>
-                                        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
-                                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                                        <ObjectProperty abbreviatedIRI="DUL:hasComponent"/>
+                                        <Class abbreviatedIRI="DUL:Goal"/>
                                     </ObjectSomeValuesFrom>
                                     <ObjectAllValuesFrom>
                                         <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isWorsePlanThan"/>
-                                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                        <Class abbreviatedIRI="DUL:Plan"/>
                                     </ObjectAllValuesFrom>
                                 </ObjectIntersectionOf>
                             </ObjectAllValuesFrom>
@@ -725,56 +780,56 @@
                     <ObjectAllValuesFrom>
                         <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
                         <ObjectIntersectionOf>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                            <Class abbreviatedIRI="DUL:Plan"/>
                             <ObjectSomeValuesFrom>
-                                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
-                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                                <ObjectProperty abbreviatedIRI="DUL:hasComponent"/>
+                                <Class abbreviatedIRI="DUL:Goal"/>
                             </ObjectSomeValuesFrom>
                             <ObjectAllValuesFrom>
                                 <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isBetterPlanThan"/>
-                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                <Class abbreviatedIRI="DUL:Plan"/>
                             </ObjectAllValuesFrom>
                         </ObjectIntersectionOf>
                     </ObjectAllValuesFrom>
                 </ObjectIntersectionOf>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+                <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
                 <ObjectIntersectionOf>
-                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                    <Class abbreviatedIRI="DUL:Event"/>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
+                        <ObjectProperty abbreviatedIRI="DUL:hasParticipant"/>
                         <ObjectIntersectionOf>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+                            <Class abbreviatedIRI="DUL:Agent"/>
                             <ObjectAllValuesFrom>
                                 <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasGoal"/>
-                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                                <Class abbreviatedIRI="DUL:Goal"/>
                             </ObjectAllValuesFrom>
                             <ObjectAllValuesFrom>
                                 <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasPlan"/>
-                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                <Class abbreviatedIRI="DUL:Plan"/>
                             </ObjectAllValuesFrom>
                         </ObjectIntersectionOf>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="#preconditions"/>
-                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+                        <ObjectProperty IRI="#isPreconditionEventOf"/>
+                        <Class abbreviatedIRI="DUL:Situation"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="#preconditions"/>
+                        <ObjectProperty IRI="#isPreconditionEventOf"/>
                         <ObjectIntersectionOf>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                            <Class abbreviatedIRI="DUL:Event"/>
                             <ObjectAllValuesFrom>
                                 <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
                                 <ObjectIntersectionOf>
-                                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                    <Class abbreviatedIRI="DUL:Plan"/>
                                     <ObjectSomeValuesFrom>
-                                        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
-                                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                                        <ObjectProperty abbreviatedIRI="DUL:hasComponent"/>
+                                        <Class abbreviatedIRI="DUL:Goal"/>
                                     </ObjectSomeValuesFrom>
                                     <ObjectAllValuesFrom>
                                         <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isBetterPlanThan"/>
-                                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                        <Class abbreviatedIRI="DUL:Plan"/>
                                     </ObjectAllValuesFrom>
                                 </ObjectIntersectionOf>
                             </ObjectAllValuesFrom>
@@ -783,22 +838,22 @@
                     <ObjectAllValuesFrom>
                         <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
                         <ObjectIntersectionOf>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                            <Class abbreviatedIRI="DUL:Plan"/>
                             <ObjectSomeValuesFrom>
-                                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
-                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                                <ObjectProperty abbreviatedIRI="DUL:hasComponent"/>
+                                <Class abbreviatedIRI="DUL:Goal"/>
                             </ObjectSomeValuesFrom>
                             <ObjectAllValuesFrom>
                                 <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isWorsePlanThan"/>
-                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                <Class abbreviatedIRI="DUL:Plan"/>
                             </ObjectAllValuesFrom>
                         </ObjectIntersectionOf>
                     </ObjectAllValuesFrom>
                 </ObjectIntersectionOf>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
-                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+                <ObjectProperty abbreviatedIRI="DUL:hasParticipant"/>
+                <Class abbreviatedIRI="DUL:Agent"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -812,7 +867,7 @@
     <EquivalentClasses>
         <Class IRI="#RobotProperty"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
+            <ObjectProperty abbreviatedIRI="DUL:isQualityOf"/>
             <ObjectUnionOf>
                 <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AutonomousRobot"/>
                 <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Cobot"/>
@@ -834,14 +889,14 @@
     <EquivalentClasses>
         <Class IRI="#SocialRobotContext"/>
         <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+            <ObjectProperty abbreviatedIRI="DUL:hasConstituent"/>
             <Class IRI="#SocialRobot"/>
         </ObjectMinCardinality>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#SocialRobotProperty"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
+            <ObjectProperty abbreviatedIRI="DUL:isQualityOf"/>
             <Class IRI="#SocialRobot"/>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
@@ -890,7 +945,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AdaptivityLevel"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
+        <Class abbreviatedIRI="DUL:Amount"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AgeGroup"/>
@@ -917,12 +972,16 @@
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#AgentProactivity"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Android"/>
         <Class IRI="#HumanLikeness"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AnimalLikeness"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAttribute"/>
+        <Class abbreviatedIRI="DUL:PhysicalAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AnimalLikeness"/>
@@ -957,12 +1016,12 @@
         <Class IRI="#Notify"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#BDIEntity"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+        <Class IRI="#AutonomyLevel"/>
+        <Class abbreviatedIRI="DUL:Amount"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Belief"/>
-        <Class IRI="#BDIEntity"/>
+        <Class abbreviatedIRI="DUL:Entity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Children"/>
@@ -994,12 +1053,12 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CommunicationProperty"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Quality"/>
+        <Class abbreviatedIRI="DUL:Quality"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CommunicationProperty"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isQualityOf"/>
+            <ObjectProperty abbreviatedIRI="DUL:isQualityOf"/>
             <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Communication"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -1010,7 +1069,7 @@
     <SubClassOf>
         <Class IRI="#ComplexSocialCapability"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+            <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
             <Class IRI="#ConcreteSocialCapability"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -1021,13 +1080,13 @@
     <SubClassOf>
         <Class IRI="#ConcreteSocialCapability"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isPartOf"/>
+            <ObjectProperty abbreviatedIRI="DUL:isPartOf"/>
             <Class IRI="#ComplexSocialCapability"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ContinousTimeWindow"/>
-        <Class IRI="#LargeTimeWindow"/>
+        <Class IRI="#LongTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CrawlingCapability"/>
@@ -1035,7 +1094,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Days"/>
-        <Class IRI="#SmallTimeWindow"/>
+        <Class IRI="#ShortTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DecisionProcess"/>
@@ -1043,29 +1102,32 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DecisionProcess"/>
-        <Class IRI="#BDIEntity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DecisionProcess"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+            <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
             <Class IRI="#OccurentBelief"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DecisionProcess"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+            <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
             <Class IRI="#OccurentDesire"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#DecisionProcess"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isPreconditionEventOf"/>
+            <Class abbreviatedIRI="DUL:Action"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Desire"/>
-        <Class IRI="#BDIEntity"/>
+        <Class abbreviatedIRI="DUL:Entity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DevicePrimitive"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Description"/>
+        <Class IRI="#Skill"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DevicePrimitive"/>
@@ -1077,17 +1139,13 @@
     <SubClassOf>
         <Class IRI="#DevicePrimitive"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isConstituentOf"/>
+            <ObjectProperty abbreviatedIRI="DUL:isConstituentOf"/>
             <Class IRI="#Skill"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Disposition"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Quality"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Disposition"/>
-        <Class IRI="#BDIEntity"/>
+        <Class abbreviatedIRI="DUL:Quality"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DispositionalBelief"/>
@@ -1122,6 +1180,10 @@
         <Class IRI="#TargetGroup"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ExpertiseLevelScale"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#QualitativeAmount"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Experts"/>
         <Class IRI="#ExpertiseGroup"/>
     </SubClassOf>
@@ -1137,16 +1199,36 @@
         </ObjectUnionOf>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#FixedPatterns"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#FlyingCapability"/>
         <Class IRI="#MobilityCapability"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#HighAdaptivity"/>
+        <Class IRI="#FullyAdaptive"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FullyProactive"/>
+        <Class IRI="#ProactivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FullyReactive"/>
+        <Class IRI="#ProactivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FullyStatic"/>
+        <Class IRI="#AdaptivityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighlyAdaptive"/>
         <Class IRI="#AdaptivityLevel"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Hours"/>
-        <Class IRI="#SmallTimeWindow"/>
+        <Class IRI="#ShortTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HumanEmotionRecognition"/>
@@ -1158,7 +1240,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HumanLikeness"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAttribute"/>
+        <Class abbreviatedIRI="DUL:PhysicalAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HumanLikeness"/>
@@ -1173,7 +1255,7 @@
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentProperty"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#HumanToRobotRatio"/>
+        <Class IRI="#HumanToSocialRobot"/>
         <Class IRI="#RatioRegion"/>
     </SubClassOf>
     <SubClassOf>
@@ -1194,16 +1276,19 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Intention"/>
-        <Class IRI="#BDIEntity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Intention"/>
         <Class IRI="#Disposition"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Intention"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#specifiedOutputOf"/>
+            <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
+            <Class abbreviatedIRI="DUL:Plan"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Intention"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSpecifiedOutputOf"/>
             <Class IRI="#DecisionProcess"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -1218,7 +1303,11 @@
         <Class IRI="#Intention"/>
         <ObjectAllValuesFrom>
             <ObjectProperty IRI="#realizedIn"/>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
+            <ObjectUnionOf>
+                <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#ProductionAction"/>
+                <Class abbreviatedIRI="DUL:Action"/>
+                <Class IRI="#SocialAction"/>
+            </ObjectUnionOf>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -1227,7 +1316,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InteractionAmount"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+        <Class abbreviatedIRI="DUL:SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InteractionDuration"/>
@@ -1255,7 +1344,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#InteractionsPerDay"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+        <Class abbreviatedIRI="DUL:SocialObjectAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InteractionsPerDay"/>
+        <Class IRI="#RatioRegion"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#IntimateProxemicZone"/>
@@ -1266,10 +1359,6 @@
         <Class IRI="#PhysicalCloseness"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#LargeTimeWindow"/>
-        <Class IRI="#TimeFrame"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Laymen"/>
         <Class IRI="#ExpertiseGroup"/>
     </SubClassOf>
@@ -1278,20 +1367,20 @@
         <Class IRI="#TimeDuration"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#LowAdaptivity"/>
-        <Class IRI="#AdaptivityLevel"/>
+        <Class IRI="#LongTerm"/>
+        <Class IRI="#TimeFrame"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MedicalRobot"/>
         <Class IRI="#RobotType"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MediumTimeWindow"/>
+        <Class IRI="#MediumTerm"/>
         <Class IRI="#TimeFrame"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Minutes"/>
-        <Class IRI="#SmallTimeWindow"/>
+        <Class IRI="#ShortTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Mobile"/>
@@ -1303,11 +1392,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MobilityLevel"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ModerateAdaptivity"/>
-        <Class IRI="#AdaptivityLevel"/>
+        <Class abbreviatedIRI="DUL:Amount"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ModerateDuration"/>
@@ -1315,7 +1400,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Months"/>
-        <Class IRI="#MediumTimeWindow"/>
+        <Class IRI="#MediumTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MotivationalAdaptability"/>
@@ -1323,7 +1408,15 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#NaturalRobot"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAgent"/>
+        <Class abbreviatedIRI="DUL:PhysicalAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NoResemblance"/>
+        <Class IRI="#AnimalLikeness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NoResemblance"/>
+        <Class IRI="#HumanLikeness"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#NonverbalCapability"/>
@@ -1361,6 +1454,13 @@
         <Class IRI="#Desire"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#OccurentDesire"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
+            <Class abbreviatedIRI="DUL:Goal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ParaverbalCapability"/>
         <Class IRI="#CommunicationCapability"/>
     </SubClassOf>
@@ -1385,7 +1485,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PhysicalCloseness"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAttribute"/>
+        <Class abbreviatedIRI="DUL:PhysicalAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PhysicalTaskContext"/>
@@ -1393,43 +1493,43 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PlanAdaptation"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+        <Class abbreviatedIRI="DUL:Event"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PlanAdaptation"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+            <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
             <ObjectIntersectionOf>
-                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                <Class abbreviatedIRI="DUL:Event"/>
                 <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
+                    <ObjectProperty abbreviatedIRI="DUL:hasParticipant"/>
                     <ObjectIntersectionOf>
-                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+                        <Class abbreviatedIRI="DUL:Agent"/>
                         <ObjectAllValuesFrom>
                             <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasGoal"/>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                            <Class abbreviatedIRI="DUL:Goal"/>
                         </ObjectAllValuesFrom>
                         <ObjectAllValuesFrom>
                             <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasPlan"/>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                            <Class abbreviatedIRI="DUL:Plan"/>
                         </ObjectAllValuesFrom>
                     </ObjectIntersectionOf>
                 </ObjectSomeValuesFrom>
                 <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#postconditions"/>
+                    <ObjectProperty IRI="#isPostconditionEventOf"/>
                     <ObjectIntersectionOf>
-                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                        <Class abbreviatedIRI="DUL:Event"/>
                         <ObjectAllValuesFrom>
                             <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
                             <ObjectIntersectionOf>
-                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                <Class abbreviatedIRI="DUL:Plan"/>
                                 <ObjectSomeValuesFrom>
-                                    <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
-                                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                                    <ObjectProperty abbreviatedIRI="DUL:hasComponent"/>
+                                    <Class abbreviatedIRI="DUL:Goal"/>
                                 </ObjectSomeValuesFrom>
                                 <ObjectAllValuesFrom>
                                     <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isWorsePlanThan"/>
-                                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                    <Class abbreviatedIRI="DUL:Plan"/>
                                 </ObjectAllValuesFrom>
                             </ObjectIntersectionOf>
                         </ObjectAllValuesFrom>
@@ -1438,14 +1538,14 @@
                 <ObjectAllValuesFrom>
                     <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
                     <ObjectIntersectionOf>
-                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                        <Class abbreviatedIRI="DUL:Plan"/>
                         <ObjectSomeValuesFrom>
-                            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                            <ObjectProperty abbreviatedIRI="DUL:hasComponent"/>
+                            <Class abbreviatedIRI="DUL:Goal"/>
                         </ObjectSomeValuesFrom>
                         <ObjectAllValuesFrom>
                             <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isBetterPlanThan"/>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                            <Class abbreviatedIRI="DUL:Plan"/>
                         </ObjectAllValuesFrom>
                     </ObjectIntersectionOf>
                 </ObjectAllValuesFrom>
@@ -1455,42 +1555,42 @@
     <SubClassOf>
         <Class IRI="#PlanAdaptation"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
+            <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
             <ObjectIntersectionOf>
-                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                <Class abbreviatedIRI="DUL:Event"/>
                 <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
+                    <ObjectProperty abbreviatedIRI="DUL:hasParticipant"/>
                     <ObjectIntersectionOf>
-                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+                        <Class abbreviatedIRI="DUL:Agent"/>
                         <ObjectAllValuesFrom>
                             <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasGoal"/>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                            <Class abbreviatedIRI="DUL:Goal"/>
                         </ObjectAllValuesFrom>
                         <ObjectAllValuesFrom>
                             <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#hasPlan"/>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                            <Class abbreviatedIRI="DUL:Plan"/>
                         </ObjectAllValuesFrom>
                     </ObjectIntersectionOf>
                 </ObjectSomeValuesFrom>
                 <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#preconditions"/>
-                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+                    <ObjectProperty IRI="#isPreconditionEventOf"/>
+                    <Class abbreviatedIRI="DUL:Situation"/>
                 </ObjectSomeValuesFrom>
                 <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#preconditions"/>
+                    <ObjectProperty IRI="#isPreconditionEventOf"/>
                     <ObjectIntersectionOf>
-                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+                        <Class abbreviatedIRI="DUL:Event"/>
                         <ObjectAllValuesFrom>
                             <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
                             <ObjectIntersectionOf>
-                                <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                <Class abbreviatedIRI="DUL:Plan"/>
                                 <ObjectSomeValuesFrom>
-                                    <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
-                                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                                    <ObjectProperty abbreviatedIRI="DUL:hasComponent"/>
+                                    <Class abbreviatedIRI="DUL:Goal"/>
                                 </ObjectSomeValuesFrom>
                                 <ObjectAllValuesFrom>
                                     <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isBetterPlanThan"/>
-                                    <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                                    <Class abbreviatedIRI="DUL:Plan"/>
                                 </ObjectAllValuesFrom>
                             </ObjectIntersectionOf>
                         </ObjectAllValuesFrom>
@@ -1499,14 +1599,14 @@
                 <ObjectAllValuesFrom>
                     <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#executesPlan"/>
                     <ObjectIntersectionOf>
-                        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                        <Class abbreviatedIRI="DUL:Plan"/>
                         <ObjectSomeValuesFrom>
-                            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Goal"/>
+                            <ObjectProperty abbreviatedIRI="DUL:hasComponent"/>
+                            <Class abbreviatedIRI="DUL:Goal"/>
                         </ObjectSomeValuesFrom>
                         <ObjectAllValuesFrom>
                             <ObjectProperty IRI="http://www.iri.upc.edu/groups/perception/OCRA/ont/ocra.owl#isWorsePlanThan"/>
-                            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+                            <Class abbreviatedIRI="DUL:Plan"/>
                         </ObjectAllValuesFrom>
                     </ObjectIntersectionOf>
                 </ObjectAllValuesFrom>
@@ -1516,16 +1616,20 @@
     <SubClassOf>
         <Class IRI="#PlanAdaptation"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasParticipant"/>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Agent"/>
+            <ObjectProperty abbreviatedIRI="DUL:hasParticipant"/>
+            <Class abbreviatedIRI="DUL:Agent"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PlanAdaptation"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
+            <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
+            <Class abbreviatedIRI="DUL:Event"/>
         </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PredefinedAdaptations"/>
+        <Class IRI="#AdaptivityLevel"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PrivateService"/>
@@ -1534,6 +1638,10 @@
     <SubClassOf>
         <Class IRI="#PrivateServiceRobot"/>
         <Class IRI="#ServiceRobot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProactivityLevel"/>
+        <Class abbreviatedIRI="DUL:Amount"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProfessionalService"/>
@@ -1560,20 +1668,12 @@
         <Class IRI="#ServiceRobot"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#PurelyTechnical"/>
-        <Class IRI="#AnimalLikeness"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PurelyTechnical"/>
-        <Class IRI="#HumanLikeness"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#RatioRegion"/>
         <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#QuantitativeAmount"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Realization"/>
-        <Class IRI="#BDIEntity"/>
+        <Class abbreviatedIRI="DUL:Entity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ReceiveBodySpeech"/>
@@ -1673,7 +1773,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Seconds"/>
-        <Class IRI="#SmallTimeWindow"/>
+        <Class IRI="#ShortTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SendBodySpeech"/>
@@ -1768,41 +1868,48 @@
         <Class IRI="#TimeDuration"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ShortTerm"/>
+        <Class IRI="#TimeFrame"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SingleInteraction"/>
         <Class IRI="#InteractionAmount"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Skill"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Description"/>
+        <Class abbreviatedIRI="DUL:Description"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Skill"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implementedBy"/>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Method"/>
+            <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
+            <Class abbreviatedIRI="DUL:Method"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Skill"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#describes"/>
+            <ObjectProperty abbreviatedIRI="DUL:describes"/>
             <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Skill"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasConstituent"/>
+            <ObjectProperty abbreviatedIRI="DUL:hasConstituent"/>
             <Class IRI="#DevicePrimitive"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SmallTimeWindow"/>
-        <Class IRI="#TimeFrame"/>
+        <Class IRI="#SocialAction"/>
+        <Class abbreviatedIRI="DUL:Action"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialAction"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Action"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
+            <Class IRI="#SocialTask"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialCapability"/>
@@ -1811,7 +1918,7 @@
     <SubClassOf>
         <Class IRI="#SocialCapability"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+            <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
             <Class IRI="#SocialSkill"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -1833,15 +1940,15 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialContext"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+        <Class abbreviatedIRI="DUL:Situation"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialDistance"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalAttribute"/>
+        <Class abbreviatedIRI="DUL:PhysicalAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialDistance"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+        <Class abbreviatedIRI="DUL:SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialFunction"/>
@@ -1849,30 +1956,30 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialMethod"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Method"/>
+        <Class abbreviatedIRI="DUL:Method"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialPlan"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Plan"/>
+        <Class abbreviatedIRI="DUL:Plan"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialPlan"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#describes"/>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Process"/>
+            <ObjectProperty abbreviatedIRI="DUL:describes"/>
+            <Class abbreviatedIRI="DUL:Process"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialPlan"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasComponent"/>
+            <ObjectProperty abbreviatedIRI="DUL:hasComponent"/>
             <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#SocialGoal"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialPlan"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isDescribedBy"/>
+            <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
             <Class IRI="#SocialMethod"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
@@ -1886,7 +1993,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialRobot"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialAgent"/>
+        <Class abbreviatedIRI="DUL:SocialAgent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialRobot"/>
@@ -1905,24 +2012,24 @@
     <SubClassOf>
         <Class IRI="#SocialRobot"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#hasQuality"/>
+            <ObjectProperty abbreviatedIRI="DUL:hasQuality"/>
             <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#RobotAutonomy"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialRobotAttribute"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+        <Class abbreviatedIRI="DUL:SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialRobotAttribute"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#isRegionFor"/>
+            <ObjectProperty abbreviatedIRI="DUL:isRegionFor"/>
             <Class IRI="#SocialRobot"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialRobotContext"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+        <Class abbreviatedIRI="DUL:Situation"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialRobotProperty"/>
@@ -1935,7 +2042,7 @@
     <SubClassOf>
         <Class IRI="#SocialSkill"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#describes"/>
+            <ObjectProperty abbreviatedIRI="DUL:describes"/>
             <Class IRI="#SocialCapability"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -1949,11 +2056,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialTimeInterval"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#SocialObjectAttribute"/>
+        <Class abbreviatedIRI="DUL:SocialObjectAttribute"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocialTimeInterval"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#TimeInterval"/>
+        <Class abbreviatedIRI="DUL:TimeInterval"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SocioCulturalAdaptability"/>
@@ -1962,6 +2069,10 @@
     <SubClassOf>
         <Class IRI="#Stationary"/>
         <Class IRI="#MobilityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SuperficialAdaptations"/>
+        <Class IRI="#AdaptivityLevel"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SwimmingCapability"/>
@@ -1981,11 +2092,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TimeDuration"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#TimeInterval"/>
+        <Class abbreviatedIRI="DUL:TimeInterval"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TimeFrame"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#TimeInterval"/>
+        <Class abbreviatedIRI="DUL:TimeInterval"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Touching"/>
@@ -1997,7 +2108,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Trigger"/>
-        <Class IRI="#BDIEntity"/>
+        <Class abbreviatedIRI="DUL:Entity"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#VerbalCapability"/>
@@ -2020,7 +2131,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Weeks"/>
-        <Class IRI="#MediumTimeWindow"/>
+        <Class IRI="#MediumTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Workers"/>
@@ -2028,7 +2139,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Years"/>
-        <Class IRI="#LargeTimeWindow"/>
+        <Class IRI="#LongTerm"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Zoomorph"/>
@@ -2043,52 +2154,102 @@
         <Class IRI="#SendCapability"/>
     </DisjointClasses>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPostconditionEvent"/>
+        <ObjectProperty abbreviatedIRI="DUL:directlyPrecedes"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPreconditionEvent"/>
+        <ObjectProperty abbreviatedIRI="DUL:directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasTrigger"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
+        <ObjectProperty abbreviatedIRI="DUL:directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#involvesCompetenceIn"/>
+        <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isInvolvedCompetenceIn"/>
+        <ObjectProperty abbreviatedIRI="DUL:describes"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPostconditionEventOf"/>
+        <ObjectProperty abbreviatedIRI="DUL:directlyFollows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPreconditionEventOf"/>
+        <ObjectProperty abbreviatedIRI="DUL:directlyPrecedes"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isTriggerOf"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#postconditionedBy"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#postconditions"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#preconditionedBy"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyFollows"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#preconditions"/>
-        <ObjectProperty IRI="http://www.loa-cnr.it/ontologies/DUL.owl#directlyPrecedes"/>
+        <ObjectProperty abbreviatedIRI="DUL:directlyPrecedes"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasTrigger"/>
-        <ObjectProperty IRI="#isTriggerOf"/>
+        <ObjectProperty IRI="#hasPostconditionEvent"/>
+        <ObjectProperty IRI="#isPostconditionEventOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#isRealizationOf"/>
-        <ObjectProperty IRI="#realizedIn"/>
+        <ObjectProperty IRI="#hasPreconditionEvent"/>
+        <ObjectProperty IRI="#isPreconditionEventOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSkill"/>
+        <ObjectProperty IRI="#isSkillOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSpecifiedOutput"/>
         <ObjectProperty IRI="#isSpecifiedOutputOf"/>
-        <ObjectProperty IRI="#specifiedOutputOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#postconditionedBy"/>
-        <ObjectProperty IRI="#postconditions"/>
+        <ObjectProperty IRI="#hasTrigger"/>
+        <ObjectProperty IRI="#isTriggerOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#preconditionedBy"/>
-        <ObjectProperty IRI="#preconditions"/>
+        <ObjectProperty IRI="#involvesCompetenceIn"/>
+        <ObjectProperty IRI="#isInvolvedCompetenceIn"/>
     </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isRealizationOf"/>
+        <ObjectProperty IRI="#realizedIn"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPostconditionEvent"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="DUL:Event"/>
+            <Class abbreviatedIRI="DUL:Situation"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPreconditionEvent"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="DUL:Event"/>
+            <Class abbreviatedIRI="DUL:Situation"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSkill"/>
+        <Class abbreviatedIRI="DUL:Agent"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTrigger"/>
         <Class IRI="#Disposition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#involvesCompetenceIn"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isInvolvedCompetenceIn"/>
+        <Class IRI="#Skill"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPostconditionEventOf"/>
+        <Class abbreviatedIRI="DUL:Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPreconditionEventOf"/>
+        <Class abbreviatedIRI="DUL:Event"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isRealizationOf"/>
@@ -2099,34 +2260,46 @@
         <Class IRI="#Trigger"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#postconditionedBy"/>
-        <ObjectUnionOf>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#postconditions"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#preconditionedBy"/>
-        <ObjectUnionOf>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#preconditions"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#realizedIn"/>
         <Class IRI="#Disposition"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPostconditionEvent"/>
+        <Class abbreviatedIRI="DUL:Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPreconditionEvent"/>
+        <Class abbreviatedIRI="DUL:Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSkill"/>
+        <Class IRI="#Skill"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTrigger"/>
         <Class IRI="#Trigger"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#involvesCompetenceIn"/>
+        <Class IRI="#Skill"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isInvolvedCompetenceIn"/>
+        <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPostconditionEventOf"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="DUL:Event"/>
+            <Class abbreviatedIRI="DUL:Situation"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPreconditionEventOf"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="DUL:Event"/>
+            <Class abbreviatedIRI="DUL:Situation"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isRealizationOf"/>
@@ -2137,41 +2310,359 @@
         <Class IRI="#Disposition"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#postconditionedBy"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#postconditions"/>
-        <ObjectUnionOf>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#preconditionedBy"/>
-        <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#preconditions"/>
-        <ObjectUnionOf>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Event"/>
-            <Class IRI="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
-        </ObjectUnionOf>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#realizedIn"/>
         <Class IRI="#Realization"/>
     </ObjectPropertyRange>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#BDIEntity</IRI>
-        <Literal>An entity that is described in and as part of the Belief-Desire-Intention model</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#BDIEntity</IRI>
-        <Literal>Belief-Desire-Intention Model Entity</Literal>
-    </AnnotationAssertion>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing the skills involved in implementing a capability</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S8</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#Function"/>
+                <Variable IRI="#f"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Skill"/>
+                <Variable IRI="#s"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
+                <Variable IRI="#s"/>
+                <Variable IRI="#f"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
+                <Variable IRI="#f"/>
+                <Variable IRI="#c"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#involvesCompetenceIn"/>
+                <Variable IRI="#c"/>
+                <Variable IRI="#s"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing the relationship between a plan and an action intent</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S9</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="DUL:Goal"/>
+                <Variable abbreviatedIRI="owl:g"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="DUL:Method"/>
+                <Variable abbreviatedIRI="owl:m"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#SocialTask"/>
+                <Variable abbreviatedIRI="owl:t"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:hasConstituent"/>
+                <Variable abbreviatedIRI="owl:g"/>
+                <Variable abbreviatedIRI="owl:m"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:hasConstituent"/>
+                <Variable abbreviatedIRI="owl:m"/>
+                <Variable abbreviatedIRI="owl:t"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#DecisionProcess"/>
+                <Variable abbreviatedIRI="owl:d"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Intention"/>
+                <Variable abbreviatedIRI="owl:i"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isSpecifiedOutputOf"/>
+                <Variable abbreviatedIRI="owl:i"/>
+                <Variable abbreviatedIRI="owl:d"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#OccurentDesire"/>
+                <Variable abbreviatedIRI="owl:o"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:hasPart"/>
+                <Variable abbreviatedIRI="owl:d"/>
+                <Variable abbreviatedIRI="owl:o"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
+                <Variable abbreviatedIRI="owl:o"/>
+                <Variable abbreviatedIRI="owl:g"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="DUL:Plan"/>
+                <Variable abbreviatedIRI="owl:p"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
+                <Variable abbreviatedIRI="owl:i"/>
+                <Variable abbreviatedIRI="owl:p"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:hasComponent"/>
+                <Variable abbreviatedIRI="owl:p"/>
+                <Variable abbreviatedIRI="owl:g"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
+                <Variable abbreviatedIRI="owl:p"/>
+                <Variable abbreviatedIRI="owl:m"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="DUL:Action"/>
+                <Variable abbreviatedIRI="owl:a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isPreconditionEventOf"/>
+                <Variable abbreviatedIRI="owl:d"/>
+                <Variable abbreviatedIRI="owl:a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:isDescribedBy"/>
+                <Variable abbreviatedIRI="owl:a"/>
+                <Variable abbreviatedIRI="owl:t"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing how an intention is realized through an action.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S13</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Intention"/>
+                <Variable abbreviatedIRI="owl:i"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#DecisionProcess"/>
+                <Variable abbreviatedIRI="owl:d"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="DUL:Action"/>
+                <Variable abbreviatedIRI="owl:a"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isSpecifiedOutputOf"/>
+                <Variable abbreviatedIRI="owl:i"/>
+                <Variable abbreviatedIRI="owl:d"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isPreconditionEventOf"/>
+                <Variable abbreviatedIRI="owl:d"/>
+                <Variable abbreviatedIRI="owl:a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#realizedIn"/>
+                <Variable abbreviatedIRI="owl:i"/>
+                <Variable abbreviatedIRI="owl:a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing function implementations describing capabilities as agent skills</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S7</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="DUL:Agent"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Skill"/>
+                <Variable IRI="#s"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
+                <Variable IRI="#s"/>
+                <Variable IRI="#f"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasCapability"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:describes"/>
+                <Variable IRI="#s"/>
+                <Variable IRI="#c"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasSkill"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#s"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing the capability of an agent based on its skills</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S12</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="DUL:Agent"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Skill"/>
+                <Variable IRI="#s"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasSkill"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#s"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
+                <Variable IRI="#s"/>
+                <Variable IRI="#f"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
+                <Variable IRI="#f"/>
+                <Variable IRI="#c"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasCapability"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#c"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing Sobots isPostconditionEventOf</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S11</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="DUL:Event"/>
+                <Variable IRI="#e"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="DUL:Situation"/>
+                <Variable IRI="#s"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:isPostconditionOf"/>
+                <Variable IRI="#e"/>
+                <Variable IRI="#s"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isPostconditionEventOf"/>
+                <Variable IRI="#e"/>
+                <Variable IRI="#s"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A semantic rule characterizing Sobots isPreconditionEventOf</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S10</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="DUL:Event"/>
+                <Variable IRI="#e"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="DUL:Situation"/>
+                <Variable IRI="#s"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="DUL:isPreconditionOf"/>
+                <Variable IRI="#e"/>
+                <Variable IRI="#s"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isPreconditionEventOf"/>
+                <Variable IRI="#e"/>
+                <Variable IRI="#s"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ComplexSocialCapability</IRI>
@@ -2207,6 +2698,26 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FixedPatterns</IRI>
+        <Literal>Limited adjustments; mostly follows fixed interaction patterns</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FullyAdaptive</IRI>
+        <Literal>Responds to user preferences and situational changes with some flexibility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FullyStatic</IRI>
+        <Literal>Fully static behavior; no adjustment to user or context</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HighlyAdaptive</IRI>
+        <Literal>Continuously adjusts behavior based on user cues, context, and history</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#InteractionDuration</IRI>
         <Literal>Represents the duration of any interaction as a fixed time interval. Example: The interaction between me and the robot took exactly 5 minutes, until we reached our collaborative goal.</Literal>
     </AnnotationAssertion>
@@ -2222,12 +2733,12 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#LargeTimeWindow</IRI>
+        <IRI>#LongTerm</IRI>
         <Literal>An interaction time frame between years and open ended.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#MediumTimeWindow</IRI>
+        <IRI>#MediumTerm</IRI>
         <Literal>An interaction time frame between weeks and months.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -2271,24 +2782,29 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PredefinedAdaptations</IRI>
+        <Literal>Adapts in predefined ways under certain conditions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#RatioRegion</IRI>
         <Literal>Any ratio as a dimensional space. A ratio could be &quot;2 : 3&quot;, &quot;1 : 1&quot;, &quot;16 : 9&quot; or &quot;4 : 6&quot;. The first and last example are the same value in the dimensional space.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ShortTerm</IRI>
+        <Literal>An interaction time frame between seconds and days.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Skill</IRI>
-        <Literal>A skill describes an agent&apos;s capability and is implemented by a Method.
-E.g.: A robot can have the capability to move objects, described by a skill &quot;Pick-and-Place&quot; and implemented by a Function &quot;PickPlace&quot;.</Literal>
+        <Literal>A skill describes an agent&apos;s capability by implementing a Method.
+E.g.: A robot can have the capability to move objects, described by a skill &quot;Pick-and-Place&quot;, which implements the Function &quot;PickPlace&quot;.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Skill</IRI>
         <Literal>Skill</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#SmallTimeWindow</IRI>
-        <Literal>An interaction time frame between seconds and days.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2302,6 +2818,11 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SuperficialAdaptations</IRI>
+        <Literal>Rare or superficial adaptation (e.g., simple parameter changes)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#TimeDuration</IRI>
         <Literal>Represents the duration of any event as a fixed time interval. Example: It took me 8 years to graduate from grammar school.</Literal>
     </AnnotationAssertion>
@@ -2312,6 +2833,26 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPostconditionEvent</IRI>
+        <Literal>Indicates that an event or situation occurs as a cause of another event. This relation identifies the event whose execution is the consequence of the current event or situation. For example, heavy rainfall may have flooded fields as its postcondition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPostconditionEvent</IRI>
+        <Literal>postconditioned by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPreconditionEvent</IRI>
+        <Literal>Indicates that an event or situation must follow another event. This relation identifies the prior event required for the current situation to hold or event to occur. For example, boiling water may have the precondition of heating the pot on a stove.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPreconditionEvent</IRI>
+        <Literal>preconditioned by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasTrigger</IRI>
         <Literal>A relation linking a disposition to its set of triggers causing a realization of said disposition.</Literal>
     </AnnotationAssertion>
@@ -2319,6 +2860,26 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#hasTrigger</IRI>
         <Literal>has trigger</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPostconditionEventOf</IRI>
+        <Literal>Relates an event to another event or situation. This linked postcondition describes an event that follows as a consequence of a previous state or event. For example, heavy rainfall may have flooded fields as its postcondition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPostconditionEventOf</IRI>
+        <Literal>isPostconditionEventOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPreconditionEventOf</IRI>
+        <Literal>Relates an event to another event or situation. This linked precondition specifies necessary enabling events that must occur before a situation holds or another event occurs. For example, cooking may have boiling water as a precondition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPreconditionEventOf</IRI>
+        <Literal>isPreconditionEventOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2339,46 +2900,6 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#isTriggerOf</IRI>
         <Literal>is trigger of</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#postconditionedBy</IRI>
-        <Literal>Indicates that an event or situation occurs as a cause of another event. This relation identifies the event whose execution is the consequence of the current event or situation. For example, heavy rainfall may have flooded fields as its postcondition.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#postconditionedBy</IRI>
-        <Literal>postconditioned by</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#postconditions</IRI>
-        <Literal>Relates an event to another event or situation. This linked postcondition describes an event that follows as a consequence of a previous state or event. For example, heavy rainfall may have flooded fields as its postcondition.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#postconditions</IRI>
-        <Literal>postconditions</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#preconditionedBy</IRI>
-        <Literal>Indicates that an event or situation must follow another event. This relation identifies the prior event required for the current situation to hold or event to occur. For example, boiling water may be preconditioned by heating the pot on a stove.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#preconditionedBy</IRI>
-        <Literal>preconditioned by</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#preconditions</IRI>
-        <Literal>Relates an event to another event or situation. This linked precondition specifies necessary enabling events that must occur before a situation holds or another event occurs. For example, cooking may have boiling water as one of its preconditions.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#preconditions</IRI>
-        <Literal>preconditions</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
