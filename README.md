@@ -9,6 +9,7 @@ This repository contains an ontological model developed within the BFS research 
 - *Core/*         Contains the core ontology
 - *Rules/*        Contains the rule files applied in Jena Fuseki
 - *Instances/*    Contains instances of the meta-model, currently only an extended version of the [Sharework](https://github.com/pstlab/SOHO) use case *Capital Goods*.
+- *ThirdParty/*   Contains domain ontologies NOT part of Sobots. Please refer to */ThirdParty/LICENCE*.
 
 Sobots uses DOLCE+DnS Ultralite, SSN and SOHO as domains for human-robot-interaction and aims to specialize within the sub-domain of social robotics.
 
