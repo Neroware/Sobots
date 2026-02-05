@@ -15,7 +15,7 @@ Sobots uses DOLCE+DnS Ultralite, SSN and SOHO as domains for human-robot-interac
 
 ## Application
 
-We implemented a [digital twin prototype](https://github.com/Neroware/FSRDigitalTwin3D/) that leverages a semantic knowledge server based on Sobots combined with an interactive virtualization environment to run interactive processes of human-robot-interaction.
+We implemented a [digital twin prototype](https://github.com/Neroware/ARSO2026-Reproduce) that leverages a semantic knowledge server based on Sobots combined with an interactive virtualization environment to run interactive processes of human-robot-interaction.
 
 ## Publications
 
