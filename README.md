@@ -4,7 +4,7 @@
 
 ![image](sobots.png)
 
-This repository contains an ontological model developed within the BFS research project [FORSocialRobots](https://www.forsocialrobots.de/). It features basic vocabulary for social human-robot interaction based on a taxonomy from prior research, combined with concepts for skill-based task processing and belief-desire-intention modelling.
+This repository contains an ontological model developed within the BFS research project [FORSocialRobots](https://www.forsocialrobots.de/). It features basic vocabulary for social human-robot interaction based on a [taxonomy](https://faubox.rrze.uni-erlangen.de/dl/fiGhtNLypwAMBhspAxcLM6/Treffen/Treffen_2025-07-23/2025-07-21_Workshop_FORSocialRobots_final.pdf) from prior research, combined with concepts for skill-based task processing and belief-desire-intention modelling.
 
 - *Core/*         Contains the core ontology
 - *Rules/*        Contains the rule files applied in Jena Fuseki
