@@ -2378,7 +2378,7 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasCapability"/>
-                <someValuesFrom rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>

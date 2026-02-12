@@ -1999,7 +1999,7 @@
         <Class IRI="#SocialRobot"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#hasCapability"/>
-            <Class IRI="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+            <Class IRI="#SocialCapability"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
