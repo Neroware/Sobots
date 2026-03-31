@@ -469,6 +469,16 @@
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#AutonomousNavigation -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#AutonomousNavigation">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>Navigate in space, avoiding collision with objects and humans, possibly accounting for proxemics.</rdfs:comment>
+        <rdfs:label>Autonomous Navigation</rdfs:label>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#AutonomyLevel -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#AutonomyLevel">
@@ -485,13 +495,23 @@
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#BodyMovement -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#BodyMovement">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability"/>
+        <rdfs:comment>The robot uses actuators to assist in communication (ex: move arm for on-spot mobile robots, or move in space for mobile robots).</rdfs:comment>
+        <rdfs:label>Body movement</rdfs:label>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
         <rdfs:comment>An abstract social capability discovered in the literature review on imprecise fuzzy techniques in social robotics conducted by the Chair of Digital Manufacturing at the University of Augsburg (https://github.com/Neroware/CPSL2026-Reproduce-SLR). 
 These classes are essentially a subset of a top layer in a taxonomy tree on social robot capability.</rdfs:comment>
-        <rdfs:label>Abstract social capability as defined by the Chair of Digital Manufacturing (CDM) of the University of Augsburg</rdfs:label>
+        <rdfs:label>Social Capability, University of Augsburg, Chair of Digital Manufacturing (CDM)</rdfs:label>
     </Class>
     
 
@@ -557,6 +577,23 @@ E.g. in a SOHO plan, the robotic agent can decide to assign a Function to itself
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationPerceptionCapability -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationPerceptionCapability">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
+        <disjointWith rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationProductionCapability"/>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationProductionCapability -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationProductionCapability">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationProperty -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationProperty">
@@ -567,6 +604,16 @@ E.g. in a SOHO plan, the robotic agent can decide to assign a Function to itself
                 <someValuesFrom rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#Communication"/>
             </Restriction>
         </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#CompliantActuation -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CompliantActuation">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>The system responds to external perturbations/forces by deviating from the target position to ensure safe operation.</rdfs:comment>
+        <rdfs:label>Compliant Actuation</rdfs:label>
     </Class>
     
 
@@ -802,18 +849,58 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ExtraverbalCapability -->
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ExtraverbalCommunicationCapability -->
 
-    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ExtraverbalCapability">
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ExtraverbalCommunicationCapability">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
         <rdfs:subClassOf>
             <Class>
                 <unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ReceiveCapabilitiy"/>
-                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SendCapability"/>
+                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationPerceptionCapability"/>
+                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationProductionCapability"/>
                 </unionOf>
             </Class>
         </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#EyeMovement -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#EyeMovement">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability"/>
+        <rdfs:comment>The robot can move its eyes to assist in communication.</rdfs:comment>
+        <rdfs:label>Eye Movement</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#EyeTracking -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#EyeTracking">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>The robot re-orientates to follow user gaze.</rdfs:comment>
+        <rdfs:label>Eye Tracking</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#FaceRecognition -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#FaceRecognition">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>The robot can follow and locate human faces.</rdfs:comment>
+        <rdfs:label>Face Recognition</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#FacialExpression -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#FacialExpression">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability"/>
+        <rdfs:comment>The robot can actuate its face in an anthropomorphic way to communicate emotions/information.</rdfs:comment>
+        <rdfs:label>Facial Expression</rdfs:label>
     </Class>
     
 
@@ -869,6 +956,36 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Gesture -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Gesture">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability"/>
+        <rdfs:comment>The robot generates gestures for the user to view.</rdfs:comment>
+        <rdfs:label>Gesture</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#GestureRecognition -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#GestureRecognition">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>The robot can understand gestural cues, typically using vision.</rdfs:comment>
+        <rdfs:label>Gesture Recognition</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#HeadMovement -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#HeadMovement">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability"/>
+        <rdfs:comment>The robot can move its head to assist in communication.</rdfs:comment>
+        <rdfs:label>Head Movement</rdfs:label>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#HighlyAdaptive -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#HighlyAdaptive">
@@ -890,7 +1007,8 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#HumanEmotionRecognition">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability"/>
-        <rdfs:comment>The capability to recognise human emotions, e.g. through facial expressions</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>The system can identify various anthropomorphic emotions.</rdfs:comment>
         <rdfs:label>Emotion Recognition</rdfs:label>
     </Class>
     
@@ -1096,6 +1214,26 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#LearningCapability -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#LearningCapability">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>Uses learning algorithms applied to environmental and user data to adapt the robot’s behavior to offer better interaction over time.</rdfs:comment>
+        <rdfs:label>Learning abilities</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Lights -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Lights">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability"/>
+        <rdfs:comment>The robot employs non-screen lights (ex: LEDs).</rdfs:comment>
+        <rdfs:label>Lights</rdfs:label>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#LongDuration -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#LongDuration">
@@ -1109,6 +1247,28 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#LongTerm">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#TimeFrame"/>
         <rdfs:comment>An interaction time frame between years and open ended.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>An abstract communication capability as defined by Mahdi et al.: A survey on the design and evolution of social robots — Past, present and future, 2022 (Table 4).
+These classes are essentially a subset of a top layer in a taxonomy tree on social robot capability.</rdfs:comment>
+        <rdfs:label>Abstract Communication Capability</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
+        <rdfs:comment>An abstract social capability as defined by Mahdi et al.: A survey on the design and evolution of social robots — Past, present and future, 2022 (Table 4).
+These classes are essentially a subset of a top layer in a taxonomy tree on social robot capability.</rdfs:comment>
     </Class>
     
 
@@ -1205,15 +1365,15 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#NonverbalCapability -->
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#NonverbalCommunicationCapability -->
 
-    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#NonverbalCapability">
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#NonverbalCommunicationCapability">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
         <rdfs:subClassOf>
             <Class>
                 <unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ReceiveCapabilitiy"/>
-                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SendCapability"/>
+                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationPerceptionCapability"/>
+                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationProductionCapability"/>
                 </unionOf>
             </Class>
         </rdfs:subClassOf>
@@ -1225,6 +1385,26 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Notify">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SendExtraverbal"/>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#OZTeleoperation -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#OZTeleoperation">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Teleoperation"/>
+        <rdfs:comment>Real-time remote control that appears to be autonomous. Usually used for research purposes.</rdfs:comment>
+        <rdfs:label>Wizard Of Oz Teleoperation</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ObjectRecognition -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ObjectRecognition">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>The robot can identify and localize objects.</rdfs:comment>
+        <rdfs:label>Object Recognition</rdfs:label>
     </Class>
     
 
@@ -1261,15 +1441,15 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ParaverbalCapability -->
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ParaverbalCommunicationCapability -->
 
-    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ParaverbalCapability">
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ParaverbalCommunicationCapability">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
         <rdfs:subClassOf>
             <Class>
                 <unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ReceiveCapabilitiy"/>
-                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SendCapability"/>
+                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationPerceptionCapability"/>
+                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationProductionCapability"/>
                 </unionOf>
             </Class>
         </rdfs:subClassOf>
@@ -1675,6 +1855,26 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#PoseTracking -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#PoseTracking">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>The robot can locate and keep track of user joints.</rdfs:comment>
+        <rdfs:label>Pose Tracking</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#PreProgrammedBehaviors -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#PreProgrammedBehaviors">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>Features and processes that are pre-programmed in the system such as reacting to certain stimuli in a deterministic manner.</rdfs:comment>
+        <rdfs:label>Pre-programmed Behaviors</rdfs:label>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#PredefinedAdaptations -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#PredefinedAdaptations">
@@ -1720,6 +1920,16 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ProfessionalServiceRobot">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ServiceRobot"/>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Projection -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Projection">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability"/>
+        <rdfs:comment>The robot can use light to project on a surface.</rdfs:comment>
+        <rdfs:label>Projection</rdfs:label>
     </Class>
     
 
@@ -1783,15 +1993,6 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ReceiveBodySpeech">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ReceiveNonverbal"/>
-    </Class>
-    
-
-
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ReceiveCapabilitiy -->
-
-    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ReceiveCapabilitiy">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
-        <disjointWith rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SendCapability"/>
     </Class>
     
 
@@ -1987,6 +2188,16 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Screen -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Screen">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability"/>
+        <rdfs:comment>The robot can display features on a screen.</rdfs:comment>
+        <rdfs:label>Screen</rdfs:label>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Seconds -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Seconds">
@@ -1999,14 +2210,6 @@ Regarding the nature of the change made in the plan, we can find adaptations in 
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SendBodySpeech">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SendNonverbal"/>
-    </Class>
-    
-
-
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SendCapability -->
-
-    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SendCapability">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
     </Class>
     
 
@@ -2225,6 +2428,16 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SmellDiscernment -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SmellDiscernment">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>The robot can identify particular airborne gases and smells.</rdfs:comment>
+        <rdfs:label>Smell Discernment</rdfs:label>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SocialAction -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialAction">
@@ -2297,6 +2510,16 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialContext">
         <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Situation"/>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCuesGeneration -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCuesGeneration">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>The robot can generate sounds that are not part of a human language.</rdfs:comment>
+        <rdfs:label>Sound Cues Generation</rdfs:label>
     </Class>
     
 
@@ -2490,6 +2713,62 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SoftwareCapability -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SoftwareCapability">
+        <rdfs:subClassOf rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Sound -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Sound">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability"/>
+        <rdfs:label>Sound</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SoundCuesGeneration -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SoundCuesGeneration">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>The robot can generate sounds that are not part of a human language.</rdfs:comment>
+        <rdfs:label>Sound Cues Generation</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Speech -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Speech">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability"/>
+        <rdfs:label>Speech</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SpeechLocalization -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SpeechLocalization">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>The robot can direct its attention to a location in space where a source of speech is perceived.</rdfs:comment>
+        <rdfs:label>Speech Localization</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SpeechRecognition -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SpeechRecognition">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>The robot is able to understand user speech.</rdfs:comment>
+        <rdfs:label>Speech Recognition</rdfs:label>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Stationary -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Stationary">
@@ -2515,6 +2794,16 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Tactile -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Tactile">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability"/>
+        <rdfs:comment>The robot reacts to user touch on its build, which does not include a touchscreen.</rdfs:comment>
+        <rdfs:label>Tactile</rdfs:label>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#TargetGroup -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#TargetGroup">
@@ -2535,6 +2824,16 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#TechnicalSystem">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#InteractionPartner"/>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Teleoperation -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Teleoperation">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractSocialCapability"/>
+        <rdfs:comment>Can be controlled in real-time by a human operator.</rdfs:comment>
+        <rdfs:label>Teleoperation</rdfs:label>
     </Class>
     
 
@@ -2565,6 +2864,16 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Touchscreen -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Touchscreen">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Mahdi_AbstractCommunicationCapability"/>
+        <rdfs:comment>The robot reacts to user input from a touchscreen.</rdfs:comment>
+        <rdfs:label>Touchscreen</rdfs:label>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#TransportTaskContext -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#TransportTaskContext">
@@ -2587,15 +2896,15 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     
 
 
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#VerbalCapability -->
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#VerbalCommunicationCapability -->
 
-    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#VerbalCapability">
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#VerbalCommunicationCapability">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
         <rdfs:subClassOf>
             <Class>
                 <unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ReceiveCapabilitiy"/>
-                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SendCapability"/>
+                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationPerceptionCapability"/>
+                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationProductionCapability"/>
                 </unionOf>
             </Class>
         </rdfs:subClassOf>
