@@ -434,7 +434,9 @@
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ArtificalEmotionExpression -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ArtificalEmotionExpression">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability"/>
+        <rdfs:comment>The capability to express some form of emotion.</rdfs:comment>
+        <rdfs:label>Artificial Emotion Expression</rdfs:label>
     </Class>
     
 
@@ -442,7 +444,9 @@
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ArtificalEmotionSimulation -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ArtificalEmotionSimulation">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability"/>
+        <rdfs:comment>The capability to simulate an emotional state.</rdfs:comment>
+        <rdfs:label>Artificial Emotion Simulation</rdfs:label>
     </Class>
     
 
@@ -450,7 +454,9 @@
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ArtisticCoCreation -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ArtisticCoCreation">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability"/>
+        <rdfs:comment>The capability to engage in artistic tasks with humans</rdfs:comment>
+        <rdfs:label>Artistic Co-Creation</rdfs:label>
     </Class>
     
 
@@ -475,6 +481,17 @@
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Belief">
         <rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Entity"/>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
+        <rdfs:comment>An abstract social capability discovered in the literature review on imprecise fuzzy techniques in social robotics conducted by the Chair of Digital Manufacturing at the University of Augsburg (https://github.com/Neroware/CPSL2026-Reproduce-SLR). 
+These classes are essentially a subset of a top layer in a taxonomy tree on social robot capability.</rdfs:comment>
+        <rdfs:label>Abstract social capability as defined by the Chair of Digital Manufacturing (CDM) of the University of Augsburg</rdfs:label>
     </Class>
     
 
@@ -514,7 +531,9 @@
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#CollaborativeAssistance -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CollaborativeAssistance">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability"/>
+        <rdfs:comment>The capability to autonomously identify and assist in tasks of collaborative human-robot processes. E.g.: A social robot can identify that an elderly person requires aid in getting up and that the attached task of helping said person needs to performed.</rdfs:comment>
+        <rdfs:label>Collaborative Assistance</rdfs:label>
     </Class>
     
 
@@ -522,7 +541,10 @@
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#CollaborativeDivisionOfLabor -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CollaborativeDivisionOfLabor">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability"/>
+        <rdfs:comment>The capability to autonomously divide tasks and workloads between human and robotic agents. 
+E.g. in a SOHO plan, the robotic agent can decide to assign a Function to itself if it comes with a high ergonomic load for the collaborating worker(s).</rdfs:comment>
+        <rdfs:label>Division of Labor</rdfs:label>
     </Class>
     
 
@@ -545,41 +567,6 @@
                 <someValuesFrom rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#Communication"/>
             </Restriction>
         </rdfs:subClassOf>
-    </Class>
-    
-
-
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability -->
-
-    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasPart"/>
-                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ConcreteSocialCapability"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <disjointWith rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ConcreteSocialCapability"/>
-        <rdfs:comment>A complex social capability discovered in the literature review on imprecise fuzzy techniques in social robotics conducted by the Chair of Digital Manufacturing at the University of Augsburg (https://github.com/Neroware/CPSL2026-Reproduce-SLR). 
-These classes are essentially a subset of a top layer in a taxonomy tree on social robot capability.</rdfs:comment>
-        <rdfs:label>Complex Social Capability</rdfs:label>
-    </Class>
-    
-
-
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ConcreteSocialCapability -->
-
-    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ConcreteSocialCapability">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isPartOf"/>
-                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>A concrete social capability is part of some form of complex social capability and represents a certain aspect of said capability. 
-E.g.: A robot&apos;s capability to adjust the speaking style depending on the role of the person it communicates with is a concrete social capability and a part of the complex social capability of Social-Cognitive Communication.</rdfs:comment>
-        <rdfs:label>Concrete Social Capability</rdfs:label>
     </Class>
     
 
@@ -902,7 +889,9 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#HumanEmotionRecognition -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#HumanEmotionRecognition">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability"/>
+        <rdfs:comment>The capability to recognise human emotions, e.g. through facial expressions</rdfs:comment>
+        <rdfs:label>Emotion Recognition</rdfs:label>
     </Class>
     
 
@@ -910,7 +899,9 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#HumanIntentionRecognition -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#HumanIntentionRecognition">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability"/>
+        <rdfs:comment>The capability to identify human intentions, e.g. through identified emotional cues.</rdfs:comment>
+        <rdfs:label>Intention Recognition</rdfs:label>
     </Class>
     
 
@@ -1297,7 +1288,9 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#PersonRecognition -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#PersonRecognition">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability"/>
+        <rdfs:comment>The capability to recognise persons</rdfs:comment>
+        <rdfs:label>Person Recognition</rdfs:label>
     </Class>
     
 
@@ -2263,7 +2256,9 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCognitiveAdmittanceControl -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCognitiveAdmittanceControl">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability"/>
+        <rdfs:comment>The capability to control admittance according to social cues</rdfs:comment>
+        <rdfs:label>Social-Cognitive Admittance Control</rdfs:label>
     </Class>
     
 
@@ -2271,7 +2266,9 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCognitiveCommunication -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCognitiveCommunication">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability"/>
+        <rdfs:comment>The capability to communicate under social-cognitive considerations</rdfs:comment>
+        <rdfs:label>Social-Cognitive Communication</rdfs:label>
     </Class>
     
 
@@ -2279,7 +2276,9 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCognitiveMovement -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCognitiveMovement">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability"/>
+        <rdfs:comment>The capability to move autonomously under social-cognitive considerations.</rdfs:comment>
+        <rdfs:label>Social-Cognitive Movement</rdfs:label>
     </Class>
     
 
@@ -2287,7 +2286,9 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCognitivePositioning -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCognitivePositioning">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ComplexSocialCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CDM_AbstractSocialCapability"/>
+        <rdfs:comment>The capability to position under social-cognitive considerations.</rdfs:comment>
+        <rdfs:label>Social-Cognitive Positioning</rdfs:label>
     </Class>
     
 
