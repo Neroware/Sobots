@@ -972,6 +972,17 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#HumanEmotionRecognition -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#HumanEmotionRecognition">
+        <rdfs:subClassOf rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SensingCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialRobotFeature"/>
+        <rdfs:comment>The system can identify various anthropomorphic emotions.</rdfs:comment>
+        <rdfs:label>Human Emotion Recognition</rdfs:label>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#HumanLikeness -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#HumanLikeness">
@@ -2418,7 +2429,37 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
-                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#KnowledgeCapability"/>
+                <someValuesFrom>
+                    <Class>
+                        <intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#EyeTracking"/>
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#FaceRecognition"/>
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#GestureRecognition"/>
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#HumanEmotionRecognition"/>
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ObjectRecognition"/>
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#PoseTracking"/>
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SpeechRecognition"/>
+                        </intersectionOf>
+                    </Class>
+                </someValuesFrom>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom>
+                    <Class>
+                        <intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#KnowledgeCapability"/>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#EyeTracking"/>
+                                    <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#FaceRecognition"/>
+                                </unionOf>
+                            </Class>
+                        </intersectionOf>
+                    </Class>
+                </someValuesFrom>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>The knowledge of how to change one&apos;s self-presentation based on social context factors</rdfs:comment>
