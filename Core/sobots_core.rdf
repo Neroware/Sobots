@@ -398,6 +398,26 @@
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Agreeableness -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Agreeableness">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#EmotionExpression"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Android -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Android">
@@ -530,6 +550,34 @@
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability">
         <rdfs:subClassOf rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#AgentCapability"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialAwareness"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom>
+                    <Class>
+                        <unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Gesture"/>
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Screen"/>
+                            <rdf:Description rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SpeechSynthesis"/>
+                        </unionOf>
+                    </Class>
+                </someValuesFrom>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requires"/>
+                <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</minQualifiedCardinality>
+                <onClass rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#InteractionModality"/>
+            </Restriction>
+        </rdfs:subClassOf>
     </Class>
     
 
@@ -571,6 +619,32 @@
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialRobotFeature"/>
         <rdfs:comment>The system responds to external perturbations/forces by deviating from the target position to ensure safe operation.</rdfs:comment>
         <rdfs:label>Compliant Actuation</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ConflictManagement -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ConflictManagement">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#NegotiationCapability"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialAwareness"/>
+            </Restriction>
+        </rdfs:subClassOf>
     </Class>
     
 
@@ -758,6 +832,14 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#EmotionExpression -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#EmotionExpression">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#EmotionalAdaptability -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#EmotionalAdaptability">
@@ -778,6 +860,26 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Entertainment">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ApplicationArea"/>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ExchangeTactics -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ExchangeTactics">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialComprehension"/>
+            </Restriction>
+        </rdfs:subClassOf>
     </Class>
     
 
@@ -1033,6 +1135,20 @@ E.g.: A robot&apos;s Pick-and-Place skill has the two device primitives for Open
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Humanoid">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#HumanLikeness"/>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#ImpressionManagementTactics -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#ImpressionManagementTactics">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
+            </Restriction>
+        </rdfs:subClassOf>
     </Class>
     
 
@@ -1315,6 +1431,26 @@ These classes are essentially a subset of a top layer in a taxonomy tree on soci
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#NegotiationCapability -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#NegotiationCapability">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialComprehension"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#NoResemblance -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#NoResemblance">
@@ -1447,6 +1583,20 @@ These classes are essentially a subset of a top layer in a taxonomy tree on soci
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#PersonalProxemicZone">
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#ProxemicZone"/>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#PersuasiveMessaging -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#PersuasiveMessaging">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#CommunicationCapability"/>
+            </Restriction>
+        </rdfs:subClassOf>
     </Class>
     
 
@@ -2482,6 +2632,26 @@ E.g.: A robot can have the capability to move objects, described by a skill &quo
     
 
 
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SocialComprehension -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialComprehension">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialCapability"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#SensingCapability"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pst.istc.cnr.it/ontologies/2019/01/soho#requiresCapability"/>
+                <someValuesFrom rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#KnowledgeCapability"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SocialContext -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialContext">
@@ -2731,15 +2901,6 @@ These classes are essentially a subset of a top layer in a taxonomy tree on soci
     
 
 
-    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Speech -->
-
-    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Speech">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#InteractionModality"/>
-        <rdfs:label>Speech</rdfs:label>
-    </Class>
-    
-
-
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SpeechLocalization -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SpeechLocalization">
@@ -2757,6 +2918,16 @@ These classes are essentially a subset of a top layer in a taxonomy tree on soci
         <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#SocialRobotFeature"/>
         <rdfs:comment>The robot is able to understand user speech.</rdfs:comment>
         <rdfs:label>Speech Recognition</rdfs:label>
+    </Class>
+    
+
+
+    <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#SpeechSynthesis -->
+
+    <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#SpeechSynthesis">
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#InteractionModality"/>
+        <rdfs:comment>The robot can generate speech.</rdfs:comment>
+        <rdfs:label>Speech Synthesis</rdfs:label>
     </Class>
     
 
@@ -2859,7 +3030,7 @@ These classes are essentially a subset of a top layer in a taxonomy tree on soci
     <!-- https://www.forsocialrobots.de/ontologies/sobots.owl#Touchscreen -->
 
     <Class rdf:about="https://www.forsocialrobots.de/ontologies/sobots.owl#Touchscreen">
-        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#InteractionModality"/>
+        <rdfs:subClassOf rdf:resource="https://www.forsocialrobots.de/ontologies/sobots.owl#Screen"/>
         <rdfs:comment>The robot reacts to user input from a touchscreen.</rdfs:comment>
         <rdfs:label>Touchscreen</rdfs:label>
     </Class>
