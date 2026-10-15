@@ -19,7 +19,7 @@ We implemented a [digital twin prototype](https://github.com/Neroware/FSRDigital
 
 ## Publications
 
-Unfortunately, we do not have any publications out yet...
+Raoul Zebisch, Nina Merz, Jörg Franke, Sebastian Reitelshöfer and Johannes Schilp. 2026. SoBots: a domain ontology for social robotics. In 2026 IEEE International Conference on Advanced Robotics and its Social Impacts (ARSO), 10-12 June 2026, Vienna, Austria. IEEE, Piscataway, NJ, 7-12 DOI: 10.1109/arso68304.2026.11536115
 
 ## References
 
